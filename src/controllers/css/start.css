@@ -1,0 +1,12 @@
+.root {
+    -fx-background-image: url("../../assets/images/lightbg.png");
+    -fx-background-color: transparent
+}
+
+.button {
+    -fx-background-radius: 8;
+    -fx-padding: 10;
+    -fx-color: RED;
+    -fx-opacity: .5;
+
+}

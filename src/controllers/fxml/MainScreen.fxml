@@ -9,11 +9,14 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <VBox id="main-VBox" xmlns="http://javafx.com/javafx/11.0.1"
-      xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainScreenController">
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainScreenController"
+      stylesheets="@../css/start.css">
     <children>
         <AnchorPane id="main-anchor-pane" >
             <children>
-                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="182.0" layoutX="140.5" layoutY="55.0"
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DARKGREEN" opacity=".5"
+                           stroke = "GRAY"
+                           height="182.0" layoutX="140.5" layoutY="55.0"
                            width="359.0"/>
                 <Button styleClass="intro-buttons" fx:id="startButton" layoutX="245.0" layoutY="267.0" mnemonicParsing="false"
                         onAction="#changeToEnterName" text="Play!">

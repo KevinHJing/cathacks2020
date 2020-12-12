@@ -22,8 +22,8 @@
             <Insets top="0" right="25" bottom="25" left="25"/>
         </padding>
 
-        <ImageView fitHeight="275.0" fitWidth="603.0" pickOnBounds="true" preserveRatio="true"
-                   translateX="400" translateY="200" onMousePressed="#imageClick">
+        <ImageView fitHeight="500.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true"
+                   translateX="100" translateY="100" onMousePressed="#imageClick">
             <image>
                 <Image url="@../../assets/images/reindeer.png" />
             </image>

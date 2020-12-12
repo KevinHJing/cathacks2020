@@ -12,7 +12,8 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="controllers.OverworldScreenController"
             prefHeight="400.0" prefWidth="600.0"
-            styleClass="root">
+            styleClass="root"
+            fx:id="GameRoot">
 
     <ImageView fitHeight="275.0" fitWidth="603.0" pickOnBounds="true" preserveRatio="true"
                translateX="500" translateY="300" onMousePressed="#loadNextScene">
