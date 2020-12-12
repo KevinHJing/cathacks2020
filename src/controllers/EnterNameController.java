@@ -29,9 +29,8 @@ public class EnterNameController {
         GameScreenController gameScreenController = loader.getController();
         gameScreenController.setLabelText(nameField.getText());
 
-        Scene scene = new Scene(root, 640, 400);
-        scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
-        scene.getStylesheets().add(getClass().getResource("css/EnterName.css").toExternalForm());
+        Scene scene = new Scene(root, 900, 650);
+//        scene.getStylesheets().add(getClass().getResource("css/Game.css").toExternalForm());
         stage.setScene(scene);
 
     }

@@ -20,14 +20,13 @@ import java.io.IOException;
 
 public class GameScreenController {
 
-    @FXML Label welcomeMessage;
+    @FXML Label dialogue;
 
     public void setLabelText(String text){
-        welcomeMessage.setText("Sup " + text);
+        dialogue.setText("hey what's up " + text);
     }
   
     @FXML private Button option1;
-    @FXML private Label dialogue;
 
 
     @FXML
