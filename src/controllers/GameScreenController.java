@@ -22,20 +22,15 @@ import java.awt.*;
 import java.io.IOException;
 
 public class GameScreenController {
-
     @FXML Label welcomeMessage;
     private Character character;
-
-    public GameScreenController() {
-        character = new Character("name");
-    }
+    @FXML Label dialogue;
 
     public void setLabelText(String text){
-        welcomeMessage.setText("Sup " + text);
+        dialogue.setText("hey what's up " + text);
     }
   
     @FXML private Button option1;
-    @FXML private Label dialogue;
 
 
     @FXML

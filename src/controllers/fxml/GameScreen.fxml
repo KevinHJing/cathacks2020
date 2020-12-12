@@ -13,7 +13,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
 <StackPane fx:id="GameRoot" xmlns:fx="http://javafx.com/fxml"
-           stylesheets="@../../assets/css/game.css"
+           stylesheets="@../css/game.css"
            styleClass="root" fx:controller="controllers.GameScreenController">
     <BorderPane prefHeight="1000" prefWidth="1000" fx:id="background" >
 

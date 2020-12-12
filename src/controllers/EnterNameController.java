@@ -21,7 +21,6 @@ public class EnterNameController {
     private void changeToGame(ActionEvent event) throws IOException {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setTitle("Enter Your Name");
-        System.out.println(nameField.getText());
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/GameScreen.fxml"));
         Parent root = loader.load();
@@ -29,9 +28,8 @@ public class EnterNameController {
         GameScreenController gameScreenController = loader.getController();
         gameScreenController.setLabelText(nameField.getText());
 
-        Scene scene = new Scene(root, 640, 400);
-        scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
-        scene.getStylesheets().add(getClass().getResource("css/EnterName.css").toExternalForm());
+        Scene scene = new Scene(root, 900, 650);
+        scene.getStylesheets().add(getClass().getResource("css/game.css").toExternalForm());
         stage.setScene(scene);
 
     }
