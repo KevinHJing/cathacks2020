@@ -15,13 +15,15 @@
 <StackPane fx:id="GameRoot" xmlns:fx="http://javafx.com/fxml"
            stylesheets="@../css/game.css"
            styleClass="root" fx:controller="controllers.GameScreenController">
+
     <BorderPane prefHeight="1000" prefWidth="1000" fx:id="background" >
 
         <padding>
             <Insets top="0" right="25" bottom="25" left="25"/>
         </padding>
 
-        <ImageView fitHeight="275.0" fitWidth="603.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="275.0" fitWidth="603.0" pickOnBounds="true" preserveRatio="true"
+                   translateX="400" translateY="200" onMousePressed="#imageClick">
             <image>
                 <Image url="@../../assets/images/reindeer.png" />
             </image>
