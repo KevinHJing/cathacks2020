@@ -35,7 +35,6 @@ public class EnterNameController {
     private void handleButtonSubmit(ActionEvent event) throws IOException {
         // if nameField is empty
         if (nameField.getText().isBlank()){
-
             Alert fail= new Alert(Alert.AlertType.ERROR);
             fail.setHeaderText("Please enter a valid name");
             fail.showAndWait();
@@ -46,7 +45,6 @@ public class EnterNameController {
             scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
             scene.getStylesheets().add(getClass().getResource("css/EnterName.css").toExternalForm());
             stage.setScene(scene);
-
             return;
         }
 

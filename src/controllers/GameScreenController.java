@@ -44,6 +44,9 @@ import java.io.IOException;
         public void initialize(URL url, ResourceBundle rb) {
             GameRoot.setOpacity(0);
             makeFadeInTransition();
+            dialogue.setFont(new Font("Lucida Console", 20));
+            option1.setFont(new Font("Segoe UI", 17));
+            option2.setFont(new Font("Segoe UI", 17));
             Dialog d1 = new Dialog(
                     ".........",
                     "hello?",
@@ -53,33 +56,45 @@ import java.io.IOException;
                     "Is that a ghost?!",
                     "I’m losing it...");
             Dialog d3 = new Dialog(
-                    "Bowman: Nah, don’t be silly. It’s just me, Bowman the wildcat. I’m here to wish \n" +
-                            "you a happy holidays! Well, I couldn’t visit you in person, but I thought I’d \n" +
-                            "drop by your dream to say hi.\n",
+                    "Bowman: Nah, don’t be silly. It’s just me,\n" +
+                            "Bowman the wildcat. I’m here to wish you a\n" +
+                            "happy holidays! Well, I couldn’t visit you in\n" +
+                            "person, but I thought I’d drop by your dream\n" +
+                            "to say hi.\n",
                     "That’s… unconventional.",
                     "Happy holidays to you too...?");
             Dialog d4 = new Dialog(
-                    "Bowman: Dang, not even a warm welcome? It would make me feel a lot better\n" +
-                            "about giving you this job.",
+                    "Bowman: Dang, not even a warm welcome? It would\n" +
+                            "make me feel a lot better about giving you this\n" +
+                            "job.",
                     "Job?",
                     null);
             Dialog d5 = new Dialog(
-                    "Bowman: Well…. I had all these presents to give to everyone, but I don’t have\n" +
-                            "the time to give them out. So… could you do me a little favor?",
+                    "Bowman: Well…. I had all these presents to give\n" +
+                            "to everyone, but I don’t have the time to give\n" +
+                            "them out. So… could you do me a little favor?",
                     "Sure thing, pal.",
                     "Do I have a choice?");
             Dialog d6 = new Dialog(
-                    "That’s the spirit! When you wake up, you’ll see the presents in your room, and\n" +
-                            "you should be able to see Moodolph the Reindeer, Iceberg the Penguin, and \n" +
-                            "[Name] the snowman around town. Just talk to them to give them a present.",
+                    "That’s the spirit! When you wake up, you’ll see\n" +
+                            "the presents in your room, and you should be\n" +
+                            "able to see Moodolph the Reindeer, Iceberg the\n" +
+                            "Penguin, and [Name] the snowman around town.\n" +
+                            "Just talk to them to give them a present.",
                     "Wait, I don’t get one?",
                     null);
+            Dialog d7 = new Dialog(
+                    "Bowman: Oops, I guess I missed you on the list!\n" +
+                            "Sorry bud. Anyways, gotta be going now!.",
+                    "Wait a minute!",
+                    "(wake up)");
             setDialogValues(d1);
             dialogslist.add(d2);
             dialogslist.add(d3);
             dialogslist.add(d4);
             dialogslist.add(d5);
             dialogslist.add(d6);
+            dialogslist.add(d7);
         }
 
         private void setDialogValues(Dialog d) {
@@ -110,6 +125,11 @@ import java.io.IOException;
                 setDialogValues(dialogslist.get(dialogNum));
                 dialogNum++;
             }
+        }
+
+        @FXML
+        public void changeBackground() {
+
         }
 
         @FXML
