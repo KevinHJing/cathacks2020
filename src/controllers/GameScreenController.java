@@ -3,7 +3,7 @@ import javafx.animation.FadeTransition;
 import game.*;
 
 import game.Character;
-
+import game.Dialog;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -26,27 +26,11 @@ import java.awt.*;
 import java.io.IOException;
 
 public class GameScreenController implements Initializable{
-
-    @FXML
-    Label dialogue;
-    @FXML 
-        Label welcomeMessage;
     private Character character;
-    
-    public void setLabelText(String text){
-        dialogue.setText("hey what's up " + text);
-    }
-  
-    @FXML private Button option1;
-
-
-    @FXML
-    public void changeText(javafx.event.ActionEvent actionEvent) {
-        dialogue.setText("it worked :)");
-    }
-
-    @FXML
-    StackPane GameRoot;
+    @FXML Label dialogue;
+    @FXML Button option1;
+    @FXML Button option2;
+    @FXML StackPane GameRoot;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -61,6 +45,57 @@ public class GameScreenController implements Initializable{
         fadeout.setFromValue(0);
         fadeout.setToValue(1);
         fadeout.play();
+    }
+    
+    public void setLabelText(String text){
+        Dialog d1 = new Dialog("hey what's up " + text + "! how are you doing today!", "good :)", "not good :(");
+        dialogue.setText(d1.getOutput());
+        option1.setText(d1.getButtonText1());
+        option2.setText(d1.getButtonText2());
+    }
+
+    @FXML
+    public void changeDialogOption1(javafx.event.ActionEvent actionEvent) {
+        if (dialogue.getText().contains("! how are you doing today!")) {
+            Dialog d2 = new Dialog("That's great to hear!", "Who are you?", "What's up with you?");
+            dialogue.setText(d2.getOutput());
+            option1.setText(d2.getButtonText1());
+            option2.setText(d2.getButtonText2());
+        } else if (dialogue.getText().equals("I'm one of Santa's elves! I am actually running behind on present deliveries. \nCould you help me out?")) {
+            Dialog d2 = new Dialog("Thank you so much! Follow me to the town I'm delivering presents in!", "Ok!", "Coming!");
+            dialogue.setText(d2.getOutput());
+            option1.setText(d2.getButtonText1());
+            option2.setText(d2.getButtonText2());
+        } else if (dialogue.getText().equals("Thank you so much! Follow me to the town I'm delivering presents in!")) {
+            //Change Screens
+        } else {
+            Dialog d2 = new Dialog("I'm one of Santa's elves! I am actually running behind on present deliveries. \nCould you help me out?", "Of course!", "Sure...");
+            dialogue.setText(d2.getOutput());
+            option1.setText(d2.getButtonText1());
+            option2.setText(d2.getButtonText2());
+        }
+    }
+
+    @FXML
+    public void changeDialogOption2(javafx.event.ActionEvent actionEvent) {
+        if (dialogue.getText().contains("! how are you doing today!")) {
+            Dialog d2 = new Dialog("I'm sorry, I hope you feel better :(", "Who are you?", "What's up with you?");
+            dialogue.setText(d2.getOutput());
+            option1.setText(d2.getButtonText1());
+            option2.setText(d2.getButtonText2());
+        } else if (dialogue.getText().equals("I'm one of Santa's elves! I am actually running behind on present deliveries. \nCould you help me out?")) {
+            Dialog d2 = new Dialog("Thank you so much! Follow me to the town I'm delivering presents in!", "Ok!", "Coming!");
+            dialogue.setText(d2.getOutput());
+            option1.setText(d2.getButtonText1());
+            option2.setText(d2.getButtonText2());
+        } else if (dialogue.getText().equals("Thank you so much! Follow me to the town I'm delivering presents in!")) {
+            //Change Screens
+        } else {
+            Dialog d2 = new Dialog("I'm one of Santa's elves! I am actually running behind on present deliveries. \nCould you help me out?", "Of course!", "Sure...");
+            dialogue.setText(d2.getOutput());
+            option1.setText(d2.getButtonText1());
+            option2.setText(d2.getButtonText2());
+        }
     }
 }
 
