@@ -1,5 +1,5 @@
 package controllers;
-
+import javafx.animation.FadeTransition;
 import game.*;
 
 import game.Character;
@@ -12,23 +12,41 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.util.Duration;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import java.awt.*;
 import java.io.IOException;
 
-public class GameScreenController {
-    @FXML Label welcomeMessage;
+public class GameScreenController implements Initializable{
     private Character character;
     @FXML Label dialogue;
     @FXML Button option1;
     @FXML Button option2;
+    @FXML StackPane GameRoot;
 
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        GameRoot.setOpacity(0);
+        makeFadeInTrasition();
+    }
+
+    private void makeFadeInTrasition() {
+        FadeTransition fadeout = new FadeTransition();
+        fadeout.setDuration(Duration.millis(1000));
+        fadeout.setNode(GameRoot);
+        fadeout.setFromValue(0);
+        fadeout.setToValue(1);
+        fadeout.play();
+    }
+    
     public void setLabelText(String text){
         Dialog d1 = new Dialog("hey what's up " + text + "! how are you doing today!", "good :)", "not good :(");
         dialogue.setText(d1.getOutput());
@@ -80,3 +98,4 @@ public class GameScreenController {
         }
     }
 }
+

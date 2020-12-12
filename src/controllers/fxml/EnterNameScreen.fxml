@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 
 <?import javafx.scene.text.Font?>
-<VBox id="main-VBox" xmlns="http://javafx.com/javafx/11.0.1"
+<StackPane id="main-VBox" fx:id="mainbox" xmlns="http://javafx.com/javafx/11.0.1"
       xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EnterNameController">
     <children>
         <AnchorPane id="main-anchor-pane">
@@ -23,4 +23,4 @@
             </children>
         </AnchorPane>
     </children>
-</VBox>
+</StackPane>
