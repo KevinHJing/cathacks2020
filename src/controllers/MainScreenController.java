@@ -1,5 +1,6 @@
 package controllers;
 
+import javafx.animation.FadeTransition;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.awt.*;
 import java.io.IOException;
@@ -22,6 +24,7 @@ public class MainScreenController{
 
     @FXML
     private void changeToEnterName(ActionEvent event) throws IOException {
+
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         stage.setTitle("Enter Your Name");
@@ -33,6 +36,8 @@ public class MainScreenController{
         stage.setScene(scene);
 
     }
+
+
 
 
 }
