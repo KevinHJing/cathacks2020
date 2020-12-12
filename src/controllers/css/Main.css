@@ -1,0 +1,9 @@
+#main-VBox{
+    -fx-pref-width: 640px;
+    -fx-pref-height: 400px;
+}
+
+#main-anchor-pane{
+    -fx-pref-width: 640px;
+    -fx-pref-height: 413px;
+}
