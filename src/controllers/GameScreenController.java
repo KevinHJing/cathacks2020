@@ -1,5 +1,8 @@
 package controllers;
 
+import game.*;
+
+import game.Character;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,6 +24,11 @@ import java.io.IOException;
 public class GameScreenController {
 
     @FXML Label welcomeMessage;
+    private Character character;
+
+    public GameScreenController() {
+        character = new Character("name");
+    }
 
     public void setLabelText(String text){
         welcomeMessage.setText("Sup " + text);
