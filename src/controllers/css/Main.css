@@ -14,3 +14,10 @@
     -fx-text-align: center;
     -fx-wrap-text: true;
 }
+
+.intro-buttons{
+    -fx-pref-height: 46px;
+    -fx-pref-width: 150px;
+    -fx-text-align: center;
+
+}
