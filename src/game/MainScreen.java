@@ -13,5 +13,5 @@ import java.io.IOException;
 
 public class MainScreen  {
 
-//will probaby delete this later lol
+//will probaby delete this later lol since it's not really a class
 }
