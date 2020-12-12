@@ -21,6 +21,11 @@
             <Insets top="0" right="25" bottom="25" left="25"/>
         </padding>
 
+        <ImageView fitHeight="275.0" fitWidth="603.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../assets/images/reindeer.png" />
+            </image>
+        </ImageView>
 
         <bottom>
             <HBox spacing="10">
@@ -30,8 +35,8 @@
                     <Label fx:id="dialogue" text="hey what's up" />
                 </Group>
                 <VBox spacing="10">
-                    <Button fx:id="option1" text="what's good :)" onAction="#changeText"/>
-                    <Button fx:id="option2" text="what's not good :("/>
+                    <Button fx:id="option1" text="what's good :)" onAction="#changeDialogOption1"/>
+                    <Button fx:id="option2" text="what's not good :(" onAction="#changeDialogOption2"/>
                 </VBox>
 
             </HBox>
