@@ -15,6 +15,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
 import javafx.fxml.Initializable;
@@ -23,35 +24,73 @@ import javafx.util.Duration;
 
 import javax.swing.text.html.ImageView;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import java.awt.*;
 import java.io.IOException;
     public class GameScreenController implements Initializable {
-        @FXML
-        Label dialogue;
-        @FXML
-        Label welcomeMessage;
-        private Character character;
-        @FXML
-        Button option1;
-        @FXML
-        Button option2;
-        @FXML
-        StackPane GameRoot;
+        @FXML Label dialogue;
+        @FXML Label welcomeMessage;
+        @FXML Button option1;
+        @FXML Button option2;
+        @FXML StackPane GameRoot;
 
-        public void setLabelText(String text) {
-            dialogue.setText("hey what's up " + text);
-        }
+        private Character character;
+        ArrayList<Dialog> dialogslist = new ArrayList<Dialog>();
+        private int dialogNum = 0;
 
         @Override
         public void initialize(URL url, ResourceBundle rb) {
             GameRoot.setOpacity(0);
             makeFadeInTransition();
-            Dialog d1 = new Dialog("hey what's up! how are you doing today!", "good :)", "not good :(");
-            dialogue.setText(d1.getOutput());
-            option1.setText(d1.getButtonText1());
-            option2.setText(d1.getButtonText2());
+            Dialog d1 = new Dialog(
+                    ".........",
+                    "hello?",
+                    null);
+            Dialog d2 = new Dialog(
+                    "??: Hey, you there?",
+                    "Is that a ghost?!",
+                    "I’m losing it...");
+            Dialog d3 = new Dialog(
+                    "Bowman: Nah, don’t be silly. It’s just me, Bowman the wildcat. I’m here to wish \n" +
+                            "you a happy holidays! Well, I couldn’t visit you in person, but I thought I’d \n" +
+                            "drop by your dream to say hi.\n",
+                    "That’s… unconventional.",
+                    "Happy holidays to you too...?");
+            Dialog d4 = new Dialog(
+                    "Bowman: Dang, not even a warm welcome? It would make me feel a lot better\n" +
+                            "about giving you this job.",
+                    "Job?",
+                    null);
+            Dialog d5 = new Dialog(
+                    "Bowman: Well…. I had all these presents to give to everyone, but I don’t have\n" +
+                            "the time to give them out. So… could you do me a little favor?",
+                    "Sure thing, pal.",
+                    "Do I have a choice?");
+            Dialog d6 = new Dialog(
+                    "That’s the spirit! When you wake up, you’ll see the presents in your room, and\n" +
+                            "you should be able to see Moodolph the Reindeer, Iceberg the Penguin, and \n" +
+                            "[Name] the snowman around town. Just talk to them to give them a present.",
+                    "Wait, I don’t get one?",
+                    null);
+            setDialogValues(d1);
+            dialogslist.add(d2);
+            dialogslist.add(d3);
+            dialogslist.add(d4);
+            dialogslist.add(d5);
+            dialogslist.add(d6);
+        }
+
+        private void setDialogValues(Dialog d) {
+            dialogue.setText(d.getOutput());
+            option1.setText(d.getButtonText1());
+            if (d.getButtonText2() == null) {
+                option2.setVisible(false);
+            } else {
+                option2.setVisible(true);
+                option2.setText(d.getButtonText2());
+            }
         }
 
         private void makeFadeInTransition() {
@@ -65,45 +104,21 @@ import java.io.IOException;
 
         @FXML
         public void changeDialogOption1(javafx.event.ActionEvent actionEvent) {
-            if (dialogue.getText().contains("! how are you doing today!")) {
-                Dialog d2 = new Dialog("That's great to hear!", "Who are you?", "What's up with you?");
-                dialogue.setText(d2.getOutput());
-                option1.setText(d2.getButtonText1());
-                option2.setText(d2.getButtonText2());
-            } else if (dialogue.getText().equals("I'm one of Santa's elves! I am actually running behind on present deliveries. \nCould you help me out?")) {
-                Dialog d2 = new Dialog("Thank you so much! Follow me to the town I'm delivering presents in!", "Ok!", "Coming!");
-                dialogue.setText(d2.getOutput());
-                option1.setText(d2.getButtonText1());
-                option2.setText(d2.getButtonText2());
-            } else if (dialogue.getText().equals("Thank you so much! Follow me to the town I'm delivering presents in!")) {
-                //Change Screens
+            if (dialogNum >= dialogslist.size()) {
+                System.out.println("done");
             } else {
-                Dialog d2 = new Dialog("I'm one of Santa's elves! I am actually running behind on present deliveries. \nCould you help me out?", "Of course!", "Sure...");
-                dialogue.setText(d2.getOutput());
-                option1.setText(d2.getButtonText1());
-                option2.setText(d2.getButtonText2());
+                setDialogValues(dialogslist.get(dialogNum));
+                dialogNum++;
             }
         }
 
         @FXML
         public void changeDialogOption2(javafx.event.ActionEvent actionEvent) {
-            if (dialogue.getText().contains("! how are you doing today!")) {
-                Dialog d2 = new Dialog("I'm sorry, I hope you feel better :(", "Who are you?", "What's up with you?");
-                dialogue.setText(d2.getOutput());
-                option1.setText(d2.getButtonText1());
-                option2.setText(d2.getButtonText2());
-            } else if (dialogue.getText().equals("I'm one of Santa's elves! I am actually running behind on present deliveries. \nCould you help me out?")) {
-                Dialog d2 = new Dialog("Thank you so much! Follow me to the town I'm delivering presents in!", "Ok!", "Coming!");
-                dialogue.setText(d2.getOutput());
-                option1.setText(d2.getButtonText1());
-                option2.setText(d2.getButtonText2());
-            } else if (dialogue.getText().equals("Thank you so much! Follow me to the town I'm delivering presents in!")) {
-                //Change Screens
+            if (dialogNum >= dialogslist.size()) {
+                System.out.println("done");
             } else {
-                Dialog d2 = new Dialog("I'm one of Santa's elves! I am actually running behind on present deliveries. \nCould you help me out?", "Of course!", "Sure...");
-                dialogue.setText(d2.getOutput());
-                option1.setText(d2.getButtonText1());
-                option2.setText(d2.getButtonText2());
+                setDialogValues(dialogslist.get(dialogNum));
+                dialogNum++;
             }
         }
 
