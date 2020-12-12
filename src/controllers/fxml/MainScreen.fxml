@@ -14,7 +14,7 @@
     <children>
         <AnchorPane id="main-anchor-pane" >
             <children>
-                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DARKGREEN" opacity=".5"
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="GREEN" opacity=".5"
                            stroke = "GRAY"
                            height="182.0" layoutX="140.5" layoutY="55.0"
                            width="359.0"/>
