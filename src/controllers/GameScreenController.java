@@ -25,8 +25,7 @@ import java.util.ResourceBundle;
 import java.awt.*;
 import java.io.IOException;
 
-public class GameScreenController implements Initializable{
-    private Character character;
+public class GameScreenController implements Initializable {
     @FXML Label dialogue;
     @FXML Button option1;
     @FXML Button option2;
