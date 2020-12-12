@@ -1,6 +1,5 @@
 package controllers;
 
-import game.Player;
 import javafx.animation.FadeTransition;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -12,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -25,22 +25,21 @@ public class EnterNameController {
 
     @FXML private TextField nameField;
     @FXML private StackPane mainbox;
-    private Player player;
 
     @FXML
     private void changeToGame(ActionEvent event) throws IOException {
         makeFadeOut();
+
     }
 
     private void loadNextScene() throws IOException{
+
         Parent secondView;
-        secondView = (StackPane) FXMLLoader.load(getClass().getResource("fxml/GameScreen.fxml"));
+        secondView = (AnchorPane) FXMLLoader.load(getClass().getResource("fxml/OverworldScreen.fxml"));
         Scene scene = new Scene(secondView, 900, 650);
-        scene.getStylesheets().add(getClass().getResource("css/game.css").toExternalForm());
-        scene.getStylesheets().add(getClass().getResource("css/EnterName.css").toExternalForm());
-        scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("css/Overworld.css").toExternalForm());
         Stage curr = (Stage) mainbox.getScene().getWindow();
-        curr.setTitle("Gamer hours");
+        curr.setTitle("Overworld");
         curr.setScene(scene);
 
         /*
@@ -65,13 +64,12 @@ public class EnterNameController {
         fadeout.setFromValue(1);
         fadeout.setToValue(0);
         fadeout.setOnFinished((ActionEvent actionEvent) -> {
-                    try {
-                        loadNextScene();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-        );
+            try {
+                loadNextScene();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
         fadeout.play();
     }
 
