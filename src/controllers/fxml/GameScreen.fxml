@@ -8,20 +8,38 @@
 
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1"
-      xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainScreenController">
-    <children>
-        <AnchorPane prefHeight="413.0" prefWidth="640.0">
-            <children>
-                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="182.0" layoutX="133.0" layoutY="55.0"
-                           stroke="BLACK" strokeType="INSIDE" width="359.0"/>
-                <Label alignment="CENTER" layoutX="141.0" layoutY="64.0" prefHeight="164.0" prefWidth="359.0"
-                       text="Sup" textAlignment="CENTER" wrapText="true">
-                    <font>
-                        <Font name="Courier New" size="48.0"/>
-                    </font>
-                </Label>
-            </children>
-        </AnchorPane>
-    </children>
-</VBox>
+
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<StackPane fx:id="GameRoot" xmlns:fx="http://javafx.com/fxml"
+           stylesheets="@../../assets/css/game.css"
+           styleClass="root" fx:controller="controllers.GameScreenController">
+    <BorderPane prefHeight="1000" prefWidth="1000" fx:id="background" >
+
+        <padding>
+            <Insets top="0" right="25" bottom="25" left="25"/>
+        </padding>
+
+
+        <bottom>
+            <HBox spacing="10">
+                <Group>
+                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="150.0"
+                               stroke="GRAY" strokeType="INSIDE" width="600.0"/>
+                    <Label fx:id="dialogue" text="hey what's up" />
+                </Group>
+                <VBox spacing="10">
+                    <Button fx:id="option1" text="what's good :)" onAction="#changeText"/>
+                    <Button fx:id="option2" text="what's not good :("/>
+                </VBox>
+
+            </HBox>
+
+
+        </bottom>
+
+    </BorderPane>
+    <Rectangle fill="black" visible="false" width="1000" height="1000" fx:id="transition"/>
+</StackPane>
