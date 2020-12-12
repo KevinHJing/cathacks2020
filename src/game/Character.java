@@ -1,19 +1,29 @@
 package game;
 
 import javafx.scene.image.Image;
+import javafx.scene.paint.ImagePattern;
 
 public class Character {
     private String name;
-    private Image image;
+    private ImagePattern icon;
+    private String imagePath;
+    private Dialog[] characterDialogs;
 
-    public Character(String _name, Image _image) {
+    public Character(String _name, String imagePath) {
         name = _name;
-        image = _image;
+        this.setIcon(imagePath);
     }
 
+    public void setIcon(String path) {
+        this.imagePath = path;
+        Image image = new Image(getClass().getResourceAsStream(this.imagePath));
+        this.icon = new ImagePattern(image);
+    }
+
+    public Dialog getDialog(int index) { return characterDialogs[index]; }
     public String getName() {return name;}
-    public Image getImage() {return image;}
+    public String getImagePath() {return imagePath;}
 
     public void setName(String _name) {name = _name;}
-    public void setImage(Image _image) {image = _image;}
+    public void setImagePath(String _image_path) {imagePath = _image_path;}
 }

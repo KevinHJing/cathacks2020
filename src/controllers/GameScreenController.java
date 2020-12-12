@@ -1,6 +1,9 @@
 package controllers;
-
 import javafx.animation.FadeTransition;
+import game.*;
+
+import game.Character;
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -26,6 +29,21 @@ public class GameScreenController implements Initializable{
 
     @FXML
     Label dialogue;
+    @FXML 
+        Label welcomeMessage;
+    private Character character;
+    
+    public void setLabelText(String text){
+        dialogue.setText("hey what's up " + text);
+    }
+  
+    @FXML private Button option1;
+
+
+    @FXML
+    public void changeText(javafx.event.ActionEvent actionEvent) {
+        dialogue.setText("it worked :)");
+    }
 
     @FXML
     StackPane GameRoot;
@@ -44,17 +62,5 @@ public class GameScreenController implements Initializable{
         fadeout.setToValue(1);
         fadeout.play();
     }
-
-
-    public void setLabelText(String text){
-        dialogue.setText("hey what's up " + text);
-    }
-  
-    @FXML private Button option1;
-
-
-    @FXML
-    public void changeText(javafx.event.ActionEvent actionEvent) {
-        dialogue.setText("it worked :)");
-    }
 }
+
