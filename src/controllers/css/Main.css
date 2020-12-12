@@ -7,3 +7,10 @@
     -fx-pref-width: 640px;
     -fx-pref-height: 413px;
 }
+
+.intro-title{
+    -fx-pref-height: 164px;
+    -fx-pref-width: 359px;
+    -fx-text-align: center;
+    -fx-wrap-text: true;
+}

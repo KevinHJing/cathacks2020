@@ -37,6 +37,8 @@ public class EnterNameController {
         secondView = (StackPane) FXMLLoader.load(getClass().getResource("fxml/GameScreen.fxml"));
         Scene scene = new Scene(secondView, 900, 650);
         scene.getStylesheets().add(getClass().getResource("css/game.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("css/EnterName.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
         Stage curr = (Stage) mainbox.getScene().getWindow();
         curr.setTitle("Gamer hours");
         curr.setScene(scene);
