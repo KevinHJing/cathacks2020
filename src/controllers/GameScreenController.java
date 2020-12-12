@@ -35,23 +35,20 @@ public class GameScreenController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         GameRoot.setOpacity(0);
-        makeFadeInTrasition();
+        makeFadeInTransition();
+        Dialog d1 = new Dialog("hey what's up! how are you doing today!", "good :)", "not good :(");
+        dialogue.setText(d1.getOutput());
+        option1.setText(d1.getButtonText1());
+        option2.setText(d1.getButtonText2());
     }
 
-    private void makeFadeInTrasition() {
+    private void makeFadeInTransition() {
         FadeTransition fadeout = new FadeTransition();
         fadeout.setDuration(Duration.millis(1000));
         fadeout.setNode(GameRoot);
         fadeout.setFromValue(0);
         fadeout.setToValue(1);
         fadeout.play();
-    }
-    
-    public void setLabelText(String text){
-        Dialog d1 = new Dialog("hey what's up " + text + "! how are you doing today!", "good :)", "not good :(");
-        dialogue.setText(d1.getOutput());
-        option1.setText(d1.getButtonText1());
-        option2.setText(d1.getButtonText2());
     }
 
     @FXML

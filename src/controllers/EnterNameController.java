@@ -1,5 +1,6 @@
 package controllers;
 
+import game.Player;
 import javafx.animation.FadeTransition;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -24,15 +25,14 @@ public class EnterNameController {
 
     @FXML private TextField nameField;
     @FXML private StackPane mainbox;
+    private Player player;
 
     @FXML
     private void changeToGame(ActionEvent event) throws IOException {
         makeFadeOut();
-
     }
 
     private void loadNextScene() throws IOException{
-
         Parent secondView;
         secondView = (StackPane) FXMLLoader.load(getClass().getResource("fxml/GameScreen.fxml"));
         Scene scene = new Scene(secondView, 900, 650);
