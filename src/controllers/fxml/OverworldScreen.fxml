@@ -15,7 +15,7 @@
             styleClass="root">
 
     <ImageView fitHeight="275.0" fitWidth="603.0" pickOnBounds="true" preserveRatio="true"
-               onMousePressed="#loadNextScene">
+               translateX="500" translateY="300" onMousePressed="#loadNextScene">
         <image>
             <Image url="@../../assets/images/reindeer.png" />
         </image>
