@@ -44,7 +44,7 @@ public class PlayersRoomController implements Initializable {
     private int dialogNum = 0;
     String playerName;
 
-    private AudioClip ac;
+    static AudioClip ac;
     private boolean isPlaying;
 
     @Override
@@ -166,6 +166,6 @@ public class PlayersRoomController implements Initializable {
         ac = new AudioClip(Paths.get(s).toUri().toString());
         ac.setCycleCount(AudioClip.INDEFINITE);
         ac.setVolume(0.5);
-//        ac.play();
+        ac.play();
     }
 }
