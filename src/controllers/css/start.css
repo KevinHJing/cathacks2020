@@ -10,3 +10,8 @@
     -fx-opacity: .5;
 
 }
+
+.label {
+    -fx-text-alignment: center;
+    -fx-text-fill: DARKRED;
+}

@@ -14,9 +14,8 @@
     <children>
         <AnchorPane id="main-anchor-pane" >
             <children>
-                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="GREEN" opacity=".5"
-                           stroke = "GRAY"
-                           height="182.0" layoutX="140.5" layoutY="55.0"
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="GREEN" opacity="0"
+                           height="100" layoutX="140.5" layoutY="100.0"
                            width="359.0"/>
                 <Button styleClass="intro-buttons" fx:id="startButton" layoutX="245.0" layoutY="267.0" mnemonicParsing="false"
                         onAction="#changeToEnterName" text="Play!">
@@ -24,10 +23,10 @@
                         <Font name="Courier New" size="22.0"/>
                     </font>
                 </Button>
-                <Label styleClass="intro-title" alignment="CENTER" layoutX="140.5" layoutY="64.0"
-                       text="Name Of Game" >
+                <Label styleClass="intro-title" alignment="TOP_CENTER" layoutX="140.5" layoutY="120.0"
+                       text="Holiday Cheer" >
                     <font>
-                        <Font name="Courier New" size="48.0"/>
+                        <Font name="Courier New" size="40.0"/>
                     </font>
                 </Label>
             </children>
