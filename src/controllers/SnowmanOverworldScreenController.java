@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -28,9 +29,13 @@ public class SnowmanOverworldScreenController implements Initializable {
         GameRoot.setOpacity(0);
         makeFadeInTransition();
 
+        Tooltip talkSnowman = new Tooltip("Click on Bean to talk.");
+        Tooltip.install(imageView, talkSnowman);
+
         if (snowmanVisited) {
             imageView.setMouseTransparent(false);
             imageView.setDisable(true);
+            Tooltip.uninstall(imageView, talkSnowman);
         }
     }
 

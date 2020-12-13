@@ -8,6 +8,7 @@ import javafx.scene.ImageCursor;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -32,13 +33,21 @@ public class PenguinOverworldScreenController implements Initializable {
         GameRoot.setOpacity(0);
         makeFadeInTransition();
 
+        Tooltip talkPenguin = new Tooltip("Click on Iceberg to talk.");
+        Tooltip.install(imageView, talkPenguin);
+
+        Tooltip talkSean = new Tooltip("???");
+        Tooltip.install(imageView, talkSean);
+
         if (penguinVisited) {
             imageView.setMouseTransparent(false);
             imageView.setDisable(true);
+            Tooltip.uninstall(imageView, talkPenguin);
         }
         if (seanVisited) {
             imageView2.setMouseTransparent(false);
             imageView2.setDisable(true);
+            Tooltip.uninstall(imageView2, talkSean);
         }
     }
 
