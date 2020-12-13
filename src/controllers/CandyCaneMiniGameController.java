@@ -35,8 +35,9 @@ public class CandyCaneMiniGameController implements Initializable {
     @FXML Button option3;
     @FXML StackPane GameRoot;
     @FXML ImageView imageView;
+    @FXML ImageView imageView1;
     @FXML TextArea text;
-
+    private int numCandyCanesFound = 0;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -48,9 +49,20 @@ public class CandyCaneMiniGameController implements Initializable {
         text.setMouseTransparent(true);
         text.setFocusTraversable(false);
         text.setFont(new Font("Lucida Console", 20));
-        text.setText("I seem to have lost 5 of my candy canes on my way into the forest. can you help me find them?\n" +
+        text.setText("I seem to have lost 5 of my candy canes in my home. can you help me find them?\n" +
                 "\nWhen you see a candy cane, click on it to collect it. You win when you find all 5!");
+    }
 
+    @FXML
+    private void foundCandyCane1(javafx.event.ActionEvent actionEvent) throws IOException {
+        imageView1.setImage(null);
+        imageView.setMouseTransparent(false);
+        imageView.setDisable(true);
+        numCandyCanesFound++;
+
+        if (numCandyCanesFound == 5) {
+            System.out.println("found all");
+        }
     }
 
     private void makeFadeInTransition() {
