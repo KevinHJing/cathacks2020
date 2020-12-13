@@ -2,7 +2,7 @@
   <img src="src/assets/images/readmePic.png">
 </p>
 
-## This is Holiday Cheer
+## Holiday Cheer
 
 **A project developed by Kevin Jing, Stephanie Yank, Shashank Bhatt, and Ila Sharma for CatHacks 2020**
 
