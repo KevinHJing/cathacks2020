@@ -12,7 +12,7 @@ After being tasked to deliver presents to the other animals in the town, you set
 of minigames, you will interact with everyone in the town. However, are you ready for what the others have in store for you?
 
 ### Contributors
-- Kevin Jing, Discord: KevinJ #8930
+- Kevin Jing
     - [LinkedIn](https://www.linkedin.com/in/kevinjing/), [GitHub](https://github.com/kevinhjing)
 - Stephanie Yang
     - [LinkedIn](https://www.linkedin.com/in/syang00/), [GitHub](https://github.com/syangtm)
