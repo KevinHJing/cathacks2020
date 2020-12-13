@@ -122,20 +122,12 @@ public class ReindeerDialogController implements Initializable {
     public void changeDialogOption1(javafx.event.ActionEvent actionEvent) throws IOException {
         if (dialogNum >= dialogslist.size()) {
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            if (GameScreenController.numCharactersVisited >= 3) {
-                Parent root = FXMLLoader.load(getClass().getResource("fxml/EndTransitionScreen.fxml"));
-                Scene scene = new Scene(root, 900, 650);
-                scene.getStylesheets().add(getClass().getResource("css/blackscreen.css").toExternalForm());
-                scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
-                stage.setScene(scene);
-            } else {
-                // GO TO TRIVIA
-                Parent root = FXMLLoader.load(getClass().getResource("fxml/Trivia.fxml"));
-                Scene scene = new Scene(root, 900, 650);
-                scene.getStylesheets().add(getClass().getResource("css/characterdialog.css").toExternalForm());
-                scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
-                stage.setScene(scene);
-            }
+            // GO TO TRIVIA
+            Parent root = FXMLLoader.load(getClass().getResource("fxml/Trivia.fxml"));
+            Scene scene = new Scene(root, 900, 650);
+            scene.getStylesheets().add(getClass().getResource("css/characterdialog.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
+            stage.setScene(scene);
         } else {
             setDialogValues(dialogslist.get(dialogNum));
             dialogNum++;
@@ -152,20 +144,12 @@ public class ReindeerDialogController implements Initializable {
     public void changeDialogOption2(javafx.event.ActionEvent actionEvent) throws IOException {
         if (dialogNum >= dialogslist.size()) {
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            if (GameScreenController.numCharactersVisited >= 3) {
-                Parent root = FXMLLoader.load(getClass().getResource("fxml/EndTransitionScreen.fxml"));
-                Scene scene = new Scene(root, 900, 650);
-                scene.getStylesheets().add(getClass().getResource("css/blackscreen.css").toExternalForm());
-                scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
-                stage.setScene(scene);
-            } else {
-                // GO TO TRIVIA
-                Parent root = FXMLLoader.load(getClass().getResource("fxml/Trivia.fxml"));
-                Scene scene = new Scene(root, 900, 650);
-                scene.getStylesheets().add(getClass().getResource("css/characterdialog.css").toExternalForm());
-                scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
-                stage.setScene(scene);
-            }
+            // GO TO TRIVIA
+            Parent root = FXMLLoader.load(getClass().getResource("fxml/Trivia.fxml"));
+            Scene scene = new Scene(root, 900, 650);
+            scene.getStylesheets().add(getClass().getResource("css/characterdialog.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
+            stage.setScene(scene);
         } else {
             setDialogValues(dialogslist.get(dialogNum));
             dialogNum++;
