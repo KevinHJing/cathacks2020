@@ -129,7 +129,6 @@ public class ReindeerDialogController implements Initializable {
                 scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
                 stage.setScene(scene);
             } else {
-                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                 // GO TO TRIVIA
                 Parent root = FXMLLoader.load(getClass().getResource("fxml/Trivia.fxml"));
                 Scene scene = new Scene(root, 900, 650);
