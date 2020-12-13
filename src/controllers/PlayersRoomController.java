@@ -15,6 +15,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.StackPane;
+import javafx.scene.media.AudioClip;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
@@ -23,6 +24,7 @@ import javafx.scene.control.Button;
 import javafx.util.Duration;
 
 import java.net.URL;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -41,6 +43,9 @@ public class PlayersRoomController implements Initializable {
     ArrayList<Dialog> dialogslist = new ArrayList<Dialog>();
     private int dialogNum = 0;
     String playerName;
+
+    private AudioClip ac;
+    private boolean isPlaying;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -106,6 +111,7 @@ public class PlayersRoomController implements Initializable {
             scene.getStylesheets().add(getClass().getResource("css/ReindeerOverworld.css").toExternalForm());
             scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
             stage.setScene(scene);
+            playMusic();
         } else {
             setDialogValues(dialogslist.get(dialogNum));
             dialogNum++;
@@ -138,5 +144,16 @@ public class PlayersRoomController implements Initializable {
             imageView.setImage(imageObject);
             FadeTransition fade = new FadeTransition();
         }
+    }
+    private void playMusic() {
+        if(isPlaying) {
+            return;
+        }
+        isPlaying = true;
+        String s = "src/assets/music/sleigh ride.mp3";
+        ac = new AudioClip(Paths.get(s).toUri().toString());
+        ac.setCycleCount(AudioClip.INDEFINITE);
+        ac.setVolume(0.5);
+        ac.play();
     }
 }

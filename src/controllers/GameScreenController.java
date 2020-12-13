@@ -15,6 +15,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.media.AudioClip;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
@@ -23,6 +24,7 @@ import javafx.scene.control.Button;
 import javafx.util.Duration;
 
 import java.net.URL;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -40,6 +42,8 @@ import java.io.IOException;
         ArrayList<Dialog> dialogslist = new ArrayList<Dialog>();
         private int dialogNum = 0;
         static int numCharactersVisited = 0;
+
+
 
         @Override
         public void initialize(URL url, ResourceBundle rb) {
@@ -192,4 +196,5 @@ import java.io.IOException;
         public void imageClick(javafx.scene.input.MouseEvent mouseEvent) {
             dialogue.setText("You clicked the image!!!!!");
         }
+
     }
