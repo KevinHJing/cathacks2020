@@ -1,4 +1,8 @@
 # Holiday Cheer!
-![Title](src/assets/images/readmePic.png?raw=true "Title")
+
+<p align="center">
+  <img src="src/assets/images/readmePic.png">
+</p>
+
 
 <b>Does this work?<b>
