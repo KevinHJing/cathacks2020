@@ -12,7 +12,7 @@
 }
 
 .button {
-    -fx-background-radius: 8;
+    -fx-background-radius: 10;
     -fx-padding: 10;
     -fx-color: BLUE;
     -fx-opacity: .5;
