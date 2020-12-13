@@ -12,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -119,13 +120,14 @@ import java.io.IOException;
         @FXML
         public void changeDialogOption1(javafx.event.ActionEvent actionEvent) throws IOException {
             if (dialogNum >= dialogslist.size()) {
-                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-                Parent root = FXMLLoader.load(getClass().getResource("fxml/PlayerRoomScreen.fxml"));
-                Scene scene = new Scene(root, 900, 650);
+                Parent secondView;
+                secondView = (StackPane) FXMLLoader.load(getClass().getResource("fxml/PlayerRoomScreen.fxml"));
+                Scene scene = new Scene(secondView, 900, 650);
                 scene.getStylesheets().add(getClass().getResource("css/playersroom.css").toExternalForm());
-                scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
-                stage.setTitle("Gamer Time");
-                stage.setScene(scene);
+
+                Stage curr = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                curr.setTitle("Gamer Time");
+                curr.setScene(scene);
             } else {
                 setDialogValues(dialogslist.get(dialogNum));
                 dialogNum++;
@@ -136,7 +138,7 @@ import java.io.IOException;
             imageView.setImage(imageObject);
 
             FadeTransition fade = new FadeTransition();
-            fade.setDuration(Duration.millis(3000));
+            fade.setDuration(Duration.millis(2000));
             fade.setFromValue(0.1);
             fade.setToValue(10);
             fade.setCycleCount(1000);
@@ -148,13 +150,14 @@ import java.io.IOException;
         @FXML
         public void changeDialogOption2(javafx.event.ActionEvent actionEvent) throws IOException {
             if (dialogNum >= dialogslist.size()) {
-                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-                Parent root = FXMLLoader.load(getClass().getResource("fxml/PlayerRoomScreen.fxml"));
-                Scene scene = new Scene(root, 900, 650);
+                Parent secondView;
+                secondView = (StackPane) FXMLLoader.load(getClass().getResource("fxml/PlayerRoomScreen.fxml"));
+                Scene scene = new Scene(secondView, 900, 650);
                 scene.getStylesheets().add(getClass().getResource("css/playersroom.css").toExternalForm());
-                scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
-                stage.setTitle("Gamer Time");
-                stage.setScene(scene);
+
+                Stage curr = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                curr.setTitle("Gamer Time");
+                curr.setScene(scene);
             } else {
                 setDialogValues(dialogslist.get(dialogNum));
                 dialogNum++;
@@ -165,7 +168,7 @@ import java.io.IOException;
             imageView.setImage(imageObject);
 
             FadeTransition fade = new FadeTransition();
-            fade.setDuration(Duration.millis(3000));
+            fade.setDuration(Duration.millis(2000));
             fade.setFromValue(0.1);
             fade.setToValue(10);
             fade.setCycleCount(1000);
