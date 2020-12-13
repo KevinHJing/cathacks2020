@@ -37,6 +37,7 @@ import java.io.IOException;
         private Character character;
         ArrayList<Dialog> dialogslist = new ArrayList<Dialog>();
         private int dialogNum = 0;
+        static int numCharactersVisited = 0;
 
         @Override
         public void initialize(URL url, ResourceBundle rb) {

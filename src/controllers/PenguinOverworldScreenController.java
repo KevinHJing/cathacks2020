@@ -62,6 +62,7 @@ public class PenguinOverworldScreenController implements Initializable {
 
     public void loadPenguinDialogScene(MouseEvent mouseEvent) throws IOException {
         penguinVisited = true;
+        GameScreenController.numCharactersVisited++;
         Parent secondView;
         secondView = (StackPane) FXMLLoader.load(getClass().getResource("fxml/PenguinDialogScreen.fxml"));
         Scene scene = new Scene(secondView, 900, 650);
@@ -74,6 +75,7 @@ public class PenguinOverworldScreenController implements Initializable {
 
     public void loadSeanDialogScene(MouseEvent mouseEvent) throws IOException {
         seanVisited = true;
+        GameScreenController.numCharactersVisited++;
         Parent secondView;
         secondView = (StackPane) FXMLLoader.load(getClass().getResource("fxml/SeanDialogScreen.fxml"));
         Scene scene = new Scene(secondView, 900, 650);

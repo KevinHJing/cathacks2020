@@ -50,6 +50,7 @@ public class ReindeerOverworldScreenController implements Initializable {
 
     public void loadReindeerDialog(MouseEvent mouseEvent) throws IOException {
         reindeerVisited = true;
+        GameScreenController.numCharactersVisited++;
         Parent secondView;
         secondView = (StackPane) FXMLLoader.load(getClass().getResource("fxml/ReindeerDialogScreen.fxml"));
         Scene scene = new Scene(secondView, 900, 650);

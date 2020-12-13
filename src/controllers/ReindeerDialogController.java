@@ -108,12 +108,16 @@ public class ReindeerDialogController implements Initializable {
     @FXML
     public void changeDialogOption1(javafx.event.ActionEvent actionEvent) throws IOException {
         if (dialogNum >= dialogslist.size()) {
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            Parent root = FXMLLoader.load(getClass().getResource("fxml/ReindeerOverworldScreen.fxml"));
-            Scene scene = new Scene(root, 900, 650);
-            scene.getStylesheets().add(getClass().getResource("css/ReindeerOverworld.css").toExternalForm());
-            scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
-            stage.setScene(scene);
+            if (GameScreenController.numCharactersVisited == 4) {
+                System.out.println("Game End");
+            } else {
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                Parent root = FXMLLoader.load(getClass().getResource("fxml/ReindeerOverworldScreen.fxml"));
+                Scene scene = new Scene(root, 900, 650);
+                scene.getStylesheets().add(getClass().getResource("css/ReindeerOverworld.css").toExternalForm());
+                scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
+                stage.setScene(scene);
+            }
         } else {
             setDialogValues(dialogslist.get(dialogNum));
             dialogNum++;
@@ -129,12 +133,16 @@ public class ReindeerDialogController implements Initializable {
     @FXML
     public void changeDialogOption2(javafx.event.ActionEvent actionEvent) throws IOException {
         if (dialogNum >= dialogslist.size()) {
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            Parent root = FXMLLoader.load(getClass().getResource("fxml/ReindeerOverworldScreen.fxml"));
-            Scene scene = new Scene(root, 900, 650);
-            scene.getStylesheets().add(getClass().getResource("css/ReindeerOverworld.css").toExternalForm());
-            scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
-            stage.setScene(scene);
+            if (GameScreenController.numCharactersVisited == 4) {
+                System.out.println("Game End");
+            } else {
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                Parent root = FXMLLoader.load(getClass().getResource("fxml/ReindeerOverworldScreen.fxml"));
+                Scene scene = new Scene(root, 900, 650);
+                scene.getStylesheets().add(getClass().getResource("css/ReindeerOverworld.css").toExternalForm());
+                scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
+                stage.setScene(scene);
+            }
         } else {
             setDialogValues(dialogslist.get(dialogNum));
             dialogNum++;

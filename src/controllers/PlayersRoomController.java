@@ -128,15 +128,4 @@ public class PlayersRoomController implements Initializable {
             FadeTransition fade = new FadeTransition();
         }
     }
-
-//    public void loadNextScene(MouseEvent mouseEvent) throws IOException {
-//        Parent secondView;
-//        secondView = FXMLLoader.load(getClass().getResource("fxml/ReindeerOverworldScreen.fxml"));
-//        Scene scene = new Scene(secondView, 900, 650);
-//        scene.getStylesheets().add(getClass().getResource("css/ReindeerOverworld.css").toExternalForm());
-//
-//        Stage curr = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-//        curr.setTitle("Gamer hours");
-//        curr.setScene(scene);
-//    }
 }

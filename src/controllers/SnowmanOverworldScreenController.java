@@ -50,6 +50,7 @@ public class SnowmanOverworldScreenController implements Initializable {
 
     public void loadSnowmanDialog(MouseEvent mouseEvent) throws IOException {
         snowmanVisited = true;
+        GameScreenController.numCharactersVisited++;
         Parent secondView;
         secondView = (StackPane) FXMLLoader.load(getClass().getResource("fxml/SnowmanDialogScreen.fxml"));
         Scene scene = new Scene(secondView, 900, 650);
