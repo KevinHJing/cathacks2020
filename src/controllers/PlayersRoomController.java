@@ -146,14 +146,14 @@ public class PlayersRoomController implements Initializable {
         }
     }
     private void playMusic() {
-        if(isPlaying) {
-            return;
-        }
-        isPlaying = true;
-        String s = "src/assets/music/sleigh ride.mp3";
-        ac = new AudioClip(Paths.get(s).toUri().toString());
-        ac.setCycleCount(AudioClip.INDEFINITE);
-        ac.setVolume(0.5);
-        ac.play();
+//        if(isPlaying) {
+//            return;
+//        }
+//        isPlaying = true;
+//        String s = "src/assets/music/sleigh ride.mp3";
+//        ac = new AudioClip(Paths.get(s).toUri().toString());
+//        ac.setCycleCount(AudioClip.INDEFINITE);
+//        ac.setVolume(0.5);
+//        ac.play();
     }
 }

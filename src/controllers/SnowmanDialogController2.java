@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import java.io.IOException;
-public class SnowmanDialogController implements Initializable {
+public class SnowmanDialogController2 implements Initializable {
     @FXML Label dialogue;
     @FXML Label welcomeMessage;
     @FXML Button option1;
@@ -35,6 +35,7 @@ public class SnowmanDialogController implements Initializable {
     @FXML Button option3;
     @FXML StackPane GameRoot;
     @FXML ImageView imageView;
+    @FXML ImageView imageView2;
     @FXML TextArea text;
 
     private Character character;
@@ -47,6 +48,7 @@ public class SnowmanDialogController implements Initializable {
         GameRoot.setOpacity(0);
         makeFadeInTransition();
 
+        imageView2.setImage(null);
         text.setWrapText(true);
         text.setEditable(false);
         text.setMouseTransparent(true);
@@ -59,53 +61,26 @@ public class SnowmanDialogController implements Initializable {
         option2.setWrapText(true);
         option2.setFont(new Font("Segoe UI", 17));
         Dialog d1 = new Dialog(
-                "??: Oh hey, I didn’t realize someone else was there. ",
-                "Hey, I'm " + EnterNameController.playerName + ".",
-                "Who are you?");
+                "Bean: Nice, you guessed my number!",
+                "It wasn't too hard!",
+                "Only took a few tries.");
         Dialog d2 = new Dialog(
-                "Bean: I’m Bean! It’s nice to meet you. " +
-                        "You might have seen my twin, Sean, around " +
-                        "the town earlier.",
-                "What are you doing here?",
+                "Bean: Now that my third eye is open, it’s like we can communicate telepathically.",
+                "I'm...still not sure how that works.",
                 null);
         Dialog d3 = new Dialog(
-                "Bean: The forest is quiet, so I like to come here " +
-                        "for meditation. I’m trying to open my third eye.",
-                "Snowman... meditation?",
-                "Uh, your third eye?");
+                "Bean: Now for your prize! I present to you, cream of the whip! Or as some say, whipped cream.",
+                "That’s… pretty good, honestly.",
+                "I like whipped cream.");
         Dialog d4 = new Dialog(
-                "Bean: Never mind that. Why were you out here?",
-                "I was looking for you.",
-                "Bowman wanted me to " +
-                            "give you a present.");
-        Dialog d5 = new Dialog(
-                "Bean: Oh? I’m so excited, what is it?",
-                "Give Bean his present",
-                null);
-        Dialog d6 = new Dialog(
-                "Bean: Wow, a top hat! I’ve been looking for " +
-                        "one for ages! Wait...what’s this inside the hat?",
-                "You got two presents and " +
-                            "I didn’t even get one…",
-                "Oooh what is it?");
-        Dialog d7 = new Dialog(
-                "Bean: It's... a lump of coal??? I HAVE AWAKENED MY THIRD EYE!!!",
-                "What... is happening...",
-                null);
-        Dialog d8 = new Dialog(
-                "Bean: Thank you so much for your help! " +
-                        "I have a present for you too, but you " +
-                        "need to play a game with me first!",
-                "Start game",
-                null);
+                "Bean: Ohoho! I’m delighted to hear you are pleased with your gift! " +
+                        "You will have great use for it soon.",
+                "Thanks man.",
+                "Sounds good, see you around!");
         setDialogValues(d1);
         dialogslist.add(d2);
         dialogslist.add(d3);
         dialogslist.add(d4);
-        dialogslist.add(d5);
-        dialogslist.add(d6);
-        dialogslist.add(d7);
-        dialogslist.add(d8);
     }
 
     private void setDialogValues(Dialog d) {
@@ -131,34 +106,7 @@ public class SnowmanDialogController implements Initializable {
     @FXML
     public void changeDialogOption1(javafx.event.ActionEvent actionEvent) throws IOException {
         if (dialogNum >= dialogslist.size()) {
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            Parent root = FXMLLoader.load(getClass().getResource("fxml/GuessNumberMiniGameScreen.fxml"));
-            Scene scene = new Scene(root, 900, 650);
-            scene.getStylesheets().add(getClass().getResource("css/characterdialog.css").toExternalForm());
-            scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
-            stage.setScene(scene);
-        } else {
-            setDialogValues(dialogslist.get(dialogNum));
-            dialogNum++;
-        }
-
-        if (dialogNum == 5) {
-            String newImgURL = "@../../assets/images/hatman.png";
-            Image imageObject = new Image(newImgURL);
-            imageView.setImage(imageObject);
-        }
-
-        if (dialogNum == 6) {
-            String newImgURL = "@../../assets/images/awakenman.png";
-            Image imageObject = new Image(newImgURL);
-            imageView.setImage(imageObject);
-        }
-    }
-
-    @FXML
-    public void changeDialogOption2(javafx.event.ActionEvent actionEvent) throws IOException {
-        if (dialogNum >= dialogslist.size()) {
-            if (GameScreenController.numCharactersVisited == 3) {
+            if (GameScreenController.numCharactersVisited >= 3) {
                 System.out.println("Game End");
             } else {
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -173,10 +121,35 @@ public class SnowmanDialogController implements Initializable {
             dialogNum++;
         }
 
-        if (dialogNum == 6) {
-            String newImgURL = "@../../assets/images/awakenman.png";
+        if (dialogNum == 2) {
+            String newImgURL = "@../../assets/images/whip.png";
             Image imageObject = new Image(newImgURL);
-            imageView.setImage(imageObject);
+            imageView2.setImage(imageObject);
+        }
+    }
+
+    @FXML
+    public void changeDialogOption2(javafx.event.ActionEvent actionEvent) throws IOException {
+        if (dialogNum >= dialogslist.size()) {
+            if (GameScreenController.numCharactersVisited >= 3) {
+                System.out.println("Game End");
+            } else {
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                Parent root = FXMLLoader.load(getClass().getResource("fxml/SnowmanOverworldScreen.fxml"));
+                Scene scene = new Scene(root, 900, 650);
+                scene.getStylesheets().add(getClass().getResource("css/SnowmanOverworld.css").toExternalForm());
+                scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
+                stage.setScene(scene);
+            }
+        } else {
+            setDialogValues(dialogslist.get(dialogNum));
+            dialogNum++;
+        }
+
+        if (dialogNum == 2) {
+            String newImgURL = "@../../assets/images/whip.png";
+            Image imageObject = new Image(newImgURL);
+            imageView2.setImage(imageObject);
         }
     }
 }
