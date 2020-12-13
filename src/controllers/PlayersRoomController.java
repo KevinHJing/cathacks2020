@@ -47,6 +47,7 @@ public class PlayersRoomController implements Initializable {
         dialogue.setFont(new Font("Lucida Console", 20));
         option1.setFont(new Font("Segoe UI", 17));
         option2.setFont(new Font("Segoe UI", 17));
+        imageView.setImage(null);
         Dialog d1 = new Dialog(
                 EnterNameController.playerName + ": That was a really weird dream...\n" +
                         "Maybe if I slept earlier, these things wouldn’t happen. \n" +
@@ -99,8 +100,8 @@ public class PlayersRoomController implements Initializable {
             dialogNum++;
         }
 
-        if (dialogNum == 3) {
-            String newImgURL = "@../../assets/images/snowman.png";
+        if (dialogNum == 1) {
+            String newImgURL = "@../../assets/images/presents.png";
             Image imageObject = new Image(newImgURL);
             imageView.setImage(imageObject);
         }
@@ -118,6 +119,13 @@ public class PlayersRoomController implements Initializable {
         } else {
             setDialogValues(dialogslist.get(dialogNum));
             dialogNum++;
+        }
+
+        if (dialogNum == 1) {
+            String newImgURL = "@../../assets/images/presents.png";
+            Image imageObject = new Image(newImgURL);
+            imageView.setImage(imageObject);
+            FadeTransition fade = new FadeTransition();
         }
     }
 
