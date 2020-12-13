@@ -22,7 +22,15 @@ of minigames, you will interact with everyone in the town. However, are you read
     - [LinkedIn](https://www.linkedin.com/in/ila-sharma-2001/), [GitHub](https://github.com/ilailaila)
 
 ### Tech Stack
-- JavaFX
+- [Java SDK 14](https://www.oracle.com/java/technologies/javase/jdk14-archive-downloads.html)
+- [JavaFX 11](https://gluonhq.com/products/javafx/)
 - CSS
 
+## Installation
+You can run this program through your preferred Java IDE. This game was made with [JavaFX 11.0.2](https://gluonhq.com/products/javafx/) 
+using [Java SDK 14](https://www.oracle.com/java/technologies/javase/jdk14-archive-downloads.html). After downloading Java, download the 
+source code from this GitHub page.
+
 ## Usage
+Configure your IDE using these [instructions](https://www.jetbrains.com/help/idea/javafx.html#run). The "main" class is "Main.java". 
+With the proper run configurations, you can run the project and play the game!
