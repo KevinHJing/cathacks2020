@@ -84,7 +84,6 @@ public class EndTransitionController implements Initializable {
         fadeout.play();
     }
 
-    //TODO update redirect to Ending
     @FXML
     public void changeDialogOption1(javafx.event.ActionEvent actionEvent) throws IOException {
         if (dialogNum >= dialogslist.size()) {
@@ -102,7 +101,6 @@ public class EndTransitionController implements Initializable {
         }
     }
 
-    //TODO update redirect to Ending
     @FXML
     public void changeDialogOption2(javafx.event.ActionEvent actionEvent) throws IOException {
         if (dialogNum >= dialogslist.size()) {
