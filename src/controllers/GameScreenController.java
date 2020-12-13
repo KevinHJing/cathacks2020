@@ -49,11 +49,11 @@ import java.io.IOException;
             option2.setFont(new Font("Segoe UI", 17));
             Dialog d1 = new Dialog(
                     "Bowman: Nah, don’t be silly " + EnterNameController.playerName + ".\n" +
-                            "It’s just me Bowman the wildcat. I’m here to\n" +
+                            "It’s just me, Bowman the wildcat. I’m here to\n" +
                             "wish you a happy holidays! Well, I couldn’t\n" +
                             "visit you in person, but I thought I’d drop\n" +
                             "by your dream to say hi.\n",
-                    "That’s… unconventional.",
+                    "That’s...unconventional.",
                     "Happy holidays to you too...?");
             Dialog d2 = new Dialog(
                     "Bowman: Dang, not even a warm welcome? It would\n" +
@@ -62,17 +62,17 @@ import java.io.IOException;
                     "Job?",
                     null);
             Dialog d3 = new Dialog(
-                    "Bowman: Well…. I had all these presents to give\n" +
+                    "Bowman: Well...I had all these presents to give\n" +
                             "to everyone, but I don’t have the time to give\n" +
-                            "them out. So… could you do me a little favor?",
+                            "them out. So...could you do me a little favor?",
                     "Sure thing, pal.",
                     "Do I have a choice?");
             Dialog d4 = new Dialog(
                     "That’s the spirit! When you wake up, you’ll see\n" +
                             "the presents in your room. Go travel into town\n" +
                             "to find Moodolph the Reindeer, Iceberg the\n" +
-                            "Penguin, and Bean the snowman. Just talk to\n" +
-                            "them to give them a present!",
+                            "Penguin, and Bean the Snowman. Just talk to\n" +
+                            "them to give them each a present!",
                     "Wait, I don’t get one?",
                     null);
             Dialog d5 = new Dialog(
@@ -112,9 +112,9 @@ import java.io.IOException;
         public void changeDialogOption1(javafx.event.ActionEvent actionEvent) throws IOException {
             if (dialogNum >= dialogslist.size()) {
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-                Parent root = FXMLLoader.load(getClass().getResource("fxml/OverworldScreen.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("fxml/PlayerRoomScreen.fxml"));
                 Scene scene = new Scene(root, 900, 650);
-                scene.getStylesheets().add(getClass().getResource("css/Overworld.css").toExternalForm());
+                scene.getStylesheets().add(getClass().getResource("css/playersroom.css").toExternalForm());
                 scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
                 stage.setScene(scene);
             } else {
@@ -127,9 +127,9 @@ import java.io.IOException;
         public void changeDialogOption2(javafx.event.ActionEvent actionEvent) throws IOException {
             if (dialogNum >= dialogslist.size()) {
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-                Parent root = FXMLLoader.load(getClass().getResource("fxml/OverworldScreen.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("fxml/PlayerRoomScreen.fxml"));
                 Scene scene = new Scene(root, 900, 650);
-                scene.getStylesheets().add(getClass().getResource("css/Overworld.css").toExternalForm());
+                scene.getStylesheets().add(getClass().getResource("css/playersroom.css").toExternalForm());
                 scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
                 stage.setScene(scene);
             } else {

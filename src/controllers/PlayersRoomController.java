@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class OverworldScreenController implements Initializable {
+public class PlayersRoomController implements Initializable {
 
     @FXML AnchorPane GameRoot;
     @Override
@@ -37,9 +37,9 @@ public class OverworldScreenController implements Initializable {
 
     public void loadNextScene(MouseEvent mouseEvent) throws IOException {
         Parent secondView;
-        secondView = (StackPane) FXMLLoader.load(getClass().getResource("fxml/ReindeerDialogScreen.fxml"));
+        secondView = (AnchorPane) FXMLLoader.load(getClass().getResource("fxml/OverworldScreen.fxml"));
         Scene scene = new Scene(secondView, 900, 650);
-        scene.getStylesheets().add(getClass().getResource("css/characterdialog.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("css/Overworld.css").toExternalForm());
 
         Stage curr = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
         curr.setTitle("Gamer hours");

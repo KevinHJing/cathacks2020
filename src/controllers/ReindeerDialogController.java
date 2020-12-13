@@ -41,10 +41,6 @@ public class ReindeerDialogController implements Initializable {
     private int dialogNum = 0;
     String playerName;
 
-    public ReindeerDialogController(Player player) {
-        this.playerName = player.getName();
-    }
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         GameRoot.setOpacity(0);
@@ -53,43 +49,42 @@ public class ReindeerDialogController implements Initializable {
         option1.setFont(new Font("Segoe UI", 17));
         option2.setFont(new Font("Segoe UI", 17));
         Dialog d1 = new Dialog(
-                "Bowman: Nah, don’t be silly. It’s just me,\n" +
-                        "Bowman the wildcat. I’m here to wish you a\n" +
-                        "happy holidays! Well, I couldn’t visit you in\n" +
-                        "person, but I thought I’d drop by your dream\n" +
-                        "to say hi.\n",
-                "That’s… unconventional.",
-                "Happy holidays to you too...?");
+                "Moodolph: Hey, " + EnterNameController.playerName + "!",
+                "What’s up, Moodolph?",
+                "What are you doing?");
         Dialog d2 = new Dialog(
-                "Bowman: Dang, not even a warm welcome? It would\n" +
-                        "make me feel a lot better about giving you this\n" +
-                        "job.",
-                "Job?",
-                null);
+                "I’m waiting for my big brother Rudolph to come\n" +
+                        "home from delivering presents! Then we can\n" +
+                        "celebrate together and he can give me my\n" +
+                        "present!\n",
+                "I’m delivering presents too!",
+                "I also have a present for you.");
         Dialog d3 = new Dialog(
-                "Bowman: Well…. I had all these presents to give\n" +
-                        "to everyone, but I don’t have the time to give\n" +
-                        "them out. So… could you do me a little favor?",
-                "Sure thing, pal.",
-                "Do I have a choice?");
+                "Moodolph: Wow, really?",
+                "Give Moodolph his present",
+                null);
         Dialog d4 = new Dialog(
-                "That’s the spirit! When you wake up, you’ll see\n" +
-                        "the presents in your room. Go travel into town\n" +
-                        "to find Moodolph the Reindeer, Iceberg the\n" +
-                        "Penguin, and Bean the snowman. Just talk to\n" +
-                        "them to give them a present!",
-                "Wait, I don’t get one?",
+                "Moodolph: It’s a scarf from Bowman! That’s really\n" +
+                        "nice of him. Please tell him I said thanks.",
+                "I will!",
                 null);
         Dialog d5 = new Dialog(
-                "Bowman: Oops, I guess I missed you on the list!\n" +
-                        "Sorry bud. Anyways, gotta be going now!.",
-                "Wait a minute!",
-                "(wake up)");
+                "Moodolph: I also have a present for you, " + EnterNameController.playerName + " !\n" +
+                        " But you’ll have to play a game with me to get\n" +
+                        "it.",
+                "Uh, sure?",
+                "What game?");
+        Dialog d6 = new Dialog(
+                "Moodolph: It’s a trivia game! You get points\n" +
+                        "for getting the right answer.",
+                "Start Game",
+                null);
         setDialogValues(d1);
         dialogslist.add(d2);
         dialogslist.add(d3);
         dialogslist.add(d4);
         dialogslist.add(d5);
+        dialogslist.add(d6);
     }
 
     private void setDialogValues(Dialog d) {
