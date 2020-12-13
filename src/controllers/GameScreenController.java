@@ -137,8 +137,8 @@ import java.io.IOException;
 
             FadeTransition fade = new FadeTransition();
             fade.setDuration(Duration.millis(5000));
-            fade.setFromValue(10);
-            fade.setToValue(0.1);
+            fade.setFromValue(0.1);
+            fade.setToValue(10);
             fade.setCycleCount(1000);
             fade.setAutoReverse(true);
             fade.setNode(imageView);
@@ -166,8 +166,8 @@ import java.io.IOException;
 
             FadeTransition fade = new FadeTransition();
             fade.setDuration(Duration.millis(5000));
-            fade.setFromValue(10);
-            fade.setToValue(0.1);
+            fade.setFromValue(0.1);
+            fade.setToValue(10);
             fade.setCycleCount(1000);
             fade.setAutoReverse(true);
             fade.setNode(imageView);
