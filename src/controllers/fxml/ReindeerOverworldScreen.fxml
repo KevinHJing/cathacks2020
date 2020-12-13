@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.ReindeerOverworldScreenController"
+            prefHeight="400.0" prefWidth="600.0"
+            styleClass="root"
+            fx:id="GameRoot">
+
+    <ImageView fitHeight="275.0" fitWidth="603.0" pickOnBounds="true" preserveRatio="true"
+               translateX="500" translateY="300" onMousePressed="#loadReindeerDialog">
+        <image>
+            <Image url="@../../assets/images/reindeer.png" />
+        </image>
+    </ImageView>
+
+    <ImageView pickOnBounds="true" preserveRatio="true"
+               translateX="700" translateY="250" onMousePressed="#loadPenguinOverworld">
+        <image>
+            <Image url="@../../assets/images/right arrow.png" />
+        </image>
+    </ImageView>
+
+
+</AnchorPane>

@@ -4,16 +4,12 @@ import game.*;
 
 import game.Character;
 import game.Dialog;
-import javafx.application.Application;
-import javafx.event.ActionEvent;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
-import javafx.scene.input.MouseButton;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -22,12 +18,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.util.Duration;
 
-import javax.swing.text.html.ImageView;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-import java.awt.*;
 import java.io.IOException;
 public class ReindeerDialogController implements Initializable {
     @FXML Label dialogue;
@@ -116,9 +110,9 @@ public class ReindeerDialogController implements Initializable {
     public void changeDialogOption1(javafx.event.ActionEvent actionEvent) throws IOException {
         if (dialogNum >= dialogslist.size()) {
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            Parent root = FXMLLoader.load(getClass().getResource("fxml/OverworldScreen.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("fxml/ReindeerOverworldScreen.fxml"));
             Scene scene = new Scene(root, 900, 650);
-            scene.getStylesheets().add(getClass().getResource("css/Overworld.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("css/ReindeerOverworld.css").toExternalForm());
             scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
             stage.setScene(scene);
         } else {
@@ -131,9 +125,9 @@ public class ReindeerDialogController implements Initializable {
     public void changeDialogOption2(javafx.event.ActionEvent actionEvent) throws IOException {
         if (dialogNum >= dialogslist.size()) {
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            Parent root = FXMLLoader.load(getClass().getResource("fxml/OverworldScreen.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("fxml/ReindeerOverworldScreen.fxml"));
             Scene scene = new Scene(root, 900, 650);
-            scene.getStylesheets().add(getClass().getResource("css/Overworld.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("css/ReindeerOverworld.css").toExternalForm());
             scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
             stage.setScene(scene);
         } else {

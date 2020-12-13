@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class OverworldScreenController implements Initializable {
+public class PenguinOverworldScreenController implements Initializable {
 
     @FXML AnchorPane GameRoot;
     @Override
@@ -37,12 +37,23 @@ public class OverworldScreenController implements Initializable {
 
     public void loadNextScene(MouseEvent mouseEvent) throws IOException {
         Parent secondView;
-        secondView = (StackPane) FXMLLoader.load(getClass().getResource("fxml/BlackScreen1.fxml"));
+        secondView = (StackPane) FXMLLoader.load(getClass().getResource("fxml/PenguinDialogScreen.fxml"));
         Scene scene = new Scene(secondView, 900, 650);
-        scene.getStylesheets().add(getClass().getResource("css/blackscreen.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("css/characterdialog.css").toExternalForm());
 
         Stage curr = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-        curr.setTitle("Gamer hours");
+        curr.setTitle("Penguin");
+        curr.setScene(scene);
+    }
+
+    public void loadReindeerOverworld(MouseEvent mouseEvent) throws IOException {
+        Parent secondView;
+        secondView = (AnchorPane) FXMLLoader.load(getClass().getResource("fxml/ReindeerOverworldScreen.fxml"));
+        Scene scene = new Scene(secondView, 900, 650);
+        scene.getStylesheets().add(getClass().getResource("css/ReindeerOverworld.css").toExternalForm());
+
+        Stage curr = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+        curr.setTitle("Igloo");
         curr.setScene(scene);
     }
 }

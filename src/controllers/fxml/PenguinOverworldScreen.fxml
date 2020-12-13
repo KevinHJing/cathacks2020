@@ -10,15 +10,22 @@
 <?import javafx.scene.image.Image?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controllers.OverworldScreenController"
+            fx:controller="controllers.PenguinOverworldScreenController"
             prefHeight="400.0" prefWidth="600.0"
             styleClass="root"
             fx:id="GameRoot">
 
     <ImageView fitHeight="275.0" fitWidth="603.0" pickOnBounds="true" preserveRatio="true"
-               translateX="500" translateY="300" onMousePressed="#loadNextScene">
+               translateX="200" translateY="300" onMousePressed="#loadNextScene">
         <image>
-            <Image url="@../../assets/images/reindeer.png" />
+            <Image url="@../../assets/images/penguin.png" />
+        </image>
+    </ImageView>
+
+    <ImageView pickOnBounds="true" preserveRatio="true"
+               translateX="50" translateY="250" onMousePressed="#loadReindeerOverworld">
+        <image>
+            <Image url="@../../assets/images/left arrow.png" />
         </image>
     </ImageView>
 
