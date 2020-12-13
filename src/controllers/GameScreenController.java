@@ -47,7 +47,7 @@ import java.io.IOException;
             imageView.setImage(null);
             Dialog d1 = new Dialog(
                     "...........",
-                    "hello?",
+                    "Hello???",
                     null);
             Dialog d2 = new Dialog(
                     "??: Hey, you there?",
@@ -136,7 +136,7 @@ import java.io.IOException;
             imageView.setImage(imageObject);
 
             FadeTransition fade = new FadeTransition();
-            fade.setDuration(Duration.millis(5000));
+            fade.setDuration(Duration.millis(3000));
             fade.setFromValue(0.1);
             fade.setToValue(10);
             fade.setCycleCount(1000);
@@ -165,7 +165,7 @@ import java.io.IOException;
             imageView.setImage(imageObject);
 
             FadeTransition fade = new FadeTransition();
-            fade.setDuration(Duration.millis(5000));
+            fade.setDuration(Duration.millis(3000));
             fade.setFromValue(0.1);
             fade.setToValue(10);
             fade.setCycleCount(1000);
