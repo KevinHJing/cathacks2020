@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Tooltip;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -36,6 +37,10 @@ public class ReindeerOverworldScreenController implements Initializable {
             imageView.setMouseTransparent(false);
             imageView.setDisable(true);
             Tooltip.uninstall(imageView, talkReindeer);
+
+            String newImgURL = "@../../assets/images/scarf reindeet.png";
+            Image imageObject = new Image(newImgURL);
+            imageView.setImage(imageObject);
         }
     }
 
