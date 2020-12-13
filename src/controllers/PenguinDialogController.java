@@ -117,7 +117,7 @@ public class PenguinDialogController implements Initializable {
     @FXML
     public void changeDialogOption1(javafx.event.ActionEvent actionEvent) throws IOException {
         if (dialogNum >= dialogslist.size()) {
-            if (GameScreenController.numCharactersVisited == 4) {
+            if (GameScreenController.numCharactersVisited == 3) {
                 System.out.println("Game End");
             } else {
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -142,7 +142,7 @@ public class PenguinDialogController implements Initializable {
     @FXML
     public void changeDialogOption2(javafx.event.ActionEvent actionEvent) throws IOException {
         if (dialogNum >= dialogslist.size()) {
-            if (GameScreenController.numCharactersVisited == 4) {
+            if (GameScreenController.numCharactersVisited == 3) {
                 System.out.println("Game End");
             } else {
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
