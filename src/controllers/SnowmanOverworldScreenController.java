@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ReindeerOverworldScreenController implements Initializable {
+public class SnowmanOverworldScreenController implements Initializable {
 
     @FXML AnchorPane GameRoot;
     @Override
@@ -35,36 +35,25 @@ public class ReindeerOverworldScreenController implements Initializable {
         fadeout.play();
     }
 
-    public void loadReindeerDialog(MouseEvent mouseEvent) throws IOException {
+    public void loadSnowmanDialog(MouseEvent mouseEvent) throws IOException {
         Parent secondView;
-        secondView = (StackPane) FXMLLoader.load(getClass().getResource("fxml/ReindeerDialogScreen.fxml"));
+        secondView = (StackPane) FXMLLoader.load(getClass().getResource("fxml/SnowmanDialogScreen.fxml"));
         Scene scene = new Scene(secondView, 900, 650);
         scene.getStylesheets().add(getClass().getResource("css/characterdialog.css").toExternalForm());
 
         Stage curr = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-        curr.setTitle("Reindeer");
+        curr.setTitle("Snowman");
         curr.setScene(scene);
     }
 
-    public void loadPenguinOverworld(MouseEvent mouseEvent) throws IOException {
+    public void loadReindeerOverworld(MouseEvent mouseEvent) throws IOException {
         Parent secondView;
-        secondView = (AnchorPane) FXMLLoader.load(getClass().getResource("fxml/PenguinOverworldScreen.fxml"));
+        secondView = (AnchorPane) FXMLLoader.load(getClass().getResource("fxml/ReindeerOverworldScreen.fxml"));
         Scene scene = new Scene(secondView, 900, 650);
-        scene.getStylesheets().add(getClass().getResource("css/PenguinOverworld.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("css/ReindeerOverworld.css").toExternalForm());
 
         Stage curr = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-        curr.setTitle("Mountain");
-        curr.setScene(scene);
-    }
-
-    public void loadSnowmanOverworld(MouseEvent mouseEvent) throws IOException {
-        Parent secondView;
-        secondView = (AnchorPane) FXMLLoader.load(getClass().getResource("fxml/SnowmanOverworldScreen.fxml"));
-        Scene scene = new Scene(secondView, 900, 650);
-        scene.getStylesheets().add(getClass().getResource("css/SnowmanOverworld.css").toExternalForm());
-
-        Stage curr = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-        curr.setTitle("Forest");
+        curr.setTitle("Igloo");
         curr.setScene(scene);
     }
 }
