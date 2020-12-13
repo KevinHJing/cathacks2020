@@ -52,17 +52,17 @@ public class PenguinDialogController implements Initializable {
                 "How're you doing, Iceberg?",
                 "Heya.");
         Dialog d2 = new Dialog(
-                "Iceberg: Guess what? I got to go skiing with all of \n" +
-                        "my friends today! It was a lot of fun!",
+                "Iceberg: Guess what? I got to go skiing with\n" +
+                        "all my friends today! It was a lot of fun!",
                 "Penguins can ski?",
                 null);
         Dialog d3 = new Dialog(
-                "Iceberg: Of course! Some of my cousins cheated though. \n" +
-                        "They slid down the hill on their bellies.",
+                "Iceberg: Of course! Some of my cousins cheated \n" +
+                        "though. They slid down the hill on their bellies.",
                 "Sounds like fun.",
                 "Isn't that dangerous?");
         Dialog d4 = new Dialog(
-                " Iceberg: Yeah. Mom says we have to go home now.",
+                " Iceberg: Yeah. Mom says we have to go home now.\n",
                 "Before you go, I have a \npresent for you.",
                 "Bowman got you a present.");
         Dialog d5 = new Dialog(
@@ -70,8 +70,9 @@ public class PenguinDialogController implements Initializable {
                 "(Give Iceberg her present)",
                 null);
         Dialog d6 = new Dialog(
-                "Iceberg: WOW! It’s a new set of skis. Now I’m going to be \n" +
-                        "the fastest one racing down the mountainside.",
+                "Iceberg: WOW! It’s a new set of skis. \n" +
+                        "Now I’m going to be the fastest one \n" +
+                        "racing down the mountainside!",
                 "Make sure to be careful.",
                 "Have a good time.");
         setDialogValues(d1);
