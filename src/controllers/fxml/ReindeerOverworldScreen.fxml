@@ -15,7 +15,7 @@
             styleClass="root"
             fx:id="GameRoot">
 
-    <ImageView fitHeight="275.0" fitWidth="603.0" pickOnBounds="true" preserveRatio="true"
+    <ImageView fx:id = "imageView" fitHeight="275.0" fitWidth="603.0" pickOnBounds="true" preserveRatio="true"
                translateX="500" translateY="300" onMousePressed="#loadReindeerDialog">
         <image>
             <Image url="@../../assets/images/reindeer.png" />
