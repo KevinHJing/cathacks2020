@@ -107,7 +107,7 @@ public class SnowmanDialogController2 implements Initializable {
     public void changeDialogOption1(javafx.event.ActionEvent actionEvent) throws IOException {
         if (dialogNum >= dialogslist.size()) {
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            if (GameScreenController.numCharactersVisited >= 3) {
+            if (GameScreenController.numCharactersVisited >= 1) {
                 Parent root = FXMLLoader.load(getClass().getResource("fxml/EndTransitionScreen.fxml"));
                 Scene scene = new Scene(root, 900, 650);
                 scene.getStylesheets().add(getClass().getResource("css/blackscreen.css").toExternalForm());

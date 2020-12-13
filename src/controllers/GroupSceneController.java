@@ -15,6 +15,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.media.AudioClip;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -41,8 +42,10 @@ public class GroupSceneController implements Initializable {
     @FXML ImageView imageView4;
     @FXML ImageView imageView5;
     @FXML ImageView mainSpeaker;
-
+    @FXML VBox endGame;
     @FXML TextArea text;
+    @FXML Label endLabel;
+    @FXML Button endButton;
 
     private Character character;
     ArrayList<Dialog> dialogslist = new ArrayList<Dialog>();
@@ -67,7 +70,12 @@ public class GroupSceneController implements Initializable {
 
         option2.setWrapText(true);
         option2.setFont(new Font("Segoe UI", 17));
+
+        endLabel.setFont(new Font("Lucida Console", 60));
+        endButton.setFont(new Font("Segoe UI", 25));
+
         mainSpeaker.setImage(null);
+        endGame.setVisible(false);
         Dialog d1 = new Dialog(
                 "???: SURPRISE!!",
                 "Intruder!!",
@@ -146,27 +154,7 @@ public class GroupSceneController implements Initializable {
     @FXML
     public void changeDialogOption1(javafx.event.ActionEvent actionEvent) throws IOException {
         if (dialogNum >= dialogslist.size()) {
-            mainSpeaker.setImage(null);
-
-            String newImgURL = "@../../assets/images/wildcatsmile.png";
-            Image imageObject = new Image(newImgURL);
-            imageView1.setImage(imageObject);
-
-            String newImgURL2 = "@../../assets/images/penguinsmile.png";
-            Image imageObject2 = new Image(newImgURL2);
-            imageView2.setImage(imageObject2);
-
-            String newImgURL3 = "@../../assets/images/reindeersmile.png";
-            Image imageObject3 = new Image(newImgURL3);
-            imageView3.setImage(imageObject3);
-
-            String newImgURL4 = "@../../assets/images/smileman.png";
-            Image imageObject4 = new Image(newImgURL4);
-            imageView4.setImage(imageObject4);
-
-            String newImgURL5 = "@../../assets/images/seansmile.png";
-            Image imageObject5 = new Image(newImgURL5);
-            imageView5.setImage(imageObject5);
+            endGame.setVisible(true);
 
             if(!isPlaying) playMusic();
             return;
@@ -227,33 +215,37 @@ public class GroupSceneController implements Initializable {
             fade.setToValue(1.0);
             fade.setNode(mainSpeaker);
             fade.play();
+        }
+
+        if (dialogNum == 8) {
+            mainSpeaker.setImage(null);
+
+            String newImgURL = "@../../assets/images/wildcatsmile.png";
+            Image imageObject = new Image(newImgURL);
+            imageView1.setImage(imageObject);
+
+            String newImgURL2 = "@../../assets/images/penguinsmile.png";
+            Image imageObject2 = new Image(newImgURL2);
+            imageView2.setImage(imageObject2);
+
+            String newImgURL3 = "@../../assets/images/reindeersmile.png";
+            Image imageObject3 = new Image(newImgURL3);
+            imageView3.setImage(imageObject3);
+
+            String newImgURL4 = "@../../assets/images/smileman.png";
+            Image imageObject4 = new Image(newImgURL4);
+            imageView4.setImage(imageObject4);
+
+            String newImgURL5 = "@../../assets/images/seansmile.png";
+            Image imageObject5 = new Image(newImgURL5);
+            imageView5.setImage(imageObject5);
         }
     }
 
     @FXML
     public void changeDialogOption2(javafx.event.ActionEvent actionEvent) throws IOException {
         if (dialogNum >= dialogslist.size()) {
-            mainSpeaker.setImage(null);
-
-            String newImgURL = "@../../assets/images/wildcatsmile.png";
-            Image imageObject = new Image(newImgURL);
-            imageView1.setImage(imageObject);
-
-            String newImgURL2 = "@../../assets/images/penguinsmile.png";
-            Image imageObject2 = new Image(newImgURL2);
-            imageView2.setImage(imageObject2);
-
-            String newImgURL3 = "@../../assets/images/reindeersmile.png";
-            Image imageObject3 = new Image(newImgURL3);
-            imageView3.setImage(imageObject3);
-
-            String newImgURL4 = "@../../assets/images/smileman.png";
-            Image imageObject4 = new Image(newImgURL4);
-            imageView4.setImage(imageObject4);
-
-            String newImgURL5 = "@../../assets/images/seansmile.png";
-            Image imageObject5 = new Image(newImgURL5);
-            imageView5.setImage(imageObject5);
+            endGame.setVisible(true);
 
             if(!isPlaying) playMusic();
             return;
@@ -315,6 +307,45 @@ public class GroupSceneController implements Initializable {
             fade.setNode(mainSpeaker);
             fade.play();
         }
+
+        if (dialogNum == 8) {
+            mainSpeaker.setImage(null);
+
+            String newImgURL = "@../../assets/images/wildcatsmile.png";
+            Image imageObject = new Image(newImgURL);
+            imageView1.setImage(imageObject);
+
+            String newImgURL2 = "@../../assets/images/penguinsmile.png";
+            Image imageObject2 = new Image(newImgURL2);
+            imageView2.setImage(imageObject2);
+
+            String newImgURL3 = "@../../assets/images/reindeersmile.png";
+            Image imageObject3 = new Image(newImgURL3);
+            imageView3.setImage(imageObject3);
+
+            String newImgURL4 = "@../../assets/images/smileman.png";
+            Image imageObject4 = new Image(newImgURL4);
+            imageView4.setImage(imageObject4);
+
+            String newImgURL5 = "@../../assets/images/seansmile.png";
+            Image imageObject5 = new Image(newImgURL5);
+            imageView5.setImage(imageObject5);
+        }
+    }
+
+    @FXML
+    public void endGame(javafx.event.ActionEvent actionEvent) throws IOException {
+        GameScreenController.numCharactersVisited = 0;
+        PenguinOverworldScreenController.seanVisited = false;
+        PenguinOverworldScreenController.penguinVisited = false;
+        ReindeerOverworldScreenController.reindeerVisited = false;
+        SnowmanOverworldScreenController.snowmanVisited = false;
+        PlayersRoomController.ac.stop();
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        Parent root = (VBox) FXMLLoader.load(getClass().getResource("fxml/MainScreen.fxml"));
+        Scene scene = new Scene(root, 640, 400);
+        scene.getStylesheets().add(getClass().getResource("css/start.css").toExternalForm());
+        stage.setScene(scene);
     }
 
     private void playMusic() {
