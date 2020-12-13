@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
@@ -34,6 +35,7 @@ public class PlayersRoomController implements Initializable {
     @FXML Button option3;
     @FXML StackPane GameRoot;
     @FXML ImageView imageView;
+    @FXML TextArea text;
 
     private Character character;
     ArrayList<Dialog> dialogslist = new ArrayList<Dialog>();
@@ -44,21 +46,30 @@ public class PlayersRoomController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         GameRoot.setOpacity(0);
         makeFadeInTransition();
-        dialogue.setFont(new Font("Lucida Console", 20));
+
+        text.setWrapText(true);
+        text.setEditable(false);
+        text.setMouseTransparent(true);
+        text.setFocusTraversable(false);
+        text.setFont(new Font("Lucida Console", 20));
+
+        option1.setWrapText(true);
         option1.setFont(new Font("Segoe UI", 17));
+
+        option2.setWrapText(true);
         option2.setFont(new Font("Segoe UI", 17));
         imageView.setImage(null);
         Dialog d1 = new Dialog(
-                EnterNameController.playerName + ": That was a really weird dream...\n" +
-                        "Maybe if I slept earlier, these things wouldn’t happen. \n" +
+                EnterNameController.playerName + ": That was a really weird dream... " +
+                        "Maybe if I slept earlier, these things wouldn’t happen. " +
                         "Wait, what’s that?",
                 "Next",
                 null);
         Dialog d2 = new Dialog(
-                EnterNameController.playerName + ": Huh, I guess I have to hand these out. \n" +
-                        "If Bowman could deliver the presents here, \n" +
-                        "why couldn’t he hand them out himself?...\n" +
-                        "Well, I should get started then. The sooner I\n" +
+                EnterNameController.playerName + ": Huh, I guess I have to hand these out. " +
+                        "If Bowman could deliver the presents here, " +
+                        "why couldn’t he hand them out himself?... " +
+                        "Well, I should get started then. The sooner I " +
                         "get done, the sooner I can enjoy my holiday.",
                 "Pick up the presents",
                 null);
@@ -67,7 +78,7 @@ public class PlayersRoomController implements Initializable {
     }
 
     private void setDialogValues(Dialog d) {
-        dialogue.setText(d.getOutput());
+        text.setText(d.getOutput());
         option1.setText(d.getButtonText1());
         if (d.getButtonText2() == null) {
             option2.setVisible(false);

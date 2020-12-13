@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
@@ -34,6 +35,7 @@ public class SeanDialogController implements Initializable {
     @FXML Button option3;
     @FXML StackPane GameRoot;
     @FXML ImageView imageView;
+    @FXML TextArea text;
 
     private Character character;
     ArrayList<Dialog> dialogslist = new ArrayList<Dialog>();
@@ -43,8 +45,17 @@ public class SeanDialogController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         GameRoot.setOpacity(0);
         makeFadeInTransition();
-        dialogue.setFont(new Font("Lucida Console", 20));
+
+        text.setWrapText(true);
+        text.setEditable(false);
+        text.setMouseTransparent(true);
+        text.setFocusTraversable(false);
+        text.setFont(new Font("Lucida Console", 20));
+
+        option1.setWrapText(true);
         option1.setFont(new Font("Segoe UI", 17));
+
+        option2.setWrapText(true);
         option2.setFont(new Font("Segoe UI", 17));
         Dialog d1 = new Dialog(
                 "??: Your time has come.",
@@ -52,16 +63,16 @@ public class SeanDialogController implements Initializable {
                 "Did I do something wrong?");
         Dialog d2 = new Dialog(
                 "??: Haha, I’m just messing with you.",
-                "Okay…what are you doing\nhere Bean?",
+                "Okay…what are you doing here Bean?",
                 "Is your name Bean?");
         Dialog d3 = new Dialog(
-                "Sean: Oh, you’re looking for Bean. I’m Sean.\n" +
-                        "Bean is busy *awakening his third eye*\n",
+                "Sean: Oh, you’re looking for Bean. I’m Sean. " +
+                        "Bean is busy *awakening his third eye*",
                 "My bad.",
                 null);
         Dialog d4 = new Dialog(
-                "Sean: No worries, we’re identical twins so \n" +
-                        "people get us confused all the time.\n",
+                "Sean: No worries, we’re identical twins so " +
+                        "people get us confused all the time.",
                 "It was nice meeting you!",
                 "I gotta get going.");
         setDialogValues(d1);
@@ -71,7 +82,7 @@ public class SeanDialogController implements Initializable {
     }
 
     private void setDialogValues(Dialog d) {
-        dialogue.setText(d.getOutput());
+        text.setText(d.getOutput());
         option1.setText(d.getButtonText1());
         if (d.getButtonText2() == null) {
             option2.setVisible(false);

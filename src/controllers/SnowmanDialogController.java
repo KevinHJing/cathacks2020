@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
@@ -34,6 +35,7 @@ public class SnowmanDialogController implements Initializable {
     @FXML Button option3;
     @FXML StackPane GameRoot;
     @FXML ImageView imageView;
+    @FXML TextArea text;
 
     private Character character;
     ArrayList<Dialog> dialogslist = new ArrayList<Dialog>();
@@ -44,37 +46,46 @@ public class SnowmanDialogController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         GameRoot.setOpacity(0);
         makeFadeInTransition();
-        dialogue.setFont(new Font("Lucida Console", 20));
+
+        text.setWrapText(true);
+        text.setEditable(false);
+        text.setMouseTransparent(true);
+        text.setFocusTraversable(false);
+        text.setFont(new Font("Lucida Console", 20));
+
+        option1.setWrapText(true);
         option1.setFont(new Font("Segoe UI", 17));
+
+        option2.setWrapText(true);
         option2.setFont(new Font("Segoe UI", 17));
         Dialog d1 = new Dialog(
-                "??: Oh hey, I didn’t realize someone else was there.\n",
+                "??: Oh hey, I didn’t realize someone else was there. ",
                 "Hey, I'm " + EnterNameController.playerName + ".",
                 "Who are you?");
         Dialog d2 = new Dialog(
-                "Bean: I’m Bean! It’s nice to meet you. \n" +
-                        "You might have seen my twin, Sean, around \n" +
+                "Bean: I’m Bean! It’s nice to meet you. " +
+                        "You might have seen my twin, Sean, around " +
                         "the town earlier.",
                 "What are you doing here?",
                 null);
         Dialog d3 = new Dialog(
-                "Bean: The forest is quiet, so I like to come here \n" +
+                "Bean: The forest is quiet, so I like to come here " +
                         "for meditation. I’m trying to open my third eye.",
                 "Snowman... meditation?",
                 "Uh, your third eye?");
         Dialog d4 = new Dialog(
                 "Bean: Never mind that. Why were you out here?",
                 "I was looking for you.",
-                "Bowman wanted me to \n" +
+                "Bowman wanted me to " +
                             "give you a present.");
         Dialog d5 = new Dialog(
                 "Bean: Oh? I’m so excited, what is it?",
                 "Give Bean his present",
                 null);
         Dialog d6 = new Dialog(
-                "Bean: Wow, a top hat! I’ve been looking for \n" +
+                "Bean: Wow, a top hat! I’ve been looking for " +
                         "one for ages! Wait...what’s this inside the hat?",
-                "You got two presents and \n" +
+                "You got two presents and " +
                             "I didn’t even get one…",
                 "Oooh what is it?");
         Dialog d7 = new Dialog(
@@ -82,8 +93,8 @@ public class SnowmanDialogController implements Initializable {
                 "What... is happening...",
                 null);
         Dialog d8 = new Dialog(
-                "Bean: Thank you so much for your help! \n" +
-                        "I have a present for you too, but you \n" +
+                "Bean: Thank you so much for your help! " +
+                        "I have a present for you too, but you " +
                         "need to play a game with me first!",
                 "Start game",
                 null);
@@ -98,7 +109,7 @@ public class SnowmanDialogController implements Initializable {
     }
 
     private void setDialogValues(Dialog d) {
-        dialogue.setText(d.getOutput());
+        text.setText(d.getOutput());
         option1.setText(d.getButtonText1());
         if (d.getButtonText2() == null) {
             option2.setVisible(false);

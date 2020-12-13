@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
@@ -34,6 +35,7 @@ public class PenguinDialogController implements Initializable {
     @FXML Button option3;
     @FXML StackPane GameRoot;
     @FXML ImageView imageView;
+    @FXML TextArea text;
 
     private Character character;
     ArrayList<Dialog> dialogslist = new ArrayList<Dialog>();
@@ -44,34 +46,43 @@ public class PenguinDialogController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         GameRoot.setOpacity(0);
         makeFadeInTransition();
-        dialogue.setFont(new Font("Lucida Console", 20));
+
+        text.setWrapText(true);
+        text.setEditable(false);
+        text.setMouseTransparent(true);
+        text.setFocusTraversable(false);
+        text.setFont(new Font("Lucida Console", 20));
+
+        option1.setWrapText(true);
         option1.setFont(new Font("Segoe UI", 17));
+
+        option2.setWrapText(true);
         option2.setFont(new Font("Segoe UI", 17));
         Dialog d1 = new Dialog(
                 "Iceberg: Heya, " + EnterNameController.playerName + "!",
                 "How're you doing, Iceberg?",
                 "Heya.");
         Dialog d2 = new Dialog(
-                "Iceberg: Guess what? I got to go skiing with\n" +
+                "Iceberg: Guess what? I got to go skiing with " +
                         "all my friends today! It was a lot of fun!",
                 "Penguins can ski?",
                 null);
         Dialog d3 = new Dialog(
-                "Iceberg: Of course! Some of my cousins cheated \n" +
+                "Iceberg: Of course! Some of my cousins cheated " +
                         "though. They slid down the hill on their bellies.",
                 "Sounds like fun.",
                 "Isn't that dangerous?");
         Dialog d4 = new Dialog(
-                "Iceberg: Yeah. Mom says we have to go home now.\n",
-                "Before you go, I have a \npresent for you.",
+                "Iceberg: Yeah. Mom says we have to go home now.",
+                "Before you go, I have a present for you.",
                 "Bowman got you a present.");
         Dialog d5 = new Dialog(
                 "Iceberg: Woah! What is it?",
-                "(Give Iceberg her present)",
+                "Give Iceberg her present",
                 null);
         Dialog d6 = new Dialog(
-                "Iceberg: WOW! It’s a new set of skis. \n" +
-                        "Now I’m going to be the fastest one \n" +
+                "Iceberg: WOW! It’s a new set of skis. " +
+                        "Now I’m going to be the fastest one " +
                         "racing down the mountainside!",
                 "Make sure to be careful.",
                 "Have a good time.");
@@ -84,7 +95,7 @@ public class PenguinDialogController implements Initializable {
     }
 
     private void setDialogValues(Dialog d) {
-        dialogue.setText(d.getOutput());
+        text.setText(d.getOutput());
         option1.setText(d.getButtonText1());
         if (d.getButtonText2() == null) {
             option2.setVisible(false);
