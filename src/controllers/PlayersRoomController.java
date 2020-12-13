@@ -154,6 +154,6 @@ public class PlayersRoomController implements Initializable {
         ac = new AudioClip(Paths.get(s).toUri().toString());
         ac.setCycleCount(AudioClip.INDEFINITE);
         ac.setVolume(0.5);
-        ac.play();
+//        ac.play();
     }
 }
