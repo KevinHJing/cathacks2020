@@ -139,8 +139,7 @@ public class EnterNameController {
 
     public void keyPressed(KeyEvent keyEvent) throws IOException {
         if(keyEvent.getCode() == KeyCode.ENTER)
-            handleButtonSubmit(new ActionEvent(keyEvent.getSource(),
-                    ((Node)keyEvent.getSource()).getScene().lookup("startButton")));
+            handleButtonSubmit(new ActionEvent(keyEvent.getSource(), startButton));
     }
 
 }
