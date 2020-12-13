@@ -12,8 +12,9 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
-<AnchorPane fx:id="GameRoot" xmlns:fx="http://javafx.com/fxml"
-           styleClass="root" fx:controller="controllers.EndTransitionController">
+<StackPane fx:id="GameRoot" xmlns:fx="http://javafx.com/fxml"
+            stylesheets="@../css/game.css"
+            styleClass="root" fx:controller="controllers.EndTransitionController">
 
     <BorderPane prefHeight="1000" prefWidth="1000" fx:id="background" >
 
@@ -36,5 +37,5 @@
 
     </BorderPane>
     <Rectangle fill="black" visible="false" width="1000" height="1000" fx:id="transition"/>
-</AnchorPane>
+</StackPane>
 

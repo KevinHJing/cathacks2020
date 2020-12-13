@@ -131,10 +131,14 @@ public class PenguinDialogController2 implements Initializable {
     @FXML
     public void changeDialogOption2(javafx.event.ActionEvent actionEvent) throws IOException {
         if (dialogNum >= dialogslist.size()) {
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             if (GameScreenController.numCharactersVisited >= 3) {
-                System.out.println("Game End");
+                Parent root = FXMLLoader.load(getClass().getResource("fxml/EndTransitionScreen.fxml"));
+                Scene scene = new Scene(root, 900, 650);
+                scene.getStylesheets().add(getClass().getResource("css/blackscreen.css").toExternalForm());
+                scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
+                stage.setScene(scene);
             } else {
-                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                 Parent root = FXMLLoader.load(getClass().getResource("fxml/PenguinOverworldScreen.fxml"));
                 Scene scene = new Scene(root, 900, 650);
                 scene.getStylesheets().add(getClass().getResource("css/PenguinOverworld.css").toExternalForm());

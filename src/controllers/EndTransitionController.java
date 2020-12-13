@@ -32,7 +32,7 @@ public class EndTransitionController implements Initializable {
     @FXML Label welcomeMessage;
     @FXML Button option1;
     @FXML Button option2;
-    @FXML AnchorPane GameRoot;
+    @FXML StackPane GameRoot;
     @FXML TextArea text;
 
     ArrayList<Dialog> dialogslist = new ArrayList<Dialog>();

@@ -212,14 +212,14 @@ public class TriviaController implements Initializable {
         // if done with dialogues
         if (triviaNum >= triviaList.size()) {
             // and you've talked to everyone else
-            if (GameScreenController.numCharactersVisited == 3) {
-                // end game
-                System.out.println("Game End");
-            }
-            // if you haven't talked to everyone else
-            else {
-                // go back to reindeer overworld
-                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            if (GameScreenController.numCharactersVisited >= 3) {
+                Parent root = FXMLLoader.load(getClass().getResource("fxml/EndTransitionScreen.fxml"));
+                Scene scene = new Scene(root, 900, 650);
+                scene.getStylesheets().add(getClass().getResource("css/blackscreen.css").toExternalForm());
+                scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
+                stage.setScene(scene);
+            } else {
                 Parent root = FXMLLoader.load(getClass().getResource("fxml/ReindeerOverworldScreen.fxml"));
                 Scene scene = new Scene(root, 900, 650);
                 scene.getStylesheets().add(getClass().getResource("css/ReindeerOverworld.css").toExternalForm());
@@ -319,14 +319,14 @@ public class TriviaController implements Initializable {
         // if done with dialogues
         if (triviaNum >= triviaList.size()) {
             // and you've talked to everyone else
-            if (GameScreenController.numCharactersVisited == 3) {
-                // end game
-                System.out.println("Game End");
-            }
-            // if you haven't talked to everyone else
-            else {
-                // go back to reindeer overworld
-                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            if (GameScreenController.numCharactersVisited >= 3) {
+                Parent root = FXMLLoader.load(getClass().getResource("fxml/EndTransitionScreen.fxml"));
+                Scene scene = new Scene(root, 900, 650);
+                scene.getStylesheets().add(getClass().getResource("css/blackscreen.css").toExternalForm());
+                scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
+                stage.setScene(scene);
+            } else {
                 Parent root = FXMLLoader.load(getClass().getResource("fxml/ReindeerOverworldScreen.fxml"));
                 Scene scene = new Scene(root, 900, 650);
                 scene.getStylesheets().add(getClass().getResource("css/ReindeerOverworld.css").toExternalForm());
@@ -416,14 +416,14 @@ public class TriviaController implements Initializable {
         // if done with dialogues
         if (triviaNum >= triviaList.size()) {
             // and you've talked to everyone else
-            if (GameScreenController.numCharactersVisited == 3) {
-                // end game
-                System.out.println("Game End");
-            }
-            // if you haven't talked to everyone else
-            else {
-                // go back to reindeer overworld
-                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            if (GameScreenController.numCharactersVisited >= 3) {
+                Parent root = FXMLLoader.load(getClass().getResource("fxml/EndTransitionScreen.fxml"));
+                Scene scene = new Scene(root, 900, 650);
+                scene.getStylesheets().add(getClass().getResource("css/blackscreen.css").toExternalForm());
+                scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
+                stage.setScene(scene);
+            } else {
                 Parent root = FXMLLoader.load(getClass().getResource("fxml/ReindeerOverworldScreen.fxml"));
                 Scene scene = new Scene(root, 900, 650);
                 scene.getStylesheets().add(getClass().getResource("css/ReindeerOverworld.css").toExternalForm());
