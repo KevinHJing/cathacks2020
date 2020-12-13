@@ -1,2 +1,2 @@
 # Holiday Cheer!
-![Title](src/assets/images/readmePic.pngraw?=true "Title")
+![Title](src/assets/images/readmePic.png?raw=true "Title")
