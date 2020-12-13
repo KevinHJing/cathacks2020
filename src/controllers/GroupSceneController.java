@@ -15,6 +15,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.StackPane;
+import javafx.scene.media.AudioClip;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
@@ -23,6 +24,7 @@ import javafx.scene.control.Button;
 import javafx.util.Duration;
 
 import java.net.URL;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -46,6 +48,8 @@ public class GroupSceneController implements Initializable {
     ArrayList<Dialog> dialogslist = new ArrayList<Dialog>();
     private int dialogNum = 0;
     String playerName;
+
+    private boolean isPlaying;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -71,7 +75,7 @@ public class GroupSceneController implements Initializable {
         Dialog d2 = new Dialog(
                 "Everyone: Happy Holidays!",
                 "Alright, what’s all this then?",
-                "I thought you said you\n" +
+                "I thought you said you " +
                         "couldn’t visit me, Bowman.");
         Dialog d3 = new Dialog(
                 "Bowman: Haha, got you good, huh? We wanted to do something " +
@@ -93,19 +97,15 @@ public class GroupSceneController implements Initializable {
                 "That… makes a lot more sense now.",
                 null);
         Dialog d7 = new Dialog(
-                "Bean: It's... a lump of coal??? I HAVE AWAKENED MY THIRD EYE!!!",
-                "What... is happening...",
-                null);
-        Dialog d8 = new Dialog(
                 "Iceberg: The candle too! You can put it on the cake and " +
                         "pretend it’s your birthday. Isn’t that fun?",
                 "That does sound fun!",
                 null);
-        Dialog d9 = new Dialog(
+        Dialog d8 = new Dialog(
                 "Bean: Whipped cream good. Especially on cake.",
                 "That's facts.",
                 null);
-        Dialog d10 = new Dialog(
+        Dialog d9 = new Dialog(
                 "Bowman: Well, I hope you enjoyed this little adventure. " +
                         "Now we can sit back, relax, and listen to the most iconic -- " +
                         "and might I say, BEST, -- holiday song.",
@@ -121,7 +121,6 @@ public class GroupSceneController implements Initializable {
         dialogslist.add(d7);
         dialogslist.add(d8);
         dialogslist.add(d9);
-        dialogslist.add(d10);
     }
 
     private void setDialogValues(Dialog d) {
@@ -168,13 +167,15 @@ public class GroupSceneController implements Initializable {
             String newImgURL5 = "@../../assets/images/seansmile.png";
             Image imageObject5 = new Image(newImgURL5);
             imageView5.setImage(imageObject5);
-            //play music
+
+            if(!isPlaying) playMusic();
+            return;
         } else {
             setDialogValues(dialogslist.get(dialogNum));
             dialogNum++;
         }
 
-        if (dialogNum == 3 || dialogNum == 10) {
+        if (dialogNum == 2 || dialogNum == 8) {
             imageView1.setImage(null);
             imageView2.setImage(null);
             imageView3.setImage(null);
@@ -204,8 +205,8 @@ public class GroupSceneController implements Initializable {
             fade.play();
         }
 
-        if (dialogNum == 6 || dialogNum == 8) {
-            String newImgURL = "@../../assets/images/smileman.png";
+        if (dialogNum == 6) {
+            String newImgURL = "@../../assets/images/penguinsmile.png";
             Image imageObject = new Image(newImgURL);
             mainSpeaker.setImage(imageObject);
             FadeTransition fade = new FadeTransition();
@@ -217,7 +218,7 @@ public class GroupSceneController implements Initializable {
         }
 
         if (dialogNum == 7) {
-            String newImgURL = "@../../assets/images/penguinsmile.png";
+            String newImgURL = "@../../assets/images/smileman.png";
             Image imageObject = new Image(newImgURL);
             mainSpeaker.setImage(imageObject);
             FadeTransition fade = new FadeTransition();
@@ -253,13 +254,15 @@ public class GroupSceneController implements Initializable {
             String newImgURL5 = "@../../assets/images/seansmile.png";
             Image imageObject5 = new Image(newImgURL5);
             imageView5.setImage(imageObject5);
-            //play music
+
+            if(!isPlaying) playMusic();
+            return;
         } else {
             setDialogValues(dialogslist.get(dialogNum));
             dialogNum++;
         }
 
-        if (dialogNum == 3 || dialogNum == 10) {
+        if (dialogNum == 2 || dialogNum == 8) {
             imageView1.setImage(null);
             imageView2.setImage(null);
             imageView3.setImage(null);
@@ -289,8 +292,8 @@ public class GroupSceneController implements Initializable {
             fade.play();
         }
 
-        if (dialogNum == 6 || dialogNum == 8) {
-            String newImgURL = "@../../assets/images/smileman.png";
+        if (dialogNum == 6) {
+            String newImgURL = "@../../assets/images/penguinsmile.png";
             Image imageObject = new Image(newImgURL);
             mainSpeaker.setImage(imageObject);
             FadeTransition fade = new FadeTransition();
@@ -302,7 +305,7 @@ public class GroupSceneController implements Initializable {
         }
 
         if (dialogNum == 7) {
-            String newImgURL = "@../../assets/images/penguinsmile.png";
+            String newImgURL = "@../../assets/images/smileman.png";
             Image imageObject = new Image(newImgURL);
             mainSpeaker.setImage(imageObject);
             FadeTransition fade = new FadeTransition();
@@ -312,5 +315,17 @@ public class GroupSceneController implements Initializable {
             fade.setNode(mainSpeaker);
             fade.play();
         }
+    }
+
+    private void playMusic() {
+        if(isPlaying) return;
+
+        isPlaying = true;
+        String s = "src/assets/music/all i want.mp3";
+        PlayersRoomController.ac.stop();
+        PlayersRoomController.ac = new AudioClip(Paths.get(s).toUri().toString());
+        PlayersRoomController.ac.setCycleCount(AudioClip.INDEFINITE);
+        PlayersRoomController.ac.setVolume(0.5);
+        PlayersRoomController.ac.play();
     }
 }
