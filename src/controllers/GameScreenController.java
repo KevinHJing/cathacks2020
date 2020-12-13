@@ -142,7 +142,7 @@ import java.io.IOException;
                 scene.getStylesheets().add(getClass().getResource("css/playersroom.css").toExternalForm());
 
                 Stage curr = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-                curr.setTitle("Gamer Time");
+                curr.setTitle("My Room");
                 curr.setScene(scene);
             } else {
                 setDialogValues(dialogslist.get(dialogNum));
@@ -172,7 +172,7 @@ import java.io.IOException;
                 scene.getStylesheets().add(getClass().getResource("css/playersroom.css").toExternalForm());
 
                 Stage curr = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-                curr.setTitle("Gamer Time");
+                curr.setTitle("My Room");
                 curr.setScene(scene);
             } else {
                 setDialogValues(dialogslist.get(dialogNum));

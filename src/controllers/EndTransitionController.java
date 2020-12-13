@@ -93,7 +93,7 @@ public class EndTransitionController implements Initializable {
             scene.getStylesheets().add(getClass().getResource("css/GroupScene.css").toExternalForm());
 
             Stage curr = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            curr.setTitle("Gamer Time");
+            curr.setTitle("Surprise!");
             curr.setScene(scene);
         } else {
             setDialogValues(dialogslist.get(dialogNum));
