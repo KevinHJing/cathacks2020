@@ -66,4 +66,15 @@ public class ReindeerOverworldScreenController implements Initializable {
         curr.setTitle("Mountain");
         curr.setScene(scene);
     }
+
+    public void loadSnowmanOverworld(MouseEvent mouseEvent) throws IOException {
+        Parent secondView;
+        secondView = (AnchorPane) FXMLLoader.load(getClass().getResource("fxml/SnowmanOverworldScreen.fxml"));
+        Scene scene = new Scene(secondView, 900, 650);
+        scene.getStylesheets().add(getClass().getResource("css/SnowmanOverworld.css").toExternalForm());
+
+        Stage curr = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+        curr.setTitle("Forest");
+        curr.setScene(scene);
+    }
 }
