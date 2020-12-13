@@ -38,6 +38,8 @@ public class TriviaController implements Initializable {
     @FXML
     ImageView imageView;
 
+    @FXML ImageView imageView2;
+
     @FXML
     TextArea text;
 
@@ -58,6 +60,7 @@ public class TriviaController implements Initializable {
         text.setMouseTransparent(true);
         text.setFocusTraversable(false);
         text.setFont(new Font("Lucida Console", 20));
+        imageView2.setImage(null);
 
         option1.setWrapText(true);
         option1.setFont(new Font("Segoe UI", 17));
@@ -294,6 +297,18 @@ public class TriviaController implements Initializable {
                 triviaNum++;
             }
 
+            if (triviaList.get(triviaNum).getOutput().contains("Moodolph: Well, it's a practical gift, right? Well anyways, I have to go!")) {
+                String newImgURL = "@../../assets/images/fork.png";
+                Image imageObject = new Image(newImgURL);
+                imageView2.setImage(imageObject);
+                FadeTransition fade = new FadeTransition();
+                fade.setDuration(Duration.millis(1000));
+                fade.setFromValue(0.0);
+                fade.setToValue(1.0);
+                fade.setNode(imageView2);
+                fade.play();
+            }
+
         }
 
     }
@@ -378,6 +393,19 @@ public class TriviaController implements Initializable {
                 // proceed normally
                 triviaNum++;
             }
+
+            if (triviaList.get(triviaNum).getOutput().contains("Moodolph: Well, it's a practical gift, right? Well anyways, I have to go!")) {
+                String newImgURL = "@../../assets/images/fork.png";
+                Image imageObject = new Image(newImgURL);
+                imageView2.setImage(imageObject);
+                FadeTransition fade = new FadeTransition();
+                fade.setDuration(Duration.millis(1000));
+                fade.setFromValue(0.0);
+                fade.setToValue(1.0);
+                fade.setNode(imageView2);
+                fade.play();
+            }
+
 
         }
 
@@ -472,6 +500,19 @@ public class TriviaController implements Initializable {
                 // proceed normally
                 triviaNum++;
             }
+
+            if (triviaList.get(triviaNum).getOutput().contains("Moodolph: Well, it's a practical gift, right? Well anyways, I have to go!")) {
+                String newImgURL = "@../../assets/images/fork.png";
+                Image imageObject = new Image(newImgURL);
+                imageView2.setImage(imageObject);
+                FadeTransition fade = new FadeTransition();
+                fade.setDuration(Duration.millis(1000));
+                fade.setFromValue(0.0);
+                fade.setToValue(1.0);
+                fade.setNode(imageView2);
+                fade.play();
+            }
+
 
         }
 

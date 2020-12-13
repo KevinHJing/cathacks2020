@@ -27,6 +27,13 @@
             </image>
         </ImageView>
 
+        <ImageView fx:id="imageView2" fitHeight="200.0" pickOnBounds="true" preserveRatio="true"
+                   translateX="600.0" translateY="200.0">
+            <image>
+                <Image url="@../../assets/images/fork.png" />
+            </image>
+        </ImageView>
+
         <bottom>
             <HBox spacing="10">
                 <TextArea fx:id="text" prefHeight="150" prefWidth="600" />
