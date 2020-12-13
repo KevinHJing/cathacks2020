@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import java.io.IOException;
-public class PenguinDialogController implements Initializable {
+public class PenguinDialogController2 implements Initializable {
     @FXML Label dialogue;
     @FXML Label welcomeMessage;
     @FXML Button option1;
@@ -35,6 +35,7 @@ public class PenguinDialogController implements Initializable {
     @FXML Button option3;
     @FXML StackPane GameRoot;
     @FXML ImageView imageView;
+    @FXML ImageView imageView2;
     @FXML TextArea text;
 
     private Character character;
@@ -58,40 +59,22 @@ public class PenguinDialogController implements Initializable {
 
         option2.setWrapText(true);
         option2.setFont(new Font("Segoe UI", 17));
+        imageView2.setImage(null);
         Dialog d1 = new Dialog(
-                "Iceberg: Heya, " + EnterNameController.playerName + "!",
-                "How're you doing, Iceberg?",
-                "Heya.");
+                "Iceberg: Thanks so much for all your help " + EnterNameController.playerName + "! I have a gift for you too!",
+                "No way, really?",
+                "Ooh, what is it?");
         Dialog d2 = new Dialog(
-                "Iceberg: Guess what? I got to go skiing with " +
-                        "all my friends today! It was a lot of fun!",
-                "Penguins can ski?",
+                "Iceberg: Its a candle! I made it myself, and I added my own special scent to it!",
+                "Special scent?",
                 null);
         Dialog d3 = new Dialog(
-                "Iceberg: Of course! Some of my cousins cheated " +
-                        "though. They slid down the hill on their bellies.",
-                "Sounds like fun.",
-                "Isn't that dangerous?");
-        Dialog d4 = new Dialog(
-                "Iceberg: Yeah. Mom says we have to go home now.",
-                "Before you go, I have a present for you.",
-                "Bowman got you a present.");
-        Dialog d5 = new Dialog(
-                "Iceberg: Woah! What is it?",
-                "Give Iceberg her present",
-                null);
-        Dialog d6 = new Dialog(
-                "Iceberg: WOW! It’s a new set of skis. " +
-                        "Now I’m going to be the fastest one " +
-                        "racing down the mountainside!",
-                "Make sure to be careful.",
-                "Have a good time.");
+                "Iceberg: It smells...just like me! I hope you like it. Gotta go, catch you later " + EnterNameController.playerName + "!",
+                "umm...Thanks?",
+                "I love it, thank you!");
         setDialogValues(d1);
         dialogslist.add(d2);
         dialogslist.add(d3);
-        dialogslist.add(d4);
-        dialogslist.add(d5);
-        dialogslist.add(d6);
     }
 
     private void setDialogValues(Dialog d) {
@@ -117,36 +100,51 @@ public class PenguinDialogController implements Initializable {
     @FXML
     public void changeDialogOption1(javafx.event.ActionEvent actionEvent) throws IOException {
         if (dialogNum >= dialogslist.size()) {
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            Parent root = FXMLLoader.load(getClass().getResource("fxml/CandyCaneMiniGameScreen.fxml"));
-            Scene scene = new Scene(root, 900, 650);
-            scene.getStylesheets().add(getClass().getResource("css/CandyCaneMiniGame.css").toExternalForm());
-            scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
-            stage.setScene(scene);
+            if (GameScreenController.numCharactersVisited >= 3) {
+                System.out.println("Game End");
+            } else {
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                Parent root = FXMLLoader.load(getClass().getResource("fxml/PenguinOverworldScreen.fxml"));
+                Scene scene = new Scene(root, 900, 650);
+                scene.getStylesheets().add(getClass().getResource("css/PenguinOverworld.css").toExternalForm());
+                scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
+                stage.setScene(scene);
+            }
         } else {
             setDialogValues(dialogslist.get(dialogNum));
             dialogNum++;
         }
 
-        if (dialogNum == 5) {
-            String newImgURL = "@../../assets/images/penguinski.png";
+        if (dialogNum == 1) {
+            String newImgURL = "@../../assets/images/candle.png";
             Image imageObject = new Image(newImgURL);
-            imageView.setImage(imageObject);
+            imageView2.setImage(imageObject);
         }
     }
 
     @FXML
     public void changeDialogOption2(javafx.event.ActionEvent actionEvent) throws IOException {
         if (dialogNum >= dialogslist.size()) {
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            Parent root = FXMLLoader.load(getClass().getResource("fxml/CandyCaneMiniGameScreen.fxml"));
-            Scene scene = new Scene(root, 900, 650);
-            scene.getStylesheets().add(getClass().getResource("css/CandyCaneMiniGame.css").toExternalForm());
-            scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
-            stage.setScene(scene);
+            if (GameScreenController.numCharactersVisited >= 3) {
+                System.out.println("Game End");
+            } else {
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                Parent root = FXMLLoader.load(getClass().getResource("fxml/PenguinOverworldScreen.fxml"));
+                Scene scene = new Scene(root, 900, 650);
+                scene.getStylesheets().add(getClass().getResource("css/PenguinOverworld.css").toExternalForm());
+                scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
+                stage.setScene(scene);
+            }
         } else {
             setDialogValues(dialogslist.get(dialogNum));
             dialogNum++;
         }
+
+        if (dialogNum == 1) {
+            String newImgURL = "@../../assets/images/candle.png";
+            Image imageObject = new Image(newImgURL);
+            imageView2.setImage(imageObject);
+        }
     }
+
 }
