@@ -46,7 +46,7 @@ import java.io.IOException;
             option2.setFont(new Font("Segoe UI", 17));
             imageView.setImage(null);
             Dialog d1 = new Dialog(
-                    ".........",
+                    "...........",
                     "hello?",
                     null);
             Dialog d2 = new Dialog(
@@ -131,11 +131,18 @@ import java.io.IOException;
                 dialogNum++;
             }
 
-            if (dialogNum == 2) {
-                String newImgURL = "@../../assets/images/wildcat.png";
-                Image imageObject = new Image(newImgURL);
-                imageView.setImage(imageObject);
-            }
+            String newImgURL = "@../../assets/images/wildcat.png";
+            Image imageObject = new Image(newImgURL);
+            imageView.setImage(imageObject);
+
+            FadeTransition fade = new FadeTransition();
+            fade.setDuration(Duration.millis(5000));
+            fade.setFromValue(10);
+            fade.setToValue(0.1);
+            fade.setCycleCount(1000);
+            fade.setAutoReverse(true);
+            fade.setNode(imageView);
+            fade.play();
         }
 
         @FXML
@@ -153,11 +160,18 @@ import java.io.IOException;
                 dialogNum++;
             }
 
-            if (dialogNum == 2) {
-                String newImgURL = "@../../assets/images/wildcat.png";
-                Image imageObject = new Image(newImgURL);
-                imageView.setImage(imageObject);
-            }
+            String newImgURL = "@../../assets/images/wildcat.png";
+            Image imageObject = new Image(newImgURL);
+            imageView.setImage(imageObject);
+
+            FadeTransition fade = new FadeTransition();
+            fade.setDuration(Duration.millis(5000));
+            fade.setFromValue(10);
+            fade.setToValue(0.1);
+            fade.setCycleCount(1000);
+            fade.setAutoReverse(true);
+            fade.setNode(imageView);
+            fade.play();
         }
 
         public void imageClick(javafx.scene.input.MouseEvent mouseEvent) {
