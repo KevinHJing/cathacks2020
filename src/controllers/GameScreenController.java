@@ -48,14 +48,6 @@ import java.io.IOException;
             option1.setFont(new Font("Segoe UI", 17));
             option2.setFont(new Font("Segoe UI", 17));
             Dialog d1 = new Dialog(
-                    ".........",
-                    "hello?",
-                    null);
-            Dialog d2 = new Dialog(
-                    "??: Hey, you there?",
-                    "Is that a ghost?!",
-                    "I’m losing it...");
-            Dialog d3 = new Dialog(
                     "Bowman: Nah, don’t be silly. It’s just me,\n" +
                             "Bowman the wildcat. I’m here to wish you a\n" +
                             "happy holidays! Well, I couldn’t visit you in\n" +
@@ -63,27 +55,27 @@ import java.io.IOException;
                             "to say hi.\n",
                     "That’s… unconventional.",
                     "Happy holidays to you too...?");
-            Dialog d4 = new Dialog(
+            Dialog d2 = new Dialog(
                     "Bowman: Dang, not even a warm welcome? It would\n" +
                             "make me feel a lot better about giving you this\n" +
                             "job.",
                     "Job?",
                     null);
-            Dialog d5 = new Dialog(
+            Dialog d3 = new Dialog(
                     "Bowman: Well…. I had all these presents to give\n" +
                             "to everyone, but I don’t have the time to give\n" +
                             "them out. So… could you do me a little favor?",
                     "Sure thing, pal.",
                     "Do I have a choice?");
-            Dialog d6 = new Dialog(
+            Dialog d4 = new Dialog(
                     "That’s the spirit! When you wake up, you’ll see\n" +
-                            "the presents in your room, and you should be\n" +
-                            "able to see Moodolph the Reindeer, Iceberg the\n" +
-                            "Penguin, and [Name] the snowman around town.\n" +
-                            "Just talk to them to give them a present.",
+                            "the presents in your room. Go travel into town\n" +
+                            "to find Moodolph the Reindeer, Iceberg the\n" +
+                            "Penguin, and [Name] the snowman. Just talk to\n" +
+                            "them to give them a present!",
                     "Wait, I don’t get one?",
                     null);
-            Dialog d7 = new Dialog(
+            Dialog d5 = new Dialog(
                     "Bowman: Oops, I guess I missed you on the list!\n" +
                             "Sorry bud. Anyways, gotta be going now!.",
                     "Wait a minute!",
@@ -93,8 +85,6 @@ import java.io.IOException;
             dialogslist.add(d3);
             dialogslist.add(d4);
             dialogslist.add(d5);
-            dialogslist.add(d6);
-            dialogslist.add(d7);
         }
 
         private void setDialogValues(Dialog d) {

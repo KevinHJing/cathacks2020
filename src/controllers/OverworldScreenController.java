@@ -28,7 +28,7 @@ public class OverworldScreenController implements Initializable {
 
     private void makeFadeInTransition() {
         FadeTransition fadeout = new FadeTransition();
-        fadeout.setDuration(Duration.millis(1000));
+        fadeout.setDuration(Duration.millis(2000));
         fadeout.setNode(GameRoot);
         fadeout.setFromValue(0);
         fadeout.setToValue(1);
@@ -37,9 +37,9 @@ public class OverworldScreenController implements Initializable {
 
     public void loadNextScene(MouseEvent mouseEvent) throws IOException {
         Parent secondView;
-        secondView = (StackPane) FXMLLoader.load(getClass().getResource("fxml/GameScreen.fxml"));
+        secondView = (StackPane) FXMLLoader.load(getClass().getResource("fxml/BlackScreen1.fxml"));
         Scene scene = new Scene(secondView, 900, 650);
-        scene.getStylesheets().add(getClass().getResource("css/game.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("css/blackscreen.css").toExternalForm());
 
         Stage curr = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
         curr.setTitle("Gamer hours");

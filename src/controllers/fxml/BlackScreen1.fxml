@@ -13,21 +13,13 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
 <StackPane fx:id="GameRoot" xmlns:fx="http://javafx.com/fxml"
-           stylesheets="@../css/game.css"
-           styleClass="root" fx:controller="controllers.GameScreenController">
+           stylesheets="@../css/blackscreen.css"
+           styleClass="root" fx:controller="controllers.BlackScreen1Controller">
 
     <BorderPane prefHeight="1000" prefWidth="1000" fx:id="background" >
-
         <padding>
             <Insets top="0" right="25" bottom="25" left="25"/>
         </padding>
-
-        <ImageView fitHeight="500.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true"
-                   translateX="100" translateY="100" onMousePressed="#imageClick">
-            <image>
-                <Image url="@../../assets/images/wildcat.png" />
-            </image>
-        </ImageView>
 
         <bottom>
             <HBox spacing="10">
