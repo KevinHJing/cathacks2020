@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -14,6 +15,7 @@ import javafx.scene.chart.StackedAreaChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -58,15 +60,43 @@ public class EnterNameController {
 
     @FXML
     private void changeToGame(ActionEvent event) throws IOException {
+        // call fade out
         makeFadeOut();
 
     }
 
     private void loadNextScene() throws IOException{
+
         playerName = nameField.getText();
         Player player = new Player(nameField.getText());
         Parent secondView;
         secondView = (StackPane) FXMLLoader.load(getClass().getResource("fxml/GameScreen.fxml"));
+
+
+//        // MAKE REINDEER BUTTON
+//        // creating a graphic
+//        Image reindeerImage = new Image(getClass().getResourceAsStream("../assets/images/reindeer.png"));
+//        ImageView reindeerIV = new ImageView(reindeerImage);
+//        reindeerIV.setFitHeight(275.0);
+//        reindeerIV.setFitWidth(603.0);
+//        reindeerIV.setPickOnBounds(true);
+//        reindeerIV.setPreserveRatio(true);
+//        // creating button
+//        Button reindeerButton = new Button();
+//        // setting the characteristics of button
+//        reindeerButton.setStyle("-fx-background-color: transparent;");
+//        reindeerButton.setTranslateX(500);
+//        reindeerButton.setTranslateY(300);
+//        // setting the graphic to the button
+//        reindeerButton.setGraphic(reindeerIV);
+//        // setting if button is hovered
+//        reindeerButton.setId("reindeer-char");
+
+
+
+        // add button as child of secondView
+//        ((AnchorPane)secondView).getChildren().add(reindeerButton);
+
         Scene scene = new Scene(secondView, 900, 650);
         scene.getStylesheets().add(getClass().getResource("css/game.css").toExternalForm());
         Stage curr = (Stage) mainbox.getScene().getWindow();
@@ -96,6 +126,7 @@ public class EnterNameController {
         fadeout.setToValue(0);
         fadeout.setOnFinished((ActionEvent actionEvent) -> {
             try {
+                // after fading out, load next scene
                 loadNextScene();
             } catch (IOException e) {
                 e.printStackTrace();

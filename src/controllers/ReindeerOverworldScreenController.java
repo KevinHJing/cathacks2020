@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
@@ -19,11 +20,19 @@ import java.util.ResourceBundle;
 
 public class ReindeerOverworldScreenController implements Initializable {
 
+    static boolean reindeerVisited = false;
     @FXML AnchorPane GameRoot;
+    @FXML ImageView imageView;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         GameRoot.setOpacity(0);
         makeFadeInTransition();
+
+        if (reindeerVisited) {
+            imageView.setImage(null);
+            imageView.setMouseTransparent(false);
+            imageView.setDisable(true);
+        }
     }
 
     private void makeFadeInTransition() {
@@ -36,6 +45,7 @@ public class ReindeerOverworldScreenController implements Initializable {
     }
 
     public void loadReindeerDialog(MouseEvent mouseEvent) throws IOException {
+        reindeerVisited = true;
         Parent secondView;
         secondView = (StackPane) FXMLLoader.load(getClass().getResource("fxml/ReindeerDialogScreen.fxml"));
         Scene scene = new Scene(secondView, 900, 650);
@@ -54,6 +64,17 @@ public class ReindeerOverworldScreenController implements Initializable {
 
         Stage curr = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
         curr.setTitle("Mountain");
+        curr.setScene(scene);
+    }
+
+    public void loadSnowmanOverworld(MouseEvent mouseEvent) throws IOException {
+        Parent secondView;
+        secondView = (AnchorPane) FXMLLoader.load(getClass().getResource("fxml/SnowmanOverworldScreen.fxml"));
+        Scene scene = new Scene(secondView, 900, 650);
+        scene.getStylesheets().add(getClass().getResource("css/SnowmanOverworld.css").toExternalForm());
+
+        Stage curr = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+        curr.setTitle("Forest");
         curr.setScene(scene);
     }
 }

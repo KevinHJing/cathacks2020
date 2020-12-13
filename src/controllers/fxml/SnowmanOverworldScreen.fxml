@@ -10,24 +10,23 @@
 <?import javafx.scene.image.Image?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controllers.PenguinOverworldScreenController"
+            fx:controller="controllers.SnowmanOverworldScreenController"
             prefHeight="400.0" prefWidth="600.0"
             styleClass="root"
             fx:id="GameRoot">
 
-    <ImageView fx:id="imageView" fitHeight="275.0" fitWidth="603.0" pickOnBounds="true" preserveRatio="true"
-               translateX="200" translateY="300" onMousePressed="#loadNextScene">
+    <ImageView fitHeight="275.0" fitWidth="603.0" pickOnBounds="true" preserveRatio="true"
+               translateX="500" translateY="300" onMousePressed="#loadSnowmanDialog">
         <image>
-            <Image url="@../../assets/images/penguin.png" />
+            <Image url="@../../assets/images/snowman.png" />
         </image>
     </ImageView>
 
     <ImageView pickOnBounds="true" preserveRatio="true"
-               translateX="50" translateY="250" onMousePressed="#loadReindeerOverworld">
+               translateX="700" translateY="250" onMousePressed="#loadReindeerOverworld">
         <image>
-            <Image url="@../../assets/images/left arrow.png" />
+            <Image url="@../../assets/images/right arrow.png" />
         </image>
     </ImageView>
-
 
 </AnchorPane>

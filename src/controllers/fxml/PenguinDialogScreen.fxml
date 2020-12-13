@@ -13,8 +13,8 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
 <StackPane fx:id="GameRoot" xmlns:fx="http://javafx.com/fxml"
-           stylesheets="@../css/playersroom.css"
-           styleClass="root" fx:controller="controllers.PlayersRoomController">
+           stylesheets="@../css/characterdialog.css"
+           styleClass="root" fx:controller="controllers.PenguinDialogController">
 
     <BorderPane prefHeight="1000" prefWidth="1000" fx:id="background" >
 
@@ -22,10 +22,10 @@
             <Insets top="0" right="25" bottom="25" left="25"/>
         </padding>
 
-        <ImageView fx:id="imageView" pickOnBounds="true" preserveRatio="true"
-                   translateX="400.0" translateY="100.0">
+        <ImageView fx:id="imageView" fitHeight="500.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true"
+                   translateX="100.0" translateY="0.0">
             <image>
-                <Image url="@../../assets/images/presents.png" />
+                <Image url="@../../assets/images/penguin.png" />
             </image>
         </ImageView>
 
