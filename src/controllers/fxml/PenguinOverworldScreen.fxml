@@ -16,9 +16,16 @@
             fx:id="GameRoot">
 
     <ImageView fx:id="imageView" fitHeight="275.0" fitWidth="603.0" pickOnBounds="true" preserveRatio="true"
-               translateX="200" translateY="300" onMousePressed="#loadNextScene">
+               translateX="200" translateY="300" onMousePressed="#loadPenguinDialogScene">
         <image>
             <Image url="@../../assets/images/penguin.png" />
+        </image>
+    </ImageView>
+
+    <ImageView fx:id="imageView2" fitHeight=".0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true"
+               translateX="675" translateY="20" onMousePressed="#loadSeanDialogScene">
+        <image>
+            <Image url="@../../assets/images/snowman.png" />
         </image>
     </ImageView>
 

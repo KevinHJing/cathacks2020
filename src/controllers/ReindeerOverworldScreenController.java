@@ -29,7 +29,6 @@ public class ReindeerOverworldScreenController implements Initializable {
         makeFadeInTransition();
 
         if (reindeerVisited) {
-            imageView.setImage(null);
             imageView.setMouseTransparent(false);
             imageView.setDisable(true);
         }

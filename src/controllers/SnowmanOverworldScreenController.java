@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
@@ -20,10 +21,17 @@ import java.util.ResourceBundle;
 public class SnowmanOverworldScreenController implements Initializable {
 
     @FXML AnchorPane GameRoot;
+    @FXML ImageView imageView;
+    static boolean snowmanVisited = false;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         GameRoot.setOpacity(0);
         makeFadeInTransition();
+
+        if (snowmanVisited) {
+            imageView.setMouseTransparent(false);
+            imageView.setDisable(true);
+        }
     }
 
     private void makeFadeInTransition() {
@@ -36,6 +44,7 @@ public class SnowmanOverworldScreenController implements Initializable {
     }
 
     public void loadSnowmanDialog(MouseEvent mouseEvent) throws IOException {
+        snowmanVisited = true;
         Parent secondView;
         secondView = (StackPane) FXMLLoader.load(getClass().getResource("fxml/SnowmanDialogScreen.fxml"));
         Scene scene = new Scene(secondView, 900, 650);

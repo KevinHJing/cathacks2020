@@ -22,8 +22,10 @@ import java.util.ResourceBundle;
 public class PenguinOverworldScreenController implements Initializable {
 
     static boolean penguinVisited = false;
+    static boolean seanVisited = false;
     @FXML AnchorPane GameRoot;
     @FXML ImageView imageView;
+    @FXML ImageView imageView2;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -31,9 +33,12 @@ public class PenguinOverworldScreenController implements Initializable {
         makeFadeInTransition();
 
         if (penguinVisited) {
-            imageView.setImage(null);
             imageView.setMouseTransparent(false);
             imageView.setDisable(true);
+        }
+        if (seanVisited) {
+            imageView2.setMouseTransparent(false);
+            imageView2.setDisable(true);
         }
     }
 
@@ -46,7 +51,7 @@ public class PenguinOverworldScreenController implements Initializable {
         fadeout.play();
     }
 
-    public void loadNextScene(MouseEvent mouseEvent) throws IOException {
+    public void loadPenguinDialogScene(MouseEvent mouseEvent) throws IOException {
         penguinVisited = true;
         Parent secondView;
         secondView = (StackPane) FXMLLoader.load(getClass().getResource("fxml/PenguinDialogScreen.fxml"));
@@ -55,6 +60,18 @@ public class PenguinOverworldScreenController implements Initializable {
 
         Stage curr = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
         curr.setTitle("Penguin");
+        curr.setScene(scene);
+    }
+
+    public void loadSeanDialogScene(MouseEvent mouseEvent) throws IOException {
+        seanVisited = true;
+        Parent secondView;
+        secondView = (StackPane) FXMLLoader.load(getClass().getResource("fxml/SeanDialogScreen.fxml"));
+        Scene scene = new Scene(secondView, 900, 650);
+        scene.getStylesheets().add(getClass().getResource("css/characterdialog.css").toExternalForm());
+
+        Stage curr = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+        curr.setTitle("Sean");
         curr.setScene(scene);
     }
 
