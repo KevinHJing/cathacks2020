@@ -16,6 +16,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
@@ -59,6 +60,7 @@ public class CandyCaneMiniGameController implements Initializable {
         text.setText("I seem to have lost 5 of my candy canes in my home. can you help me find them?\n" +
                 "\nWhen you see a candy cane, click on it to collect it. You win when you find all 5!");
         label.setText("Number of candy canes found: " + numCandyCanesFound);
+        label.setTextFill(Color.WHITE);
     }
 
     @FXML

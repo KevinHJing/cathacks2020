@@ -1,6 +1,5 @@
 package controllers;
 import javafx.animation.FadeTransition;
-import game.*;
 
 import game.Character;
 import game.Dialog;
@@ -14,6 +13,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -27,21 +27,16 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import java.io.IOException;
-public class PenguinDialogController2 implements Initializable {
+public class EndTransitionController implements Initializable {
     @FXML Label dialogue;
     @FXML Label welcomeMessage;
     @FXML Button option1;
     @FXML Button option2;
-    @FXML Button option3;
-    @FXML StackPane GameRoot;
-    @FXML ImageView imageView;
-    @FXML ImageView imageView2;
+    @FXML AnchorPane GameRoot;
     @FXML TextArea text;
 
-    private Character character;
     ArrayList<Dialog> dialogslist = new ArrayList<Dialog>();
     private int dialogNum = 0;
-    String playerName;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -59,22 +54,14 @@ public class PenguinDialogController2 implements Initializable {
 
         option2.setWrapText(true);
         option2.setFont(new Font("Segoe UI", 17));
-        imageView2.setImage(null);
+
         Dialog d1 = new Dialog(
-                "Iceberg: Thanks so much for all your help " + EnterNameController.playerName + "! Here's your gift!",
-                "No way, really?",
-                "Ooh, what is it?");
-        Dialog d2 = new Dialog(
-                "Iceberg: It's a candle! I made it myself, and I added my own special scent to it!",
-                "Special scent?",
+                EnterNameController.playerName + ": Well, I finished " +
+                        "handing out all of the presents…. Guess I better go home.",
+                "Head back home.",
                 null);
-        Dialog d3 = new Dialog(
-                "Iceberg: It smells...just like me! I hope you like it. Gotta go, catch you later " + EnterNameController.playerName + "!",
-                "umm...Thanks?",
-                "I love it, thank you!");
+
         setDialogValues(d1);
-        dialogslist.add(d2);
-        dialogslist.add(d3);
     }
 
     private void setDialogValues(Dialog d) {
@@ -97,54 +84,39 @@ public class PenguinDialogController2 implements Initializable {
         fadeout.play();
     }
 
+    //TODO update redirect to Ending
     @FXML
     public void changeDialogOption1(javafx.event.ActionEvent actionEvent) throws IOException {
         if (dialogNum >= dialogslist.size()) {
-            if (GameScreenController.numCharactersVisited >= 3) {
-                System.out.println("Game End");
-            } else {
-                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-                Parent root = FXMLLoader.load(getClass().getResource("fxml/PenguinOverworldScreen.fxml"));
-                Scene scene = new Scene(root, 900, 650);
-                scene.getStylesheets().add(getClass().getResource("css/PenguinOverworld.css").toExternalForm());
-                scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
-                stage.setScene(scene);
-            }
+            Parent secondView;
+            secondView = (StackPane) FXMLLoader.load(getClass().getResource("fxml/PlayerRoomScreen.fxml"));
+            Scene scene = new Scene(secondView, 900, 650);
+            scene.getStylesheets().add(getClass().getResource("css/playersroom.css").toExternalForm());
+
+            Stage curr = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            curr.setTitle("Gamer Time");
+            curr.setScene(scene);
         } else {
             setDialogValues(dialogslist.get(dialogNum));
             dialogNum++;
         }
-
-        if (dialogNum == 1) {
-            String newImgURL = "@../../assets/images/candle.png";
-            Image imageObject = new Image(newImgURL);
-            imageView2.setImage(imageObject);
-        }
     }
 
+    //TODO update redirect to Ending
     @FXML
     public void changeDialogOption2(javafx.event.ActionEvent actionEvent) throws IOException {
         if (dialogNum >= dialogslist.size()) {
-            if (GameScreenController.numCharactersVisited >= 3) {
-                System.out.println("Game End");
-            } else {
-                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-                Parent root = FXMLLoader.load(getClass().getResource("fxml/PenguinOverworldScreen.fxml"));
-                Scene scene = new Scene(root, 900, 650);
-                scene.getStylesheets().add(getClass().getResource("css/PenguinOverworld.css").toExternalForm());
-                scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
-                stage.setScene(scene);
-            }
+            Parent secondView;
+            secondView = (StackPane) FXMLLoader.load(getClass().getResource("fxml/PlayerRoomScreen.fxml"));
+            Scene scene = new Scene(secondView, 900, 650);
+            scene.getStylesheets().add(getClass().getResource("css/playersroom.css").toExternalForm());
+
+            Stage curr = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            curr.setTitle("Gamer Time");
+            curr.setScene(scene);
         } else {
             setDialogValues(dialogslist.get(dialogNum));
             dialogNum++;
         }
-
-        if (dialogNum == 1) {
-            String newImgURL = "@../../assets/images/candle.png";
-            Image imageObject = new Image(newImgURL);
-            imageView2.setImage(imageObject);
-        }
     }
-
 }

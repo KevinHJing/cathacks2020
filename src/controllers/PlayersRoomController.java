@@ -73,7 +73,7 @@ public class PlayersRoomController implements Initializable {
         Dialog d2 = new Dialog(
                 EnterNameController.playerName + ": Huh, I guess I have to hand these out. " +
                         "If Bowman could deliver the presents here, " +
-                        "why couldn’t he hand them out himself?... " +
+                        "why couldn’t he hand them out himself? \n ..." +
                         "Well, I should get started then. The sooner I " +
                         "get done, the sooner I can enjoy my holiday.",
                 "Pick up the presents",
@@ -146,14 +146,14 @@ public class PlayersRoomController implements Initializable {
         }
     }
     private void playMusic() {
-//        if(isPlaying) {
-//            return;
-//        }
-//        isPlaying = true;
-//        String s = "src/assets/music/sleigh ride.mp3";
-//        ac = new AudioClip(Paths.get(s).toUri().toString());
-//        ac.setCycleCount(AudioClip.INDEFINITE);
-//        ac.setVolume(0.5);
+        if(isPlaying) {
+            return;
+        }
+        isPlaying = true;
+        String s = "src/assets/music/sleigh ride.mp3";
+        ac = new AudioClip(Paths.get(s).toUri().toString());
+        ac.setCycleCount(AudioClip.INDEFINITE);
+        ac.setVolume(0.5);
 //        ac.play();
     }
 }
