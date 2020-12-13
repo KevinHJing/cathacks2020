@@ -6,53 +6,47 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
-<?import javafx.scene.text.Font?>
-<?import com.sun.javafx.scene.control.IntegerField?>
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controllers.PlayersRoomController"
-            prefHeight="400.0" prefWidth="600.0"
-            stylesheets="@../css/playersroom.css"
-            styleClass="root"
-            fx:id="GameRoot">
-    <!--
-    <VBox id="reindeer-char" alignment="CENTER" layoutX="400" layoutY="300">
-        <children>
-            <Label id="talk-to-reindeer" layoutX="100" text="Talk to the Reindeer!" >
-                <font>
-                    <Font name="Courier New" size="15.0"/>
-                </font>
-            </Label>
-            <Button id="reindeer-button"
-                    onMousePressed="#loadNextScene">
-                <graphic>
-                    <ImageView fitWidth="294" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                            <Image url="@../../assets/images/reindeer.png" />
-                        </image>
-                    </ImageView>
-                </graphic>
-            </Button>
-        </children>
-    </VBox>
--->
-    <!--
-    <Label alignment="CENTER" text="Talk to the Reindeer!" layoutX="575" layoutY="275">
-        <font>
-            <Font name="Courier New" size="15.0"/>
-        </font>
-    </Label>
-    -->
-<!--
-    <ImageView fitHeight="275.0" fitWidth="603.0" pickOnBounds="true" preserveRatio="true"
-               translateX="500" translateY="300" onMousePressed="#loadNextScene">
-        <image>
-            <Image url="@../../assets/images/presents.png" />
-        </image>
-    </ImageView>
-    -->
+<StackPane fx:id="GameRoot" xmlns:fx="http://javafx.com/fxml"
+           stylesheets="@../css/playersroom.css"
+           styleClass="root" fx:controller="controllers.PlayersRoomController">
+
+    <BorderPane prefHeight="1000" prefWidth="1000" fx:id="background" >
+
+        <padding>
+            <Insets top="0" right="25" bottom="25" left="25"/>
+        </padding>
+
+        <ImageView fx:id="imageView" pickOnBounds="true" preserveRatio="true"
+                   translateX="400.0" translateY="100.0">
+            <image>
+                <Image url="@../../assets/images/presents.png" />
+            </image>
+        </ImageView>
+
+        <bottom>
+            <HBox spacing="10">
+                <Group>
+                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="150.0"
+                               stroke="GRAY" strokeType="INSIDE" width="600.0"/>
+                    <Label fx:id="dialogue" text="hey what's up" />
+                </Group>
+                <VBox spacing="10">
+                    <Button fx:id="option1" onAction="#changeDialogOption1"/>
+                    <Button fx:id="option2" onAction="#changeDialogOption2"/>
+                </VBox>
+
+            </HBox>
 
 
-</AnchorPane>
+        </bottom>
+
+    </BorderPane>
+    <Rectangle fill="black" visible="false" width="1000" height="1000" fx:id="transition"/>
+</StackPane>
+
