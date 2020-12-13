@@ -131,16 +131,12 @@ public class SnowmanDialogController implements Initializable {
     @FXML
     public void changeDialogOption1(javafx.event.ActionEvent actionEvent) throws IOException {
         if (dialogNum >= dialogslist.size()) {
-            if (GameScreenController.numCharactersVisited == 3) {
-                System.out.println("Game End");
-            } else {
-                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-                Parent root = FXMLLoader.load(getClass().getResource("fxml/SnowmanOverworldScreen.fxml"));
-                Scene scene = new Scene(root, 900, 650);
-                scene.getStylesheets().add(getClass().getResource("css/SnowmanOverworld.css").toExternalForm());
-                scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
-                stage.setScene(scene);
-            }
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getResource("fxml/GuessNumberMiniGameScreen.fxml"));
+            Scene scene = new Scene(root, 900, 650);
+            scene.getStylesheets().add(getClass().getResource("css/characterdialog.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
+            stage.setScene(scene);
         } else {
             setDialogValues(dialogslist.get(dialogNum));
             dialogNum++;
@@ -162,10 +158,14 @@ public class SnowmanDialogController implements Initializable {
     @FXML
     public void changeDialogOption2(javafx.event.ActionEvent actionEvent) throws IOException {
         if (dialogNum >= dialogslist.size()) {
-            if (GameScreenController.numCharactersVisited == 3) {
-                System.out.println("Game End");
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            if (GameScreenController.numCharactersVisited >= 3) {
+                Parent root = FXMLLoader.load(getClass().getResource("fxml/EndTransitionScreen.fxml"));
+                Scene scene = new Scene(root, 900, 650);
+                scene.getStylesheets().add(getClass().getResource("css/blackscreen.css").toExternalForm());
+                scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
+                stage.setScene(scene);
             } else {
-                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                 Parent root = FXMLLoader.load(getClass().getResource("fxml/SnowmanOverworldScreen.fxml"));
                 Scene scene = new Scene(root, 900, 650);
                 scene.getStylesheets().add(getClass().getResource("css/SnowmanOverworld.css").toExternalForm());
@@ -175,6 +175,12 @@ public class SnowmanDialogController implements Initializable {
         } else {
             setDialogValues(dialogslist.get(dialogNum));
             dialogNum++;
+        }
+
+        if (dialogNum == 6) {
+            String newImgURL = "@../../assets/images/awakenman.png";
+            Image imageObject = new Image(newImgURL);
+            imageView.setImage(imageObject);
         }
     }
 }

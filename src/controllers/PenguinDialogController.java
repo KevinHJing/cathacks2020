@@ -86,12 +86,18 @@ public class PenguinDialogController implements Initializable {
                         "racing down the mountainside!",
                 "Make sure to be careful.",
                 "Have a good time.");
+        Dialog d7 = new Dialog(
+                "Iceberg: I will! I also have a present for you," +
+                        "but you have to find all of my candy canes first to get it!",
+                "Start game",
+                null);
         setDialogValues(d1);
         dialogslist.add(d2);
         dialogslist.add(d3);
         dialogslist.add(d4);
         dialogslist.add(d5);
         dialogslist.add(d6);
+        dialogslist.add(d7);
     }
 
     private void setDialogValues(Dialog d) {
@@ -117,16 +123,12 @@ public class PenguinDialogController implements Initializable {
     @FXML
     public void changeDialogOption1(javafx.event.ActionEvent actionEvent) throws IOException {
         if (dialogNum >= dialogslist.size()) {
-            if (GameScreenController.numCharactersVisited == 3) {
-                System.out.println("Game End");
-            } else {
-                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-                Parent root = FXMLLoader.load(getClass().getResource("fxml/CandyCaneMiniGameScreen.fxml"));
-                Scene scene = new Scene(root, 900, 650);
-                scene.getStylesheets().add(getClass().getResource("css/characterdialog.css").toExternalForm());
-                scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
-                stage.setScene(scene);
-            }
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getResource("fxml/CandyCaneMiniGameScreen.fxml"));
+            Scene scene = new Scene(root, 900, 650);
+            scene.getStylesheets().add(getClass().getResource("css/CandyCaneMiniGame.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
+            stage.setScene(scene);
         } else {
             setDialogValues(dialogslist.get(dialogNum));
             dialogNum++;
@@ -142,16 +144,12 @@ public class PenguinDialogController implements Initializable {
     @FXML
     public void changeDialogOption2(javafx.event.ActionEvent actionEvent) throws IOException {
         if (dialogNum >= dialogslist.size()) {
-            if (GameScreenController.numCharactersVisited == 3) {
-                System.out.println("Game End");
-            } else {
-                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-                Parent root = FXMLLoader.load(getClass().getResource("fxml/CandyCaneMiniGameScreen.fxml"));
-                Scene scene = new Scene(root, 900, 650);
-                scene.getStylesheets().add(getClass().getResource("css/characterdialog.css").toExternalForm());
-                scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
-                stage.setScene(scene);
-            }
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getResource("fxml/CandyCaneMiniGameScreen.fxml"));
+            Scene scene = new Scene(root, 900, 650);
+            scene.getStylesheets().add(getClass().getResource("css/CandyCaneMiniGame.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
+            stage.setScene(scene);
         } else {
             setDialogValues(dialogslist.get(dialogNum));
             dialogNum++;
