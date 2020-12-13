@@ -121,9 +121,9 @@ public class PenguinDialogController implements Initializable {
                 System.out.println("Game End");
             } else {
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-                Parent root = FXMLLoader.load(getClass().getResource("fxml/PenguinOverworldScreen.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("fxml/CandyCaneMiniGameScreen.fxml"));
                 Scene scene = new Scene(root, 900, 650);
-                scene.getStylesheets().add(getClass().getResource("css/PenguinOverworld.css").toExternalForm());
+                scene.getStylesheets().add(getClass().getResource("css/characterdialog.css").toExternalForm());
                 scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
                 stage.setScene(scene);
             }
@@ -146,9 +146,9 @@ public class PenguinDialogController implements Initializable {
                 System.out.println("Game End");
             } else {
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-                Parent root = FXMLLoader.load(getClass().getResource("fxml/PenguinOverworldScreen.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("fxml/CandyCaneMiniGameScreen.fxml"));
                 Scene scene = new Scene(root, 900, 650);
-                scene.getStylesheets().add(getClass().getResource("css/PenguinOverworld.css").toExternalForm());
+                scene.getStylesheets().add(getClass().getResource("css/characterdialog.css").toExternalForm());
                 scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
                 stage.setScene(scene);
             }

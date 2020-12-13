@@ -1,0 +1,18 @@
+.root {
+    -fx-background-image: url("../../assets/images/black.png");
+}
+
+.image {
+    -fx-opacity: 0.5;
+}
+
+.label {
+    -fx-padding: 5;
+}
+
+.button {
+    -fx-background-radius: 10;
+    -fx-padding: 10;
+    -fx-color: LIGHTBLUE;
+    -fx-opacity: 1;
+}
