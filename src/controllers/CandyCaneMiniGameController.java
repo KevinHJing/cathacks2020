@@ -14,6 +14,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -36,7 +37,12 @@ public class CandyCaneMiniGameController implements Initializable {
     @FXML StackPane GameRoot;
     @FXML ImageView imageView;
     @FXML ImageView imageView1;
+    @FXML ImageView imageView2;
+    @FXML ImageView imageView3;
+    @FXML ImageView imageView4;
+    @FXML ImageView imageView5;
     @FXML TextArea text;
+    @FXML Label label;
     private int numCandyCanesFound = 0;
 
     @Override
@@ -49,22 +55,103 @@ public class CandyCaneMiniGameController implements Initializable {
         text.setMouseTransparent(true);
         text.setFocusTraversable(false);
         text.setFont(new Font("Lucida Console", 20));
+        label.setFont(new Font("Lucida Console", 40));
         text.setText("I seem to have lost 5 of my candy canes in my home. can you help me find them?\n" +
                 "\nWhen you see a candy cane, click on it to collect it. You win when you find all 5!");
+        label.setText("Number of candy canes found: " + numCandyCanesFound);
     }
 
     @FXML
-    private void foundCandyCane1(javafx.event.ActionEvent actionEvent) throws IOException {
+    public void foundCandyCane1(MouseEvent mouseEvent) throws IOException {
         imageView1.setImage(null);
-        imageView.setMouseTransparent(false);
-        imageView.setDisable(true);
+        imageView1.setMouseTransparent(false);
+        imageView1.setDisable(true);
         numCandyCanesFound++;
+        label.setText("Number of candy canes found: " + numCandyCanesFound);
 
         if (numCandyCanesFound == 5) {
-            System.out.println("found all");
+            Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getResource("fxml/PenguinDialogScreen2.fxml"));
+            Scene scene = new Scene(root, 900, 650);
+            scene.getStylesheets().add(getClass().getResource("css/characterdialog.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
+            stage.setScene(scene);
         }
     }
 
+    @FXML
+    public void foundCandyCane2(MouseEvent mouseEvent) throws IOException {
+        imageView2.setImage(null);
+        imageView2.setMouseTransparent(false);
+        imageView2.setDisable(true);
+        numCandyCanesFound++;
+        label.setText("Number of candy canes found: " + numCandyCanesFound);
+
+        if (numCandyCanesFound == 5) {
+            Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getResource("fxml/PenguinDialogScreen2.fxml"));
+            Scene scene = new Scene(root, 900, 650);
+            scene.getStylesheets().add(getClass().getResource("css/characterdialog.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
+            stage.setScene(scene);
+        }
+    }
+
+    @FXML
+    public void foundCandyCane3(MouseEvent mouseEvent) throws IOException {
+        imageView3.setImage(null);
+        imageView3.setMouseTransparent(false);
+        imageView3.setDisable(true);
+        numCandyCanesFound++;
+        label.setText("Number of candy canes found: " + numCandyCanesFound);
+
+        if (numCandyCanesFound == 5) {
+            Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getResource("fxml/PenguinDialogScreen2.fxml"));
+            Scene scene = new Scene(root, 900, 650);
+            scene.getStylesheets().add(getClass().getResource("css/characterdialog.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
+            stage.setScene(scene);
+        }
+    }
+
+
+    @FXML
+    public void foundCandyCane4(MouseEvent mouseEvent) throws IOException {
+        imageView4.setImage(null);
+        imageView4.setMouseTransparent(false);
+        imageView4.setDisable(true);
+        numCandyCanesFound++;
+        label.setText("Number of candy canes found: " + numCandyCanesFound);
+
+        if (numCandyCanesFound == 5) {
+            Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getResource("fxml/PenguinDialogScreen2.fxml"));
+            Scene scene = new Scene(root, 900, 650);
+            scene.getStylesheets().add(getClass().getResource("css/characterdialog.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
+            stage.setScene(scene);
+        }
+    }
+
+
+    @FXML
+    public void foundCandyCane5(MouseEvent mouseEvent) throws IOException {
+        imageView5.setImage(null);
+        imageView5.setMouseTransparent(false);
+        imageView5.setDisable(true);
+        numCandyCanesFound++;
+        label.setText("Number of candy canes found: " + numCandyCanesFound);
+
+        if (numCandyCanesFound == 5) {
+            Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getResource("fxml/PenguinDialogScreen2.fxml"));
+            Scene scene = new Scene(root, 900, 650);
+            scene.getStylesheets().add(getClass().getResource("css/characterdialog.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
+            stage.setScene(scene);
+        }
+    }
     private void makeFadeInTransition() {
         FadeTransition fadeout = new FadeTransition();
         fadeout.setDuration(Duration.millis(2000));

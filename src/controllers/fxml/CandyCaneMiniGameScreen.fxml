@@ -29,19 +29,49 @@
             </image>
         </ImageView>
 
-        <ImageView fx:id="imageView1" pickOnBounds="true" preserveRatio="true"
-                   translateX="630.0" translateY="400.0" onMousePressed= "#foundCandyCane1">
+        <ImageView fx:id="imageView1" fitHeight="30.0" pickOnBounds="true" preserveRatio="true"
+                   translateX="750.0" translateY="300.0" onMousePressed= "#foundCandyCane1">
             <image>
-                <Image url="@../../assets/images/penguinski.png" />
+                <Image url="@../../assets/images/candycane.png" />
             </image>
         </ImageView>
+
+        <ImageView fx:id="imageView2" fitHeight="30.0" pickOnBounds="true" preserveRatio="true"
+                   translateX="410.0" translateY="370.0" onMousePressed= "#foundCandyCane2">
+            <image>
+                <Image url="@../../assets/images/candycane.png" />
+            </image>
+        </ImageView>
+
+        <ImageView fx:id="imageView3" fitHeight="30.0" pickOnBounds="true" preserveRatio="true"
+                   translateX="50.0" translateY="50.0" onMousePressed= "#foundCandyCane3">
+            <image>
+                <Image url="@../../assets/images/candycane.png" />
+            </image>
+        </ImageView>
+
+        <ImageView fx:id="imageView4" fitHeight="30.0" pickOnBounds="true" preserveRatio="true"
+                   translateX="173.0" translateY="420.0" onMousePressed= "#foundCandyCane4">
+            <image>
+                <Image url="@../../assets/images/candycane.png" />
+            </image>
+        </ImageView>
+
+        <ImageView fx:id="imageView5" fitHeight="30.0" pickOnBounds="true" preserveRatio="true"
+                   translateX="540.0" translateY="105.0" onMousePressed= "#foundCandyCane5">
+            <image>
+                <Image url="@../../assets/images/candycane.png" />
+            </image>
+        </ImageView>
+
+        <top>
+            <Label fx:id ="label"> </Label>
+        </top>
 
         <bottom>
             <HBox spacing="10">
                 <TextArea fx:id="text" prefHeight="150" prefWidth="600" />
             </HBox>
-
-
         </bottom>
 
     </BorderPane>
