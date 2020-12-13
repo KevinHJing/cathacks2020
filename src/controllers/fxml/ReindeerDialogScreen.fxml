@@ -23,7 +23,7 @@
         </padding>
 
         <ImageView fx:id="imageView" fitHeight="500.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true"
-                   translateX="100.0" translateY="0.0" onMousePressed="#imageClick">
+                   translateX="100.0" translateY="0.0">
             <image>
                 <Image url="@../../assets/images/reindeer.png" />
             </image>
