@@ -159,9 +159,10 @@ public class ReindeerDialogController implements Initializable {
                 scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
                 stage.setScene(scene);
             } else {
-                Parent root = FXMLLoader.load(getClass().getResource("fxml/ReindeerOverworldScreen.fxml"));
+                // GO TO TRIVIA
+                Parent root = FXMLLoader.load(getClass().getResource("fxml/Trivia.fxml"));
                 Scene scene = new Scene(root, 900, 650);
-                scene.getStylesheets().add(getClass().getResource("css/ReindeerOverworld.css").toExternalForm());
+                scene.getStylesheets().add(getClass().getResource("css/characterdialog.css").toExternalForm());
                 scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
                 stage.setScene(scene);
             }
