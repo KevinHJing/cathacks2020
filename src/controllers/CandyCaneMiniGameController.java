@@ -73,11 +73,11 @@ public class CandyCaneMiniGameController implements Initializable {
         x3 = rand.nextInt(750)+1;
         x4 = rand.nextInt(750)+1;
         x5 = rand.nextInt(750)+1;
-        y1 = rand.nextInt(370)+1;
-        y2 = rand.nextInt(370)+1;
-        y3 = rand.nextInt(370)+1;
-        y4 = rand.nextInt(370)+1;
-        y5 = rand.nextInt(370)+1;
+        y1 = rand.nextInt(350)+50;
+        y2 = rand.nextInt(350)+50;
+        y3 = rand.nextInt(350)+50;
+        y4 = rand.nextInt(350)+50;
+        y5 = rand.nextInt(350)+50;
 
         imageView1.setTranslateX(x1);
         imageView1.setTranslateY(y1);
