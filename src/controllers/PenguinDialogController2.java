@@ -119,6 +119,12 @@ public class PenguinDialogController2 implements Initializable {
             String newImgURL = "@../../assets/images/candle.png";
             Image imageObject = new Image(newImgURL);
             imageView2.setImage(imageObject);
+            FadeTransition fade = new FadeTransition();
+            fade.setDuration(Duration.millis(1000));
+            fade.setFromValue(0.0);
+            fade.setToValue(1.0);
+            fade.setNode(imageView2);
+            fade.play();
         }
     }
 
@@ -144,6 +150,12 @@ public class PenguinDialogController2 implements Initializable {
             String newImgURL = "@../../assets/images/candle.png";
             Image imageObject = new Image(newImgURL);
             imageView2.setImage(imageObject);
+            FadeTransition fade = new FadeTransition();
+            fade.setDuration(Duration.millis(1000));
+            fade.setFromValue(0.0);
+            fade.setToValue(1.0);
+            fade.setNode(imageView2);
+            fade.play();
         }
     }
 

@@ -121,6 +121,12 @@ public class PlayersRoomController implements Initializable {
             String newImgURL = "@../../assets/images/presents.png";
             Image imageObject = new Image(newImgURL);
             imageView.setImage(imageObject);
+            FadeTransition fade = new FadeTransition();
+            fade.setDuration(Duration.millis(1000));
+            fade.setFromValue(0.0);
+            fade.setToValue(1.0);
+            fade.setNode(imageView);
+            fade.play();
         }
     }
 
@@ -143,6 +149,11 @@ public class PlayersRoomController implements Initializable {
             Image imageObject = new Image(newImgURL);
             imageView.setImage(imageObject);
             FadeTransition fade = new FadeTransition();
+            fade.setDuration(Duration.millis(1000));
+            fade.setFromValue(0.0);
+            fade.setToValue(1.0);
+            fade.setNode(imageView);
+            fade.play();
         }
     }
     private void playMusic() {
