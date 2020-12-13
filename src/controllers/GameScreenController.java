@@ -48,11 +48,11 @@ import java.io.IOException;
             option1.setFont(new Font("Segoe UI", 17));
             option2.setFont(new Font("Segoe UI", 17));
             Dialog d1 = new Dialog(
-                    "Bowman: Nah, don’t be silly. It’s just me,\n" +
-                            "Bowman the wildcat. I’m here to wish you a\n" +
-                            "happy holidays! Well, I couldn’t visit you in\n" +
-                            "person, but I thought I’d drop by your dream\n" +
-                            "to say hi.\n",
+                    "Bowman: Nah, don’t be silly " + EnterNameController.playerName + ".\n" +
+                            "It’s just me Bowman the wildcat. I’m here to\n" +
+                            "wish you a happy holidays! Well, I couldn’t\n" +
+                            "visit you in person, but I thought I’d drop\n" +
+                            "by your dream to say hi.\n",
                     "That’s… unconventional.",
                     "Happy holidays to you too...?");
             Dialog d2 = new Dialog(
@@ -77,7 +77,8 @@ import java.io.IOException;
                     null);
             Dialog d5 = new Dialog(
                     "Bowman: Oops, I guess I missed you on the list!\n" +
-                            "Sorry bud. Anyways, gotta be going now!.",
+                            "Sorry bud. Anyways, gotta be going now!\n" +
+                            "Good luck " + EnterNameController.playerName + "!",
                     "Wait a minute!",
                     "(wake up)");
             setDialogValues(d1);

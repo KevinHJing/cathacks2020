@@ -1,0 +1,18 @@
+.root {
+    -fx-background-image: url("../../assets/images/dialoguebg.png");
+}
+
+.image {
+    -fx-opacity: 0.5;
+}
+
+.label {
+    -fx-padding: 5;
+}
+
+.button {
+    -fx-background-radius: 8;
+    -fx-padding: 10;
+    -fx-color: BLUE;
+    -fx-opacity: .5;
+}
