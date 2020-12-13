@@ -9,6 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Tooltip;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -43,6 +44,10 @@ public class PenguinOverworldScreenController implements Initializable {
             imageView.setMouseTransparent(false);
             imageView.setDisable(true);
             Tooltip.uninstall(imageView, talkPenguin);
+
+            String newImgURL = "@../../assets/images/penguinski.png";
+            Image imageObject = new Image(newImgURL);
+            imageView.setImage(imageObject);
         }
         if (seanVisited) {
             imageView2.setMouseTransparent(false);
