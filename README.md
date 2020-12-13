@@ -1,2 +1,2 @@
 # Holiday Cheer!
-![Reindeer](src/assets/images/reindeer.png | width=100)
+![Title](src/assets/images/readmePic.pngraw?=true "Title")
