@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import java.io.IOException;
-public class PenguinDialogController implements Initializable {
+public class SnowmanDialogController implements Initializable {
     @FXML Label dialogue;
     @FXML Label welcomeMessage;
     @FXML Button option1;
@@ -48,39 +48,53 @@ public class PenguinDialogController implements Initializable {
         option1.setFont(new Font("Segoe UI", 17));
         option2.setFont(new Font("Segoe UI", 17));
         Dialog d1 = new Dialog(
-                "Iceberg: Heya, " + EnterNameController.playerName + "!",
-                "How're you doing, Iceberg?",
-                "Heya.");
+                "??: Oh hey, I didn’t realize someone else was there.\n",
+                "Hey, I'm " + EnterNameController.playerName + ".",
+                "Who are you?");
         Dialog d2 = new Dialog(
-                "Iceberg: Guess what? I got to go skiing with\n" +
-                        "all my friends today! It was a lot of fun!",
-                "Penguins can ski?",
+                "Bean: I’m Bean! It’s nice to meet you. \n" +
+                        "You might have seen my twin, Sean, around \n" +
+                        "the town earlier.",
+                "What are you doing here?",
                 null);
         Dialog d3 = new Dialog(
-                "Iceberg: Of course! Some of my cousins cheated \n" +
-                        "though. They slid down the hill on their bellies.",
-                "Sounds like fun.",
-                "Isn't that dangerous?");
+                "Bean: The forest is quiet, so I like to come here \n" +
+                        "for meditation. I’m trying to open my third eye.",
+                "Snowman... meditation?",
+                "Uh, your third eye?");
         Dialog d4 = new Dialog(
-                "Iceberg: Yeah. Mom says we have to go home now.\n",
-                "Before you go, I have a \npresent for you.",
-                "Bowman got you a present.");
+                "Bean: Never mind that. Why were you out here?",
+                "I was looking for you.",
+                "Bowman wanted me to \n" +
+                            "give you a present.");
         Dialog d5 = new Dialog(
-                "Iceberg: Woah! What is it?",
-                "(Give Iceberg her present)",
+                "Bean: Oh? I’m so excited, what is it?",
+                "Give Bean his present",
                 null);
         Dialog d6 = new Dialog(
-                "Iceberg: WOW! It’s a new set of skis. \n" +
-                        "Now I’m going to be the fastest one \n" +
-                        "racing down the mountainside!",
-                "Make sure to be careful.",
-                "Have a good time.");
+                "Bean: Wow, a top hat! I’ve been looking for \n" +
+                        "one for ages! Wait...what’s this inside the hat?",
+                "You got two presents and \n" +
+                            "I didn’t even get one…",
+                "Oooh what is it?");
+        Dialog d7 = new Dialog(
+                "Bean: It's... a lump of coal??? I HAVE AWAKENED MY THIRD EYE!!!",
+                "What... is happening...",
+                null);
+        Dialog d8 = new Dialog(
+                "Bean: Thank you so much for your help! \n" +
+                        "I have a present for you too, but you \n" +
+                        "need to play a game with me first!",
+                "Start game",
+                null);
         setDialogValues(d1);
         dialogslist.add(d2);
         dialogslist.add(d3);
         dialogslist.add(d4);
         dialogslist.add(d5);
         dialogslist.add(d6);
+        dialogslist.add(d7);
+        dialogslist.add(d8);
     }
 
     private void setDialogValues(Dialog d) {
@@ -107,9 +121,9 @@ public class PenguinDialogController implements Initializable {
     public void changeDialogOption1(javafx.event.ActionEvent actionEvent) throws IOException {
         if (dialogNum >= dialogslist.size()) {
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            Parent root = FXMLLoader.load(getClass().getResource("fxml/PenguinOverworldScreen.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("fxml/SnowmanOverworldScreen.fxml"));
             Scene scene = new Scene(root, 900, 650);
-            scene.getStylesheets().add(getClass().getResource("css/PenguinOverworld.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("css/SnowmanOverworld.css").toExternalForm());
             scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
             stage.setScene(scene);
         } else {
@@ -118,7 +132,13 @@ public class PenguinDialogController implements Initializable {
         }
 
         if (dialogNum == 5) {
-            String newImgURL = "@../../assets/images/penguinski.png";
+            String newImgURL = "@../../assets/images/hatman.png";
+            Image imageObject = new Image(newImgURL);
+            imageView.setImage(imageObject);
+        }
+
+        if (dialogNum == 6) {
+            String newImgURL = "@../../assets/images/awakenman.png";
             Image imageObject = new Image(newImgURL);
             imageView.setImage(imageObject);
         }
@@ -128,9 +148,9 @@ public class PenguinDialogController implements Initializable {
     public void changeDialogOption2(javafx.event.ActionEvent actionEvent) throws IOException {
         if (dialogNum >= dialogslist.size()) {
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            Parent root = FXMLLoader.load(getClass().getResource("fxml/PenguinOverworldScreen.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("fxml/SnowmanOverworldScreen.fxml"));
             Scene scene = new Scene(root, 900, 650);
-            scene.getStylesheets().add(getClass().getResource("css/PenguinOverworld.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("css/SnowmanOverworld.css").toExternalForm());
             scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
             stage.setScene(scene);
         } else {

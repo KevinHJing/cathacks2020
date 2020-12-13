@@ -52,7 +52,7 @@ public class ReindeerDialogController implements Initializable {
                 "What’s up, Moodolph?",
                 "What are you doing?");
         Dialog d2 = new Dialog(
-                "I’m waiting for my big brother Rudolph to come\n" +
+                "Moodolph: I’m waiting for my big brother Rudolph to come\n" +
                         "home from delivering presents! Then we can\n" +
                         "celebrate together and he can give me my\n" +
                         "present!\n",
