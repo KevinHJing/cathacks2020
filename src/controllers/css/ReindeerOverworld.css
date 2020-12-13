@@ -2,3 +2,21 @@
     -fx-background-image: url("../../assets/images/igloo%20background.png");
     -fx-background-color: transparent;
 }
+
+#talk-to-reindeer{
+    -fx-background-color: transparent;
+    -fx-text-fill: transparent;
+}
+
+#reindeer-char:hover{
+    -fx-text-fill: black;
+
+}
+
+#reindeer-button{
+    -fx-background-color: transparent;
+}
+
+#talk-to-reindeer, #reindeer-button:hover {
+    -fx-text-fill:black;
+}
