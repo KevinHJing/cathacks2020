@@ -66,8 +66,9 @@ public class PlayersRoomController implements Initializable {
         imageView.setImage(null);
         Dialog d1 = new Dialog(
                 EnterNameController.playerName + ": That was a really weird dream... " +
-                        "Maybe if I slept earlier, these things wouldn’t happen. " +
-                        "Wait, what’s that?",
+                        "Maybe if I slept earlier, these things wouldn’t happen. This is all because I" +
+                        " was up all night writing code for CatHacks..." +
+                        "wait, what’s that?",
                 "Next",
                 null);
         Dialog d2 = new Dialog(

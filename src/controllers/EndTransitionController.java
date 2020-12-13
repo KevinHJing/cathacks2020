@@ -89,9 +89,9 @@ public class EndTransitionController implements Initializable {
     public void changeDialogOption1(javafx.event.ActionEvent actionEvent) throws IOException {
         if (dialogNum >= dialogslist.size()) {
             Parent secondView;
-            secondView = (StackPane) FXMLLoader.load(getClass().getResource("fxml/PlayerRoomScreen.fxml"));
+            secondView = FXMLLoader.load(getClass().getResource("fxml/GroupSceneScreen.fxml"));
             Scene scene = new Scene(secondView, 900, 650);
-            scene.getStylesheets().add(getClass().getResource("css/playersroom.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("css/GroupScene.css").toExternalForm());
 
             Stage curr = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             curr.setTitle("Gamer Time");
@@ -107,9 +107,9 @@ public class EndTransitionController implements Initializable {
     public void changeDialogOption2(javafx.event.ActionEvent actionEvent) throws IOException {
         if (dialogNum >= dialogslist.size()) {
             Parent secondView;
-            secondView = (StackPane) FXMLLoader.load(getClass().getResource("fxml/PlayerRoomScreen.fxml"));
+            secondView = FXMLLoader.load(getClass().getResource("fxml/GroupSceneScreen.fxml"));
             Scene scene = new Scene(secondView, 900, 650);
-            scene.getStylesheets().add(getClass().getResource("css/playersroom.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("css/GroupScene.css").toExternalForm());
 
             Stage curr = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             curr.setTitle("Gamer Time");

@@ -1,0 +1,19 @@
+.root {
+    -fx-background-image: url("../../assets/images/celebration%20background.png");
+    -fx-background-color: transparent;
+}
+
+.image {
+    -fx-opacity: 0.5;
+}
+
+.label {
+    -fx-padding: 5;
+}
+
+.button {
+    -fx-background-radius: 10;
+    -fx-padding: 10;
+    -fx-color: LIGHTBLUE;
+    -fx-opacity: 1;
+}
