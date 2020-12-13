@@ -118,7 +118,7 @@ public class PenguinDialogController implements Initializable {
         }
 
         if (dialogNum == 5) {
-            String newImgURL = "@../../assets/images/snowman.png";
+            String newImgURL = "@../../assets/images/penguinski.png";
             Image imageObject = new Image(newImgURL);
             imageView.setImage(imageObject);
         }

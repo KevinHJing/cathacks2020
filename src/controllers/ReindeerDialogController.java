@@ -120,7 +120,7 @@ public class ReindeerDialogController implements Initializable {
         }
 
         if (dialogNum == 3) {
-            String newImgURL = "@../../assets/images/snowman.png";
+            String newImgURL = "@../../assets/images/scarf reindeet.png";
             Image imageObject = new Image(newImgURL);
             imageView.setImage(imageObject);
         }

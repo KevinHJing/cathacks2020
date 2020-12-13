@@ -16,7 +16,7 @@
             fx:id="GameRoot">
 
     <ImageView fitHeight="275.0" fitWidth="603.0" pickOnBounds="true" preserveRatio="true"
-               translateX="500" translateY="300" onMousePressed="#loadSnowmanDialog">
+               translateX="200" translateY="350" onMousePressed="#loadSnowmanDialog">
         <image>
             <Image url="@../../assets/images/snowman.png" />
         </image>
