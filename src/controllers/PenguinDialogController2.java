@@ -65,7 +65,7 @@ public class PenguinDialogController2 implements Initializable {
                 "No way, really?",
                 "Ooh, what is it?");
         Dialog d2 = new Dialog(
-                "Iceberg: Its a candle! I made it myself, and I added my own special scent to it!",
+                "Iceberg: It's a candle! I made it myself, and I added my own special scent to it!",
                 "Special scent?",
                 null);
         Dialog d3 = new Dialog(
