@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
@@ -33,6 +34,7 @@ import java.io.IOException;
         @FXML Button option2;
         @FXML StackPane GameRoot;
         @FXML ImageView imageView;
+        @FXML TextArea text;
 
         private Character character;
         ArrayList<Dialog> dialogslist = new ArrayList<Dialog>();
@@ -43,8 +45,17 @@ import java.io.IOException;
         public void initialize(URL url, ResourceBundle rb) {
             GameRoot.setOpacity(0);
             makeFadeInTransition();
-            dialogue.setFont(new Font("Lucida Console", 20));
+
+            text.setWrapText(true);
+            text.setEditable(false);
+            text.setMouseTransparent(true);
+            text.setFocusTraversable(false);
+            text.setFont(new Font("Lucida Console", 20));
+
+            option1.setWrapText(true);
             option1.setFont(new Font("Segoe UI", 17));
+
+            option2.setWrapText(true);
             option2.setFont(new Font("Segoe UI", 17));
             imageView.setImage(null);
             Dialog d1 = new Dialog(
@@ -56,36 +67,36 @@ import java.io.IOException;
                     "Is that a ghost?!",
                     "I’m losing it...");
             Dialog d3 = new Dialog(
-                    "Bowman: Nah, don’t be silly " + EnterNameController.playerName + ".\n" +
-                            "It’s just me, Bowman the wildcat. I’m here to\n" +
-                            "wish you a happy holidays! Well, I couldn’t\n" +
-                            "visit you in person, but I thought I’d drop\n" +
-                            "by your dream to say hi.\n",
+                    "Bowman: Nah, don’t be silly " + EnterNameController.playerName + ". " +
+                            "It’s just me, Bowman the wildcat. I’m here to " +
+                            "wish you a happy holidays! Well, I couldn’t " +
+                            "visit you in person, but I thought I’d drop " +
+                            "by your dream to say hi.",
                     "That’s...unconventional.",
                     "Happy holidays to you too...?");
             Dialog d4 = new Dialog(
-                    "Bowman: Dang, not even a warm welcome? It would\n" +
-                            "make me feel a lot better about giving you this\n" +
+                    "Bowman: Dang, not even a warm welcome? It would " +
+                            "make me feel a lot better about giving you this " +
                             "job.",
                     "Job?",
                     null);
             Dialog d5 = new Dialog(
-                    "Bowman: Well...I had all these presents to give\n" +
-                            "to everyone, but I don’t have the time to give\n" +
+                    "Bowman: Well...I had all these presents to give " +
+                            "to everyone, but I don’t have the time to give " +
                             "them out. So...could you do me a little favor?",
                     "Sure thing, pal.",
                     "Do I have a choice?");
             Dialog d6 = new Dialog(
-                    "That’s the spirit! When you wake up, you’ll see\n" +
-                            "the presents in your room. Go travel into town\n" +
-                            "to find Moodolph the Reindeer, Iceberg the\n" +
-                            "Penguin, and Bean the Snowman. Just talk to\n" +
+                    "Bowman: That’s the spirit! When you wake up, you’ll see " +
+                            "the presents in your room. Go travel into town " +
+                            "to find Moodolph the Reindeer, Iceberg the " +
+                            "Penguin, and Bean the Snowman. Just talk to " +
                             "them to give them each a present!",
                     "Wait, I don’t get one?",
                     null);
             Dialog d7 = new Dialog(
-                    "Bowman: Oops, I guess I missed you on the list!\n" +
-                            "Sorry bud. Anyways, gotta be going now!\n" +
+                    "Bowman: Oops, I guess I missed you on the list! " +
+                            "Sorry bud. Anyways, gotta be going now! " +
                             "Good luck " + EnterNameController.playerName + "!",
                     "Wait a minute!",
                     "(wake up)");
@@ -99,7 +110,7 @@ import java.io.IOException;
         }
 
         private void setDialogValues(Dialog d) {
-            dialogue.setText(d.getOutput());
+            text.setText(d.getOutput());
             option1.setText(d.getButtonText1());
             if (d.getButtonText2() == null) {
                 option2.setVisible(false);

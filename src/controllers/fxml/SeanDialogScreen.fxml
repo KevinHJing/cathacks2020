@@ -31,11 +31,7 @@
 
         <bottom>
             <HBox spacing="10">
-                <Group>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="150.0"
-                               stroke="GRAY" strokeType="INSIDE" width="600.0"/>
-                    <Label fx:id="dialogue" text="hey what's up" />
-                </Group>
+                <TextArea fx:id="text" prefHeight="150" prefWidth="600" />
                 <VBox spacing="10">
                     <Button fx:id="option1" onAction="#changeDialogOption1"/>
                     <Button fx:id="option2" onAction="#changeDialogOption2"/>

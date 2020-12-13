@@ -10,6 +10,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
@@ -27,13 +29,15 @@ import java.util.ResourceBundle;
 
 import java.io.IOException;
 public class ReindeerDialogController implements Initializable {
-    @FXML Label dialogue;
+//    @FXML Label dialogue;
     @FXML Label welcomeMessage;
     @FXML Button option1;
     @FXML Button option2;
     @FXML Button option3;
     @FXML StackPane GameRoot;
     @FXML ImageView imageView;
+
+    @FXML TextArea text;
 
     private Character character;
     ArrayList<Dialog> dialogslist = new ArrayList<Dialog>();
@@ -44,17 +48,26 @@ public class ReindeerDialogController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         GameRoot.setOpacity(0);
         makeFadeInTransition();
-        dialogue.setFont(new Font("Lucida Console", 20));
+
+        text.setWrapText(true);
+        text.setEditable(false);
+        text.setMouseTransparent(true);
+        text.setFocusTraversable(false);
+        text.setFont(new Font("Lucida Console", 20));
+
+        option1.setWrapText(true);
         option1.setFont(new Font("Segoe UI", 17));
+
+        option2.setWrapText(true);
         option2.setFont(new Font("Segoe UI", 17));
         Dialog d1 = new Dialog(
                 "Moodolph: Hey, " + EnterNameController.playerName + "!",
                 "What’s up, Moodolph?",
                 "What are you doing?");
         Dialog d2 = new Dialog(
-                "Moodolph: I’m waiting for my big brother Rudolph to come\n" +
-                        "home from delivering presents! Then we can\n" +
-                        "celebrate together and he can give me my\n" +
+                "Moodolph: I’m waiting for my big brother Rudolph to come " +
+                        "home from delivering presents! Then we can " +
+                        "celebrate together and he can give me my " +
                         "present!\n",
                 "I’m delivering presents too!",
                 "I also have a present for you.");
@@ -63,17 +76,17 @@ public class ReindeerDialogController implements Initializable {
                 "Give Moodolph his present",
                 null);
         Dialog d4 = new Dialog(
-                "Moodolph: It’s a scarf from Bowman! That’s really\n" +
+                "Moodolph: It’s a scarf from Bowman! That’s really " +
                         "nice of him. Please tell him I said thanks.",
                 "I will!",
                 null);
         Dialog d5 = new Dialog(
-                "Moodolph: I also have a present for you, " + EnterNameController.playerName + "! \n" +
+                "Moodolph: I also have a present for you, " + EnterNameController.playerName + "! " +
                         "But you’ll have to play a game with me to get it.",
                 "Uh, sure?",
                 "What game?");
         Dialog d6 = new Dialog(
-                "Moodolph: It’s a trivia game! You get points\n" +
+                "Moodolph: It’s a trivia game! You get points " +
                         "for getting the right answer.",
                 "Start Game",
                 null);
@@ -86,7 +99,7 @@ public class ReindeerDialogController implements Initializable {
     }
 
     private void setDialogValues(Dialog d) {
-        dialogue.setText(d.getOutput());
+        text.setText(d.getOutput());
         option1.setText(d.getButtonText1());
         if (d.getButtonText2() == null) {
             option2.setVisible(false);
