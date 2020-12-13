@@ -61,7 +61,7 @@ public class PenguinDialogController2 implements Initializable {
         option2.setFont(new Font("Segoe UI", 17));
         imageView2.setImage(null);
         Dialog d1 = new Dialog(
-                "Iceberg: Thanks so much for all your help " + EnterNameController.playerName + "! I have a gift for you too!",
+                "Iceberg: Thanks so much for all your help " + EnterNameController.playerName + "! Here's your gift!",
                 "No way, really?",
                 "Ooh, what is it?");
         Dialog d2 = new Dialog(
