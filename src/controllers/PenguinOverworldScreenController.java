@@ -37,7 +37,7 @@ public class PenguinOverworldScreenController implements Initializable {
         Tooltip.install(imageView, talkPenguin);
 
         Tooltip talkSean = new Tooltip("???");
-        Tooltip.install(imageView, talkSean);
+        Tooltip.install(imageView2, talkSean);
 
         if (penguinVisited) {
             imageView.setMouseTransparent(false);
