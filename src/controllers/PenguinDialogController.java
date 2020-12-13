@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import java.io.IOException;
-public class ReindeerDialogController implements Initializable {
+public class PenguinDialogController implements Initializable {
     @FXML Label dialogue;
     @FXML Label welcomeMessage;
     @FXML Button option1;
@@ -48,35 +48,32 @@ public class ReindeerDialogController implements Initializable {
         option1.setFont(new Font("Segoe UI", 17));
         option2.setFont(new Font("Segoe UI", 17));
         Dialog d1 = new Dialog(
-                "Moodolph: Hey, " + EnterNameController.playerName + "!",
-                "What’s up, Moodolph?",
-                "What are you doing?");
+                "Iceberg: Heya, " + EnterNameController.playerName + "!",
+                "How're you doing, Iceberg?",
+                "Heya.");
         Dialog d2 = new Dialog(
-                "I’m waiting for my big brother Rudolph to come\n" +
-                        "home from delivering presents! Then we can\n" +
-                        "celebrate together and he can give me my\n" +
-                        "present!\n",
-                "I’m delivering presents too!",
-                "I also have a present for you.");
+                "Iceberg: Guess what? I got to go skiing with all of \n" +
+                        "my friends today! It was a lot of fun!",
+                "Penguins can ski?",
+                null);
         Dialog d3 = new Dialog(
-                "Moodolph: Wow, really?\n",
-                "Give Moodolph his present",
-                null);
+                "Iceberg: Of course! Some of my cousins cheated though. \n" +
+                        "They slid down the hill on their bellies.",
+                "Sounds like fun.",
+                "Isn't that dangerous?");
         Dialog d4 = new Dialog(
-                "Moodolph: It’s a scarf from Bowman! That’s really\n" +
-                        "nice of him. Please tell him I said thanks.",
-                "I will!",
-                null);
+                " Iceberg: Yeah. Mom says we have to go home now.",
+                "Before you go, I have a \npresent for you.",
+                "Bowman got you a present.");
         Dialog d5 = new Dialog(
-                "Moodolph: I also have a present for you, " + EnterNameController.playerName + "! \n" +
-                        "But you’ll have to play a game with me to get it.",
-                "Uh, sure?",
-                "What game?");
-        Dialog d6 = new Dialog(
-                "Moodolph: It’s a trivia game! You get points\n" +
-                        "for getting the right answer.",
-                "Start Game",
+                "Iceberg: Woah! What is it?",
+                "(Give Iceberg her present)",
                 null);
+        Dialog d6 = new Dialog(
+                "Iceberg: WOW! It’s a new set of skis. Now I’m going to be \n" +
+                        "the fastest one racing down the mountainside.",
+                "Make sure to be careful.",
+                "Have a good time.");
         setDialogValues(d1);
         dialogslist.add(d2);
         dialogslist.add(d3);
@@ -109,9 +106,9 @@ public class ReindeerDialogController implements Initializable {
     public void changeDialogOption1(javafx.event.ActionEvent actionEvent) throws IOException {
         if (dialogNum >= dialogslist.size()) {
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            Parent root = FXMLLoader.load(getClass().getResource("fxml/ReindeerOverworldScreen.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("fxml/PenguinOverworldScreen.fxml"));
             Scene scene = new Scene(root, 900, 650);
-            scene.getStylesheets().add(getClass().getResource("css/ReindeerOverworld.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("css/PenguinOverworld.css").toExternalForm());
             scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
             stage.setScene(scene);
         } else {
@@ -119,7 +116,7 @@ public class ReindeerDialogController implements Initializable {
             dialogNum++;
         }
 
-        if (dialogNum == 3) {
+        if (dialogNum == 5) {
             String newImgURL = "@../../assets/images/snowman.png";
             Image imageObject = new Image(newImgURL);
             imageView.setImage(imageObject);
@@ -130,9 +127,9 @@ public class ReindeerDialogController implements Initializable {
     public void changeDialogOption2(javafx.event.ActionEvent actionEvent) throws IOException {
         if (dialogNum >= dialogslist.size()) {
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            Parent root = FXMLLoader.load(getClass().getResource("fxml/ReindeerOverworldScreen.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("fxml/PenguinOverworldScreen.fxml"));
             Scene scene = new Scene(root, 900, 650);
-            scene.getStylesheets().add(getClass().getResource("css/ReindeerOverworld.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("css/PenguinOverworld.css").toExternalForm());
             scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
             stage.setScene(scene);
         } else {
