@@ -26,6 +26,7 @@ import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 import java.io.IOException;
@@ -46,10 +47,14 @@ public class CandyCaneMiniGameController implements Initializable {
     @FXML Label label;
     private int numCandyCanesFound = 0;
 
+    private int x1, y1, x2, y2, x3, y3, x4, y4, x5, y5;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         GameRoot.setOpacity(0);
         makeFadeInTransition();
+
+        Random rand = new Random();
 
         text.setWrapText(true);
         text.setEditable(false);
@@ -61,6 +66,29 @@ public class CandyCaneMiniGameController implements Initializable {
                 "\nWhen you see a candy cane, click on it to collect it. You win when you find all 5!");
         label.setText("Number of candy canes found: " + numCandyCanesFound);
         label.setTextFill(Color.WHITE);
+
+        // making candy canes come up in random locations
+        x1 = rand.nextInt(750)+1;
+        x2 = rand.nextInt(750)+1;
+        x3 = rand.nextInt(750)+1;
+        x4 = rand.nextInt(750)+1;
+        x5 = rand.nextInt(750)+1;
+        y1 = rand.nextInt(420)+1;
+        y2 = rand.nextInt(420)+1;
+        y3 = rand.nextInt(420)+1;
+        y4 = rand.nextInt(420)+1;
+        y5 = rand.nextInt(420)+1;
+
+        imageView1.setTranslateX(x1);
+        imageView1.setTranslateY(y1);
+        imageView2.setTranslateX(x2);
+        imageView2.setTranslateY(y2);
+        imageView3.setTranslateX(x3);
+        imageView3.setTranslateY(y3);
+        imageView4.setTranslateX(x4);
+        imageView4.setTranslateY(y4);
+        imageView5.setTranslateX(x5);
+        imageView5.setTranslateY(y5);
     }
 
     @FXML
