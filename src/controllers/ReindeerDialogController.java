@@ -13,6 +13,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Font;
@@ -22,7 +23,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.util.Duration;
 
-import javax.swing.text.html.ImageView;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -34,7 +34,9 @@ public class ReindeerDialogController implements Initializable {
     @FXML Label welcomeMessage;
     @FXML Button option1;
     @FXML Button option2;
+    @FXML Button option3;
     @FXML StackPane GameRoot;
+    @FXML ImageView imageView;
 
     private Character character;
     ArrayList<Dialog> dialogslist = new ArrayList<Dialog>();
@@ -60,7 +62,7 @@ public class ReindeerDialogController implements Initializable {
                 "I’m delivering presents too!",
                 "I also have a present for you.");
         Dialog d3 = new Dialog(
-                "Moodolph: Wow, really?",
+                "Moodolph: Wow, really?\n",
                 "Give Moodolph his present",
                 null);
         Dialog d4 = new Dialog(
@@ -69,8 +71,9 @@ public class ReindeerDialogController implements Initializable {
                 "I will!",
                 null);
         Dialog d5 = new Dialog(
-                "Moodolph: I also have a present for you, " + EnterNameController.playerName + " !\n" +
-                        " But you’ll have to play a game with me to get\n" +
+                "Moodolph: I also have a present for you, \n" +
+                        EnterNameController.playerName + "! But you’ll have to \n" +
+                        "play a game with me to get\n" +
                         "it.",
                 "Uh, sure?",
                 "What game?");
@@ -120,6 +123,12 @@ public class ReindeerDialogController implements Initializable {
             setDialogValues(dialogslist.get(dialogNum));
             dialogNum++;
         }
+
+        if (dialogNum == 3) {
+            String newImgURL = "@../../assets/images/snowman.png";
+            Image imageObject = new Image(newImgURL);
+            imageView.setImage(imageObject);
+        }
     }
 
     @FXML
@@ -135,9 +144,5 @@ public class ReindeerDialogController implements Initializable {
             setDialogValues(dialogslist.get(dialogNum));
             dialogNum++;
         }
-    }
-
-    public void imageClick(javafx.scene.input.MouseEvent mouseEvent) {
-        dialogue.setText("You clicked the image!!!!!");
     }
 }

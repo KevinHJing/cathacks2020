@@ -66,9 +66,9 @@ public class EnterNameController {
         playerName = nameField.getText();
         Player player = new Player(nameField.getText());
         Parent secondView;
-        secondView = (StackPane) FXMLLoader.load(getClass().getResource("fxml/BlackScreen1.fxml"));
+        secondView = (StackPane) FXMLLoader.load(getClass().getResource("fxml/GameScreen.fxml"));
         Scene scene = new Scene(secondView, 900, 650);
-        scene.getStylesheets().add(getClass().getResource("css/blackscreen.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("css/game.css").toExternalForm());
         Stage curr = (Stage) mainbox.getScene().getWindow();
         curr.setTitle("Dreaming....");
         curr.setScene(scene);

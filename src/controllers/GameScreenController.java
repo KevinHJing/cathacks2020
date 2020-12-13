@@ -13,6 +13,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Font;
@@ -22,7 +23,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.util.Duration;
 
-import javax.swing.text.html.ImageView;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -35,6 +35,7 @@ import java.io.IOException;
         @FXML Button option1;
         @FXML Button option2;
         @FXML StackPane GameRoot;
+        @FXML ImageView imageView;
 
         private Character character;
         ArrayList<Dialog> dialogslist = new ArrayList<Dialog>();
@@ -47,7 +48,16 @@ import java.io.IOException;
             dialogue.setFont(new Font("Lucida Console", 20));
             option1.setFont(new Font("Segoe UI", 17));
             option2.setFont(new Font("Segoe UI", 17));
+            imageView.setImage(null);
             Dialog d1 = new Dialog(
+                    ".........",
+                    "hello?",
+                    null);
+            Dialog d2 = new Dialog(
+                    "??: Hey, you there?",
+                    "Is that a ghost?!",
+                    "I’m losing it...");
+            Dialog d3 = new Dialog(
                     "Bowman: Nah, don’t be silly " + EnterNameController.playerName + ".\n" +
                             "It’s just me, Bowman the wildcat. I’m here to\n" +
                             "wish you a happy holidays! Well, I couldn’t\n" +
@@ -55,19 +65,19 @@ import java.io.IOException;
                             "by your dream to say hi.\n",
                     "That’s...unconventional.",
                     "Happy holidays to you too...?");
-            Dialog d2 = new Dialog(
+            Dialog d4 = new Dialog(
                     "Bowman: Dang, not even a warm welcome? It would\n" +
                             "make me feel a lot better about giving you this\n" +
                             "job.",
                     "Job?",
                     null);
-            Dialog d3 = new Dialog(
+            Dialog d5 = new Dialog(
                     "Bowman: Well...I had all these presents to give\n" +
                             "to everyone, but I don’t have the time to give\n" +
                             "them out. So...could you do me a little favor?",
                     "Sure thing, pal.",
                     "Do I have a choice?");
-            Dialog d4 = new Dialog(
+            Dialog d6 = new Dialog(
                     "That’s the spirit! When you wake up, you’ll see\n" +
                             "the presents in your room. Go travel into town\n" +
                             "to find Moodolph the Reindeer, Iceberg the\n" +
@@ -75,7 +85,7 @@ import java.io.IOException;
                             "them to give them each a present!",
                     "Wait, I don’t get one?",
                     null);
-            Dialog d5 = new Dialog(
+            Dialog d7 = new Dialog(
                     "Bowman: Oops, I guess I missed you on the list!\n" +
                             "Sorry bud. Anyways, gotta be going now!\n" +
                             "Good luck " + EnterNameController.playerName + "!",
@@ -86,6 +96,8 @@ import java.io.IOException;
             dialogslist.add(d3);
             dialogslist.add(d4);
             dialogslist.add(d5);
+            dialogslist.add(d6);
+            dialogslist.add(d7);
         }
 
         private void setDialogValues(Dialog d) {
@@ -116,10 +128,17 @@ import java.io.IOException;
                 Scene scene = new Scene(root, 900, 650);
                 scene.getStylesheets().add(getClass().getResource("css/playersroom.css").toExternalForm());
                 scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
+                stage.setTitle("Gamer Time");
                 stage.setScene(scene);
             } else {
                 setDialogValues(dialogslist.get(dialogNum));
                 dialogNum++;
+            }
+
+            if (dialogNum == 2) {
+                String newImgURL = "@../../assets/images/wildcat.png";
+                Image imageObject = new Image(newImgURL);
+                imageView.setImage(imageObject);
             }
         }
 
@@ -131,10 +150,17 @@ import java.io.IOException;
                 Scene scene = new Scene(root, 900, 650);
                 scene.getStylesheets().add(getClass().getResource("css/playersroom.css").toExternalForm());
                 scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
+                stage.setTitle("Gamer Time");
                 stage.setScene(scene);
             } else {
                 setDialogValues(dialogslist.get(dialogNum));
                 dialogNum++;
+            }
+
+            if (dialogNum == 2) {
+                String newImgURL = "@../../assets/images/wildcat.png";
+                Image imageObject = new Image(newImgURL);
+                imageView.setImage(imageObject);
             }
         }
 

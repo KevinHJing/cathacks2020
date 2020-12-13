@@ -22,7 +22,7 @@
             <Insets top="0" right="25" bottom="25" left="25"/>
         </padding>
 
-        <ImageView fitHeight="500.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true"
+        <ImageView fx:id = "imageView" fitHeight="500.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true"
                    translateX="100.0" translateY="0.0" onMousePressed="#imageClick">
             <image>
                 <Image url="@../../assets/images/wildcat.png" />
