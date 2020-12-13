@@ -100,9 +100,14 @@ public class BlackScreen1Controller implements Initializable {
     }
 
     @FXML
-    public void changeDialogOption2(javafx.event.ActionEvent actionEvent) {
+    public void changeDialogOption2(javafx.event.ActionEvent actionEvent) throws IOException {
         if (dialogNum >= dialogslist.size()) {
-            System.out.println("done");
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getResource("fxml/GameScreen.fxml"));
+            Scene scene = new Scene(root, 900, 650);
+            scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("css/game.css").toExternalForm());
+            stage.setScene(scene);
         } else {
             setDialogValues(dialogslist.get(dialogNum));
             dialogNum++;

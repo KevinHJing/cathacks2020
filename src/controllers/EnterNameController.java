@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.StackedAreaChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -62,11 +63,11 @@ public class EnterNameController {
     private void loadNextScene() throws IOException{
 
         Parent secondView;
-        secondView = (AnchorPane) FXMLLoader.load(getClass().getResource("fxml/OverworldScreen.fxml"));
+        secondView = (StackPane) FXMLLoader.load(getClass().getResource("fxml/BlackScreen1.fxml"));
         Scene scene = new Scene(secondView, 900, 650);
-        scene.getStylesheets().add(getClass().getResource("css/Overworld.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("css/blackscreen.css").toExternalForm());
         Stage curr = (Stage) mainbox.getScene().getWindow();
-        curr.setTitle("Overworld");
+        curr.setTitle("Dreaming....");
         curr.setScene(scene);
 
         /*

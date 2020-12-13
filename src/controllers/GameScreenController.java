@@ -71,7 +71,7 @@ import java.io.IOException;
                     "That’s the spirit! When you wake up, you’ll see\n" +
                             "the presents in your room. Go travel into town\n" +
                             "to find Moodolph the Reindeer, Iceberg the\n" +
-                            "Penguin, and [Name] the snowman. Just talk to\n" +
+                            "Penguin, and Bean the snowman. Just talk to\n" +
                             "them to give them a present!",
                     "Wait, I don’t get one?",
                     null);
@@ -100,7 +100,7 @@ import java.io.IOException;
 
         private void makeFadeInTransition() {
             FadeTransition fadeout = new FadeTransition();
-            fadeout.setDuration(Duration.millis(1000));
+            fadeout.setDuration(Duration.millis(2000));
             fadeout.setNode(GameRoot);
             fadeout.setFromValue(0);
             fadeout.setToValue(1);
@@ -108,9 +108,14 @@ import java.io.IOException;
         }
 
         @FXML
-        public void changeDialogOption1(javafx.event.ActionEvent actionEvent) {
+        public void changeDialogOption1(javafx.event.ActionEvent actionEvent) throws IOException {
             if (dialogNum >= dialogslist.size()) {
-                System.out.println("done");
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                Parent root = FXMLLoader.load(getClass().getResource("fxml/OverworldScreen.fxml"));
+                Scene scene = new Scene(root, 900, 650);
+                scene.getStylesheets().add(getClass().getResource("css/Overworld.css").toExternalForm());
+                scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
+                stage.setScene(scene);
             } else {
                 setDialogValues(dialogslist.get(dialogNum));
                 dialogNum++;
@@ -118,14 +123,14 @@ import java.io.IOException;
         }
 
         @FXML
-        public void changeBackground() {
-
-        }
-
-        @FXML
-        public void changeDialogOption2(javafx.event.ActionEvent actionEvent) {
+        public void changeDialogOption2(javafx.event.ActionEvent actionEvent) throws IOException {
             if (dialogNum >= dialogslist.size()) {
-                System.out.println("done");
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                Parent root = FXMLLoader.load(getClass().getResource("fxml/OverworldScreen.fxml"));
+                Scene scene = new Scene(root, 900, 650);
+                scene.getStylesheets().add(getClass().getResource("css/Overworld.css").toExternalForm());
+                scene.getStylesheets().add(getClass().getResource("css/Main.css").toExternalForm());
+                stage.setScene(scene);
             } else {
                 setDialogValues(dialogslist.get(dialogNum));
                 dialogNum++;

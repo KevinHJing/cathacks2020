@@ -23,7 +23,7 @@
         </padding>
 
         <ImageView fitHeight="500.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true"
-                   translateX="100" translateY="100" onMousePressed="#imageClick">
+                   translateX="100.0" translateY="0.0" onMousePressed="#imageClick">
             <image>
                 <Image url="@../../assets/images/wildcat.png" />
             </image>
