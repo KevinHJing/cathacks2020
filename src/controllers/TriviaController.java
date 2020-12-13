@@ -297,7 +297,7 @@ public class TriviaController implements Initializable {
                 triviaNum++;
             }
 
-            if (triviaList.get(triviaNum).getOutput().contains("Moodolph: Well, it's a practical gift, right? Well anyways, I have to go!")) {
+            if (triviaList.get(triviaNum-1).getOutput().contains("Moodolph: Well, it's a practical gift, right? Well anyways, I have to go!")) {
                 String newImgURL = "@../../assets/images/fork.png";
                 Image imageObject = new Image(newImgURL);
                 imageView2.setImage(imageObject);
@@ -394,7 +394,7 @@ public class TriviaController implements Initializable {
                 triviaNum++;
             }
 
-            if (triviaList.get(triviaNum).getOutput().contains("Moodolph: Well, it's a practical gift, right? Well anyways, I have to go!")) {
+            if (triviaList.get(triviaNum-1).getOutput().contains("Moodolph: Well, it's a practical gift, right? Well anyways, I have to go!")) {
                 String newImgURL = "@../../assets/images/fork.png";
                 Image imageObject = new Image(newImgURL);
                 imageView2.setImage(imageObject);
@@ -501,7 +501,7 @@ public class TriviaController implements Initializable {
                 triviaNum++;
             }
 
-            if (triviaList.get(triviaNum).getOutput().contains("Moodolph: Well, it's a practical gift, right? Well anyways, I have to go!")) {
+            if (triviaList.get(triviaNum-1).getOutput().contains("Moodolph: Well, it's a practical gift, right? Well anyways, I have to go!")) {
                 String newImgURL = "@../../assets/images/fork.png";
                 Image imageObject = new Image(newImgURL);
                 imageView2.setImage(imageObject);
