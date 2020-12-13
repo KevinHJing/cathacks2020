@@ -17,7 +17,7 @@
                 <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" opacity=".5"
                            height="182.0" layoutX="140.5" layoutY="55.0"
                            width="359.0"/>
-                <TextField id="nameInput" fx:id="nameField" layoutX="140.5" layoutY="175.0"/>
+                <TextField id="nameInput" fx:id="nameField" layoutX="140.5" layoutY="175.0" onKeyPressed="#keyPressed"/>
                 <Button styleClass="intro-buttons" fx:id="startButton" layoutX="245.0" layoutY="267.0" mnemonicParsing="false"
                         onAction="#handleButtonSubmit" text="Begin!">
                     <font>

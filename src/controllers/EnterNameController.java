@@ -16,6 +16,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -135,5 +137,10 @@ public class EnterNameController {
         fadeout.play();
     }
 
+    public void keyPressed(KeyEvent keyEvent) throws IOException {
+        if(keyEvent.getCode() == KeyCode.ENTER)
+            handleButtonSubmit(new ActionEvent(keyEvent.getSource(),
+                    ((Node)keyEvent.getSource()).getScene().lookup("startButton")));
+    }
 
 }
